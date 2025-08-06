@@ -9,8 +9,8 @@ locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
 source_filenames = {
     "openweather": "{location}.json",
     "smhi": "smhi_{location}.json",
-    "yr": "{location}_yr.json"
-    "weatherapi": "{location}_weatherapi.json"
+    "yr": "{location}_yr.json",
+    "weatherapi": "{location}_weatherapi.json",
 }
 
 # Funktion för att läsa väderdata från en viss källa
