@@ -87,7 +87,7 @@
 
     async function loadWeather(location) {
       try {
-        const res = await fetch(`data/combined_${location}.json`);
+        const res = await fetch(`data/${location}.json`);
         const data = await res.json();
 
         tableBody.innerHTML = ""; // Töm gamla rader
