@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <title>AI Väder – sammanvägd prognos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Väder</title>
   <style>
-    body { font-family: sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
-    .forecast { margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f0f0f0;
+    }
+    #weather {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+      max-width: 400px;
+    }
+    select {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
   </style>
 </head>
 <body>
-  <h1>Sammanvägd väderprognos</h1>
+  <h1>AI Väder</h1>
 
-  <label for="city-select">Välj ort:</label>
-  <select id="city-select">
+  <label for="location">Välj ort:</label><br/>
+  <select id="location">
     <option value="eskilstuna">Eskilstuna</option>
     <option value="stockholm">Stockholm</option>
     <option value="göteborg">Göteborg</option>
@@ -21,51 +37,38 @@
     <option value="umeå">Umeå</option>
   </select>
 
-  <div id="forecast-container">Välj en ort...</div>
+  <div id="weather">
+    <p><strong>Temperatur:</strong> <span id="temp">–</span> °C</p>
+    <p><strong>Väder:</strong> <span id="desc">–</span></p>
+    <p><strong>Tillförlitlighet:</strong> <span id="reliability">–</span></p>
+  </div>
 
   <script>
-    const citySelect = document.getElementById('city-select');
-    const container = document.getElementById('forecast-container');
+    const locationSelect = document.getElementById("location");
+    const tempEl = document.getElementById("temp");
+    const descEl = document.getElementById("desc");
+    const reliabilityEl = document.getElementById("reliability");
 
-    async function loadForecast(city) {
-      container.innerHTML = 'Laddar prognos...';
-
+    async function loadWeather(location) {
       try {
-        const response = await fetch(`data/${city}_combined.json`);
-        if (!response.ok) throw new Error("Filen kunde inte hämtas");
-        const data = await response.json();
+        const res = await fetch(`data/combined_${location}.json`);
+        const data = await res.json();
 
-        container.innerHTML = '';
-
-        data.slice(0, 12).forEach(item => {
-          const date = new Date(item.time);
-          const formattedTime = date.toLocaleString('sv-SE', {
-            weekday: 'short', hour: '2-digit', minute: '2-digit'
-          });
-
-          const temp = item.temp;
-          const desc = item.desc;
-
-          const html = `
-            <div class="forecast">
-              <strong>${formattedTime}</strong>: ${temp}°C – ${desc}
-            </div>
-          `;
-
-          container.innerHTML += html;
-        });
-      } catch (err) {
-        container.textContent = 'Kunde inte ladda sammanvägd prognos.';
-        console.error(err);
+        tempEl.textContent = data.avg_temp ?? "–";
+        descEl.textContent = data.desc ?? "–";
+        reliabilityEl.textContent = data.reliability ?? "–";
+      } catch (e) {
+        tempEl.textContent = descEl.textContent = reliabilityEl.textContent = "Data saknas";
+        console.error("Fel vid laddning av väderdata:", e);
       }
     }
 
-    citySelect.addEventListener('change', () => {
-      loadForecast(citySelect.value);
+    locationSelect.addEventListener("change", () => {
+      loadWeather(locationSelect.value);
     });
 
-    // Ladda första ortens prognos direkt
-    loadForecast(citySelect.value);
+    // Ladda initial ort
+    loadWeather(locationSelect.value);
   </script>
 </body>
 </html>
