@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Väder</title>
   <style>
     body {
@@ -43,7 +43,7 @@
 <body>
   <h1>AI Väder</h1>
 
-  <label for="location">Välj ort:</label><br/>
+  <label for="location">Välj ort:</label><br>
   <select id="location">
     <option value="eskilstuna">Eskilstuna</option>
     <option value="stockholm">Stockholm</option>
@@ -91,19 +91,16 @@
       ];
       const isDay = hour >= 6 && hour < 18;
       const base = iconCode.replace(/_(day|night)$/, "");
-
-      if (dayCodes.includes(base)) {
-        return `${base}_${isDay ? "day" : "night"}`;
-      }
-      return base;
+      return dayCodes.includes(base)
+        ? `${base}_${isDay ? "day" : "night"}`
+        : base;
     }
 
     function getWeatherIcon(desc, timeStr) {
       if (!desc) return "";
       desc = desc.toLowerCase();
 
-      let iconCode = "clearsky"; // fallback
-
+      let iconCode = "clearsky";
       if (desc.includes("klart") || desc.includes("klar himmel")) iconCode = "clearsky";
       else if (desc.includes("växlande molnighet") || desc.includes("halvklart")) iconCode = "fair";
       else if (desc.includes("mulet") || desc.includes("molnigt")) iconCode = "cloudy";
@@ -117,8 +114,8 @@
       else if (desc.includes("storm") || desc.includes("blåst")) iconCode = "heavyrainandthunder";
 
       const hour = new Date(timeStr).getHours();
-      const fullIconCode = getTimeOfDayIconCode(iconCode, hour);
-      const url = `https://api.met.no/images/weathericons/svg/${fullIconCode}.svg`;
+      const fullCode = getTimeOfDayIconCode(iconCode, hour);
+      const url = `https://api.met.no/images/weathericons/svg/${fullCode}.svg`;
       return `<img src="${url}" alt="${desc}" width="30" height="30">`;
     }
 
@@ -127,36 +124,30 @@
         const res = await fetch(`data/combined_${location}.json`);
         const data = await res.json();
 
-        tableBody.innerHTML = ""; // Töm gamla rader
+        tableBody.innerHTML = "";
 
         data.forEach(entry => {
           const row = document.createElement("tr");
 
-          const icon = document.createElement("td");
-          icon.innerHTML = getWeatherIcon(entry.desc, entry.time);
+          const iconCell = document.createElement("td");
+          iconCell.innerHTML = getWeatherIcon(entry.desc, entry.time);
 
-          const time = document.createElement("td");
-          time.textContent = entry.time;
+          const timeCell = document.createElement("td");
+          timeCell.textContent = entry.time;
 
-          const temp = document.createElement("td");
-          temp.textContent = entry.avg_temp;
+          const tempCell = document.createElement("td");
+          tempCell.textContent = entry.avg_temp;
 
-          const desc = document.createElement("td");
-          desc.textContent = entry.desc;
+          const descCell = document.createElement("td");
+          descCell.textContent = entry.desc;
 
-          const rel = document.createElement("td");
-          rel.innerHTML = formatReliability(entry.reliability);
+          const relCell = document.createElement("td");
+          relCell.innerHTML = formatReliability(entry.reliability);
 
-          const sources = document.createElement("td");
-          sources.textContent = entry.sources_used?.join(", ") || "";
+          const sourcesCell = document.createElement("td");
+          sourcesCell.textContent = entry.sources_used?.join(", ") || "";
 
-          row.appendChild(icon);
-          row.appendChild(time);
-          row.appendChild(temp);
-          row.appendChild(desc);
-          row.appendChild(rel);
-          row.appendChild(sources);
-
+          row.append(iconCell, timeCell, tempCell, descCell, relCell, sourcesCell);
           tableBody.appendChild(row);
         });
       } catch (e) {
@@ -169,9 +160,7 @@
       loadWeather(locationSelect.value);
     });
 
-    // Ladda initial ort
     loadWeather(locationSelect.value);
   </script>
 </body>
 </html>
-
