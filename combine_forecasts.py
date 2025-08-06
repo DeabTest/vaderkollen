@@ -1,90 +1,63 @@
 import json
 import os
-from collections import Counter
-from datetime import datetime
+import statistics
 
-cities = [
-    "eskilstuna",
-    "stockholm",
-    "göteborg",
-    "lomma",
-    "malmö",
-    "umeå"
-]
+# Lista med orter
+locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
 
-def load_json(path):
+# Funktion för att läsa väderdata från en viss källa
+def read_source_data(source, location):
+    path = f"data/{source}_{location}.json"
+    if not os.path.exists(path):
+        return None
     try:
-        with open(path, encoding="utf-8") as f:
+        with open(path, "r") as f:
             return json.load(f)
-    except:
+    except Exception as e:
+        print(f"Fel vid läsning av {path}: {e}")
         return None
 
-def round_hour(timestamp):
-    return timestamp[:13] + ":00:00"
+# Funktion för att räkna ut tillförlitlighet
+def calculate_reliability(temps):
+    if len(temps) < 2:
+        return "låg"
+    spread = max(temps) - min(temps)
+    stdev = statistics.stdev(temps)
+    if spread < 1 and stdev < 0.5:
+        return "hög"
+    elif spread < 3 and stdev < 1.5:
+        return "medel"
+    else:
+        return "låg"
 
-for city in cities:
-    print(f"Sammanställer prognos för {city.title()}...")
+# Bearbeta varje ort
+for location in locations:
+    temps = []
+    descriptions = []
+    sources = ["openweather", "smhi", "yr"]
 
-    owm = load_json(f"data/{city}_openweather.json")
-    smhi = load_json(f"data/{city}_smhi.json")
-    yr = load_json(f"data/{city}_yr.json")
+    for source in sources:
+        data = read_source_data(source, location)
+        if data and "temp" in data:
+            temps.append(data["temp"])
+            descriptions.append(data["desc"])
 
-    if not owm or not smhi or not yr:
-        print(f"❌ Saknar data för {city}, hoppar över.")
-        continue
-
-    # --- OpenWeatherMap ---
-    owm_forecast = {}
-    for item in owm["list"]:
-        timestamp = round_hour(item["dt_txt"])
-        temp = item["main"]["temp"]
-        desc = item["weather"][0]["description"]
-        owm_forecast[timestamp] = {"temp": temp, "desc": desc}
-
-    # --- SMHI ---
-    smhi_forecast = {}
-    for t in smhi["timeSeries"]:
-        timestamp = t["validTime"]
-        timestamp = round_hour(timestamp)
-        temp = next((p["values"][0] for p in t["parameters"] if p["name"] == "t"), None)
-        if temp is not None:
-            smhi_forecast[timestamp] = {"temp": temp, "desc": "okänt"}  # SMHI har inte textbeskrivning
-
-    # --- Yr ---
-    yr_forecast = {}
-    for t in yr["properties"]["timeseries"]:
-        timestamp = round_hour(t["time"])
-        temp = t["data"]["instant"]["details"].get("air_temperature")
-        desc = t["data"].get("next_1_hours", {}).get("summary", {}).get("symbol_code", "okänt")
-        if temp is not None:
-            yr_forecast[timestamp] = {"temp": temp, "desc": desc.replace("_", " ")}
-
-    # --- Kombinera ---
-    common_times = set(owm_forecast) & set(smhi_forecast) & set(yr_forecast)
-    combined = []
-
-    for timestamp in sorted(common_times):
-        temps = [
-            owm_forecast[timestamp]["temp"],
-            smhi_forecast[timestamp]["temp"],
-            yr_forecast[timestamp]["temp"]
-        ]
-        descs = [
-            owm_forecast[timestamp]["desc"],
-            yr_forecast[timestamp]["desc"]
-        ]  # SMHI har ej desc
-
+    if temps:
         avg_temp = round(sum(temps) / len(temps), 1)
-        common_desc = Counter(descs).most_common(1)[0][0]
+        most_common_desc = max(set(descriptions), key=descriptions.count)
+        reliability = calculate_reliability(temps)
 
-        combined.append({
-            "time": timestamp,
-            "temp": avg_temp,
-            "desc": common_desc
-        })
+        result = {
+            "location": location.capitalize(),
+            "avg_temp": avg_temp,
+            "desc": most_common_desc,
+            "reliability": reliability,
+            "sources_used": len(temps),
+        }
 
-    output_path = f"data/{city}_combined.json"
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(combined, f, ensure_ascii=False, indent=2)
+        with open(f"data/combined_{location}.json", "w") as f:
+            json.dump(result, f, indent=2)
+        print(f"Kombinerad prognos sparad: data/combined_{location}.json")
 
-    print(f"✅ Skapad: {output_path}")
+    else:
+        print(f"Ingen data tillgänglig för {location}, hoppar över.")
