@@ -29,6 +29,9 @@ jobs:
       - name: Kör fetch_smhi.py (SMHI)
         run: python fetch_smhi.py
 
+      - name: Kör fetch_yr.py (YR.no)
+        run: python fetch_yr.py
+
       - name: Committa ändringar
         run: |
           git config --global user.name "github-actions"
