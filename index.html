@@ -2,15 +2,14 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <title>AI Väder</title>
+  <title>AI Väder – sammanvägd prognos</title>
   <style>
-    body { font-family: sans-serif; padding: 2rem; }
-    .forecast { margin-bottom: 1rem; }
-    .icon { vertical-align: middle; }
+    body { font-family: sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
+    .forecast { margin-bottom: 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
   </style>
 </head>
 <body>
-  <h1>Väderprognos</h1>
+  <h1>Sammanvägd väderprognos</h1>
 
   <label for="city-select">Välj ort:</label>
   <select id="city-select">
@@ -28,43 +27,45 @@
     const citySelect = document.getElementById('city-select');
     const container = document.getElementById('forecast-container');
 
-    async function loadWeather(city) {
+    async function loadForecast(city) {
       container.innerHTML = 'Laddar prognos...';
+
       try {
-        const response = await fetch(`data/${city}.json`);
+        const response = await fetch(`data/${city}_combined.json`);
+        if (!response.ok) throw new Error("Filen kunde inte hämtas");
         const data = await response.json();
+
         container.innerHTML = '';
 
-        data.list.slice(0, 12).forEach(item => {
-          const date = new Date(item.dt * 1000).toLocaleString('sv-SE', {
+        data.slice(0, 12).forEach(item => {
+          const date = new Date(item.time);
+          const formattedTime = date.toLocaleString('sv-SE', {
             weekday: 'short', hour: '2-digit', minute: '2-digit'
           });
 
-          const temp = Math.round(item.main.temp);
-          const desc = item.weather[0].description;
-          const icon = item.weather[0].icon;
+          const temp = item.temp;
+          const desc = item.desc;
 
           const html = `
             <div class="forecast">
-              <strong>${date}</strong>: ${temp}°C – ${desc}
-              <img class="icon" src="https://openweathermap.org/img/wn/${icon}.png" alt="${desc}">
+              <strong>${formattedTime}</strong>: ${temp}°C – ${desc}
             </div>
           `;
 
           container.innerHTML += html;
         });
       } catch (err) {
-        container.textContent = 'Kunde inte ladda väderdatan.';
+        container.textContent = 'Kunde inte ladda sammanvägd prognos.';
         console.error(err);
       }
     }
 
     citySelect.addEventListener('change', () => {
-      loadWeather(citySelect.value);
+      loadForecast(citySelect.value);
     });
 
-    // Ladda första orten direkt
-    loadWeather(citySelect.value);
+    // Ladda första ortens prognos direkt
+    loadForecast(citySelect.value);
   </script>
 </body>
 </html>
