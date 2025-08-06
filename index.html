@@ -148,7 +148,7 @@
           rel.innerHTML = formatReliability(entry.reliability);
 
           const sources = document.createElement("td");
-          sources.textContent = entry.sources_used?.length || 0;
+          sources.textContent = entry.sources_used?.join(", ") || "";
 
           row.appendChild(icon);
           row.appendChild(time);
@@ -174,3 +174,4 @@
   </script>
 </body>
 </html>
+
