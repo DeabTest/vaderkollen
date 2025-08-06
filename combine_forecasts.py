@@ -80,9 +80,11 @@ for location in locations:
         print(f"⛔ Ingen data tillgänglig för {location}")
         continue
 
-    # Hitta gemensamma tidpunkter mellan källor
-    all_times = [set(d.keys()) for d in source_data.values()]
-    common_times = set.intersection(*all_times)
+    # Hitta tidpunkter som finns i minst två källor
+    time_counts = Counter()
+    for data in source_data.values():
+        time_counts.update(data.keys())
+    common_times = [time for time, count in time_counts.items() if count >= 2]
 
     if not common_times:
         print(f"⚠️ Inga gemensamma tidpunkter för {location}")
@@ -108,7 +110,7 @@ for location in locations:
             descs = [e["desc"] for e in entries]
             sources = [e["source"] for e in entries]
 
-            # Använd Counter för att välja vanligaste väderbeskrivningen
+            # Vanligaste väderbeskrivningen
             desc_counter = Counter(descs)
             most_common_desc = desc_counter.most_common(1)[0][0]
 
