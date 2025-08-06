@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from datetime import datetime
 
 # Hämta API-nyckel från miljövariabel
 API_KEY = os.environ.get("OWM_API_KEY")
@@ -38,27 +39,26 @@ for city in cities:
         response.raise_for_status()
         data = response.json()
 
-        # Spara RÅDATA (max 3 första tidpunkter för rimlig storlek)
+        # Spara RÅDATA (för felsökning)
         raw_output_path = os.path.join(RAW_FOLDER, f"{city}.json")
         with open(raw_output_path, "w", encoding="utf-8") as f:
-            json.dump(data["list"][:3], f, ensure_ascii=False, indent=2)
+            json.dump(data, f, ensure_ascii=False, indent=2)
         print(f"📄 Rådata sparad: {raw_output_path}")
 
-        # Extrahera första prognospunktens temperatur och beskrivning
-        first_entry = data["list"][0]
-        temp = round(first_entry["main"]["temp"], 1)
-        desc = first_entry["weather"][0]["description"]
+        # Extrahera hourly-data i standardformat
+        hourly_data = []
+        for entry in data["list"]:
+            hourly_data.append({
+                "time": entry["dt_txt"],
+                "temp": round(entry["main"]["temp"], 1),
+                "desc": entry["weather"][0]["description"]
+            })
 
-        clean_data = {
-            "temp": temp,
-            "desc": desc
-        }
-
-        # Spara FÖRENKLAD data till combine_forecasts.py
-        output_path = os.path.join(OUTPUT_FOLDER, f"{city}.json")
+        # Spara i rätt format
+        output_path = os.path.join(OUTPUT_FOLDER, f"weather_{city}.json")
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(clean_data, f, ensure_ascii=False, indent=2)
-        print(f"✅ Förenklad data sparad: {output_path}")
+            json.dump(hourly_data, f, ensure_ascii=False, indent=2)
+        print(f"✅ Hourly-data sparad: {output_path}")
 
     except Exception as e:
         print(f"❌ Fel vid hämtning för {city}: {e}")
