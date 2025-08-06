@@ -8,7 +8,7 @@ locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
 # Karta över källa och motsvarande filprefix
 source_filenames = {
     "openweather": "{location}.json",
-    "smhi": "smhi_{location}.json",
+    "smhi": "weather_smhi_{location}.json",  # Ändrat här
     "yr": "{location}_yr.json",
     "weatherapi": "{location}_weatherapi.json",
 }
@@ -84,11 +84,9 @@ for location in locations:
                 })
 
         if entries:
-            # Räkna ut vanligaste väderbeskrivningen
             all_descs = [e["desc"] for e in entries]
             most_common_desc = max(set(all_descs), key=all_descs.count)
 
-            # Filtrera temperaturer för de som hade den väderbeskrivningen
             matching_entries = [e for e in entries if e["desc"] == most_common_desc]
             temps = [e["temp"] for e in matching_entries]
             used_sources = [e["source"] for e in matching_entries]
