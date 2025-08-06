@@ -8,11 +8,12 @@ from datetime import datetime
 locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
 
 # Karta över källa och motsvarande filprefix
+# ⚠️ WeatherAPI-filen heter weatherapi_{location}.json, inte {location}_weatherapi.json
 source_filenames = {
     "openweather": "{location}.json",
     "smhi": "weather_smhi_{location}.json",
     "yr": "{location}_yr.json",
-    "weatherapi": "{location}_weatherapi.json",
+    "weatherapi": "weatherapi_{location}.json",  # rättat här
 }
 
 # Funktion för att normalisera tidsformat
@@ -54,8 +55,7 @@ def read_source_data(source, location):
         elif isinstance(raw, dict) and source == "yr":
             for date_key, hours in raw.items():
                 for h in hours:
-                    # h["time"] är t.ex. "03:00"
-                    full_time = f"{date_key} {h['time']}"
+                    full_time = f"{date_key} {h.get('time')}"
                     entries.append({
                         "time": normalize_time(full_time),
                         "temp": h.get("temp"),
@@ -66,7 +66,6 @@ def read_source_data(source, location):
             print(f"⚠️ Filen {path} innehåller inte en lista eller YR-format.")
             return None
 
-        # Byt till dict med time som nyckel
         return { e["time"]: e for e in entries }
 
     except Exception as e:
