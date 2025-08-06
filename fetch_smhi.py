@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from datetime import datetime
 
 print("🌦️ Hämtar SMHI-prognos för alla städer...")
 
@@ -37,49 +38,46 @@ def smhi_symbol_to_text(symbol):
 os.makedirs("data", exist_ok=True)
 os.makedirs("data/raw", exist_ok=True)
 
-# Hämta SMHI-prognos
-def fetch_smhi_forecast(lat, lon):
+# Kör för varje stad
+for city, coords in locations.items():
+    print(f"\n🌦️ Hämtar SMHI-prognos för {city.title()}...")
+
+    lat, lon = coords["lat"], coords["lon"]
     url = f"https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{lon}/lat/{lat}/data.json"
+
     try:
         response = requests.get(url)
         response.raise_for_status()
         data = response.json()
 
-        # Spara första tre tidpunkter som rådata
-        raw_path = f"data/raw/smhi_{lat}_{lon}.json"
-        with open(raw_path, "w") as f:
-            json.dump(data["timeSeries"][:3], f, indent=2)
+        # Spara rådata
+        raw_path = f"data/raw/smhi_{city}.json"
+        with open(raw_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
         print(f"📄 Rådata sparad: {raw_path}")
 
-        # Extrahera första tillgängliga temp och symbol
+        hourly = []
+
         for time_series in data["timeSeries"]:
+            valid_time = time_series["validTime"]
             params = {p["name"]: p["values"][0] for p in time_series["parameters"]}
+
             if "t" in params and "Wsymb2" in params:
                 temp = round(params["t"], 1)
-                symbol = params["Wsymb2"]
-                desc = smhi_symbol_to_text(symbol)
-                return temp, desc
+                desc = smhi_symbol_to_text(params["Wsymb2"])
+                time_str = datetime.fromisoformat(valid_time).strftime("%Y-%m-%d %H:%M")
 
-        return None, None
+                hourly.append({
+                    "time": time_str,
+                    "temp": temp,
+                    "desc": desc
+                })
+
+        # Spara i standardformat
+        output_path = f"data/weather_smhi_{city}.json"
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(hourly, f, ensure_ascii=False, indent=2)
+        print(f"✅ Hourly-data sparad: {output_path}")
+
     except Exception as e:
-        print(f"❌ Fel vid API-anrop för {lat}, {lon}: {e}")
-        return None, None
-
-# Kör för varje stad
-for location, coords in locations.items():
-    print(f"\n🌦️ Hämtar SMHI-prognos för {location.capitalize()}...")
-
-    lat, lon = coords["lat"], coords["lon"]
-    temp, desc = fetch_smhi_forecast(lat, lon)
-
-    if temp is not None:
-        forecast = {"temp": temp}
-        if desc:  # Lägg bara till desc om den är giltig
-            forecast["desc"] = desc
-
-        path = f"data/smhi_{location}.json"
-        with open(path, "w") as f:
-            json.dump(forecast, f, indent=2)
-        print(f"✅ Sparat: {path}")
-    else:
-        print(f"❌ Kunde inte hämta giltig prognos för {location.capitalize()}.")
+        print(f"❌ Fel vid hämtning för {city}: {e}")
