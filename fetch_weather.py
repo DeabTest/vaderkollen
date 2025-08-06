@@ -2,34 +2,45 @@ import requests
 import json
 import os
 
-# 🧩 Steg 1: Inställningar
+# Hämta API-nyckel från GitHub Secret (eller miljövariabel)
 API_KEY = os.environ.get("OWM_API_KEY")
-CITY_NAME = "Eskilstuna"
+
+# Lista över orter att hämta väder för
+cities = [
+    "eskilstuna",
+    "stockholm",
+    "göteborg",
+    "lomma",
+    "malmö",
+    "umeå"
+]
+
+# Inställningar
 COUNTRY_CODE = "SE"
 OUTPUT_FOLDER = "data"
-OUTPUT_FILE = f"{OUTPUT_FOLDER}/{CITY_NAME.lower()}.json"
 
-# 🧩 Steg 2: Bygg URL
-url = (
-    "https://api.openweathermap.org/data/2.5/forecast"
-    f"?q={CITY_NAME},{COUNTRY_CODE}&appid={API_KEY}&units=metric&lang=sv"
-)
+# Skapa mapp om den inte finns
+os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-# 🧩 Steg 3: Hämta data
-response = requests.get(url)
+# Loopa igenom orterna
+for city in cities:
+    print(f"Hämtar väder för {city.title()}...")
 
-if response.status_code == 200:
-    data = response.json()
+    url = (
+        "https://api.openweathermap.org/data/2.5/forecast"
+        f"?q={city},{COUNTRY_CODE}&appid={API_KEY}&units=metric&lang=sv"
+    )
 
-    # Skapa mapp om den inte finns
-    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
 
-    # Spara datan till fil
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        output_path = os.path.join(OUTPUT_FOLDER, f"{city}.json")
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Prognos sparad som '{OUTPUT_FILE}'")
-else:
-    print(f"❌ Fel vid API-anrop: {response.status_code}")
-    print(response.text)
+        print(f"✅ Sparad till {output_path}")
 
+    except Exception as e:
+        print(f"❌ Fel vid hämtning för {city}: {e}")
