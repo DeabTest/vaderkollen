@@ -1,44 +1,43 @@
-name: Fetch weather data from all sources
+name: Hämta väderdata
 
 on:
+  workflow_dispatch:   # Körs manuellt via GitHub UI
   schedule:
-    - cron: "0 * * * *"  # Kör varje hel timme
-  workflow_dispatch:
+    - cron: "0 6 * * *"  # Körs varje dag kl. 06:00 (UTC)
 
 jobs:
-  fetch:
+  fetch-data:
     runs-on: ubuntu-latest
 
+    env:
+      OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
+      WEATHERAPI_KEY: ${{ secrets.WEATHERAPI_KEY }}
+
     steps:
-      - name: Klona repo
+      - name: 🔄 Klona repo
         uses: actions/checkout@v3
 
-      - name: Installera Python
-        uses: actions/setup-python@v4
+      - name: 📦 Installera Python
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
-      - name: Installera requests
-        run: pip install requests
-
-      - name: Kör fetch_weather.py (OpenWeatherMap)
-        env:
-          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
-        run: python fetch_weather.py
-
-      - name: Kör fetch_smhi.py (SMHI)
-        run: python fetch_smhi.py
-
-      - name: Kör fetch_yr.py (YR.no)
-        run: python fetch_yr.py
-
-      - name: Kör combine_forecasts.py (sammanvägning)
-        run: python combine_forecasts.py
-
-      - name: Committa ändringar
+      - name: 🧪 Installera dependencies (om du har requirements.txt)
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: 🏗️ Kör alla fetch-skript
+        run: |
+          python fetch_smhi.py
+          python fetch_yr.py
+          python fetch_weather.py
+          python fetch_weatherapi.py
+          python combine_forecasts.py
+
+      - name: ✅ Lägg till och committa nya datafiler
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add data/
-          git commit -m "Uppdaterad väderdata från OWM + SMHI" || echo "Inget att committa"
+          git commit -m "🔄 Automatisk uppdatering av väderdata" || echo "Inget att committa"
           git push
