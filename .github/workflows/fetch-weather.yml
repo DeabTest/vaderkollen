@@ -32,6 +32,9 @@ jobs:
       - name: Kör fetch_yr.py (YR.no)
         run: python fetch_yr.py
 
+      - name: Kör combine_forecasts.py (sammanvägning)
+        run: python combine_forecasts.py
+
       - name: Committa ändringar
         run: |
           git config --global user.name "github-actions"
