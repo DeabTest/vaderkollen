@@ -5,7 +5,7 @@ import statistics
 # Lista över orter
 locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
 
-# Karta över källa och motsvarande filprefix (DIN version)
+# Karta över källa och motsvarande filprefix
 source_filenames = {
     "openweather": "{location}.json",
     "smhi": "smhi_{location}.json",
@@ -24,7 +24,6 @@ def read_source_data(source, location):
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
             if isinstance(data, list):
-                # Konvertera till dict med time som nyckel
                 return {entry["time"]: entry for entry in data if "time" in entry}
             else:
                 print(f"⚠️ Filen {path} innehåller inte en lista.")
@@ -49,7 +48,6 @@ def calculate_reliability(temps):
 # Samlar alla kombinerade prognoser
 all_combined = {}
 
-# Bearbeta varje ort
 for location in locations:
     print(f"\n📍 Bearbetar {location.title()}...")
 
@@ -64,7 +62,6 @@ for location in locations:
         print(f"⛔ Ingen data tillgänglig för {location}")
         continue
 
-    # Hitta gemensamma tidpunkter
     all_times = [set(d.keys()) for d in source_data.values()]
     common_times = set.intersection(*all_times)
 
@@ -75,20 +72,28 @@ for location in locations:
     combined = []
 
     for time in sorted(common_times):
-        temps = []
-        descriptions = []
-        used_sources = []
+        entries = []
 
         for source, data in source_data.items():
             entry = data.get(time)
             if entry and "temp" in entry and "desc" in entry:
-                temps.append(entry["temp"])
-                descriptions.append(entry["desc"])
-                used_sources.append(source)
+                entries.append({
+                    "temp": entry["temp"],
+                    "desc": entry["desc"],
+                    "source": source
+                })
 
-        if temps:
+        if entries:
+            # Räkna ut vanligaste väderbeskrivningen
+            all_descs = [e["desc"] for e in entries]
+            most_common_desc = max(set(all_descs), key=all_descs.count)
+
+            # Filtrera temperaturer för de som hade den väderbeskrivningen
+            matching_entries = [e for e in entries if e["desc"] == most_common_desc]
+            temps = [e["temp"] for e in matching_entries]
+            used_sources = [e["source"] for e in matching_entries]
+
             avg_temp = round(sum(temps) / len(temps), 1)
-            most_common_desc = max(set(descriptions), key=descriptions.count)
             reliability = calculate_reliability(temps)
 
             combined.append({
@@ -99,7 +104,6 @@ for location in locations:
                 "sources_used": used_sources
             })
 
-    # Spara per ort
     output_path = f"data/combined_{location}.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(combined, f, indent=2, ensure_ascii=False)
