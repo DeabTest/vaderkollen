@@ -15,12 +15,25 @@
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 0 10px #ccc;
-      max-width: 400px;
+      max-width: 800px;
+      overflow-x: auto;
     }
     select {
       margin-bottom: 1rem;
       padding: 0.5rem;
       font-size: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #eee;
     }
   </style>
 </head>
@@ -38,27 +51,79 @@
   </select>
 
   <div id="weather">
-    <p><strong>Temperatur:</strong> <span id="temp">–</span> °C</p>
-    <p><strong>Väder:</strong> <span id="desc">–</span></p>
-    <p><strong>Tillförlitlighet:</strong> <span id="reliability">–</span></p>
+    <table id="forecastTable">
+      <thead>
+        <tr>
+          <th>Ikon</th>
+          <th>Tid</th>
+          <th>Temperatur (°C)</th>
+          <th>Väder</th>
+          <th>Tillförlitlighet</th>
+          <th>Källor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="6">Laddar...</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <script>
     const locationSelect = document.getElementById("location");
-    const tempEl = document.getElementById("temp");
-    const descEl = document.getElementById("desc");
-    const reliabilityEl = document.getElementById("reliability");
+    const tableBody = document.querySelector("#forecastTable tbody");
+
+    function getWeatherIcon(desc) {
+      if (!desc) return "❓";
+      desc = desc.toLowerCase();
+
+      if (desc.includes("klart")) return "☀️";
+      if (desc.includes("moln")) return "⛅";
+      if (desc.includes("regn") || desc.includes("skur")) return "🌧️";
+      if (desc.includes("snö")) return "❄️";
+      if (desc.includes("dimma")) return "🌫️";
+      if (desc.includes("åska")) return "⛈️";
+      return "❓";
+    }
 
     async function loadWeather(location) {
       try {
         const res = await fetch(`data/combined_${location}.json`);
         const data = await res.json();
 
-        tempEl.textContent = data.avg_temp ?? "–";
-        descEl.textContent = data.desc ?? "–";
-        reliabilityEl.textContent = data.reliability ?? "–";
+        tableBody.innerHTML = ""; // Töm gamla rader
+
+        data.forEach(entry => {
+          const row = document.createElement("tr");
+
+          const icon = document.createElement("td");
+          icon.textContent = getWeatherIcon(entry.desc);
+
+          const time = document.createElement("td");
+          time.textContent = entry.time;
+
+          const temp = document.createElement("td");
+          temp.textContent = entry.avg_temp;
+
+          const desc = document.createElement("td");
+          desc.textContent = entry.desc;
+
+          const rel = document.createElement("td");
+          rel.textContent = entry.reliability;
+
+          const sources = document.createElement("td");
+          sources.textContent = entry.sources_used.join(", ");
+
+          row.appendChild(icon);
+          row.appendChild(time);
+          row.appendChild(temp);
+          row.appendChild(desc);
+          row.appendChild(rel);
+          row.appendChild(sources);
+
+          tableBody.appendChild(row);
+        });
       } catch (e) {
-        tempEl.textContent = descEl.textContent = reliabilityEl.textContent = "Data saknas";
+        tableBody.innerHTML = `<tr><td colspan="6">Kunde inte ladda data.</td></tr>`;
         console.error("Fel vid laddning av väderdata:", e);
       }
     }
