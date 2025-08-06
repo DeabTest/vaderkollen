@@ -2,10 +2,10 @@ import json
 import os
 import statistics
 
-# Lista med orter
+# Lista över orter
 locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
 
-# Karta över källa och motsvarande filprefix
+# Karta över källa och motsvarande filprefix (DIN version)
 source_filenames = {
     "openweather": "{location}.json",
     "smhi": "smhi_{location}.json",
@@ -21,8 +21,14 @@ def read_source_data(source, location):
         print(f"⚠️ Saknar fil: {path}")
         return None
     try:
-        with open(path, "r") as f:
-            return json.load(f)
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, list):
+                # Konvertera till dict med time som nyckel
+                return {entry["time"]: entry for entry in data if "time" in entry}
+            else:
+                print(f"⚠️ Filen {path} innehåller inte en lista.")
+                return None
     except Exception as e:
         print(f"❌ Fel vid läsning av {path}: {e}")
         return None
@@ -40,55 +46,68 @@ def calculate_reliability(temps):
     else:
         return "låg"
 
-# Lista som samlar alla kombinerade prognoser
-all_combined = []
+# Samlar alla kombinerade prognoser
+all_combined = {}
 
 # Bearbeta varje ort
 for location in locations:
-    temps = []
-    descriptions = []
-    used_sources = []
+    print(f"\n📍 Bearbetar {location.title()}...")
 
-    print(f"\n🔍 Bearbetar {location.title()}...")
+    source_data = {}
 
     for source in source_filenames:
         data = read_source_data(source, location)
+        if data:
+            source_data[source] = data
 
-        if data and isinstance(data, dict):
-            if "temp" in data and "desc" in data:
-                temps.append(data["temp"])
-                descriptions.append(data["desc"])
+    if not source_data:
+        print(f"⛔ Ingen data tillgänglig för {location}")
+        continue
+
+    # Hitta gemensamma tidpunkter
+    all_times = [set(d.keys()) for d in source_data.values()]
+    common_times = set.intersection(*all_times)
+
+    if not common_times:
+        print(f"⚠️ Inga gemensamma tidpunkter för {location}")
+        continue
+
+    combined = []
+
+    for time in sorted(common_times):
+        temps = []
+        descriptions = []
+        used_sources = []
+
+        for source, data in source_data.items():
+            entry = data.get(time)
+            if entry and "temp" in entry and "desc" in entry:
+                temps.append(entry["temp"])
+                descriptions.append(entry["desc"])
                 used_sources.append(source)
-            else:
-                print(f"⚠️ Fil för {source} och {location} saknar 'temp' eller 'desc'")
-        else:
-            print(f"⚠️ Ingen användbar data från källa {source} för {location}")
 
-    if temps:
-        avg_temp = round(sum(temps) / len(temps), 1)
-        most_common_desc = max(set(descriptions), key=descriptions.count)
-        reliability = calculate_reliability(temps)
+        if temps:
+            avg_temp = round(sum(temps) / len(temps), 1)
+            most_common_desc = max(set(descriptions), key=descriptions.count)
+            reliability = calculate_reliability(temps)
 
-        result = {
-            "location": location.capitalize(),
-            "avg_temp": avg_temp,
-            "desc": most_common_desc,
-            "reliability": reliability,
-            "sources_used": used_sources,
-        }
+            combined.append({
+                "time": time,
+                "avg_temp": avg_temp,
+                "desc": most_common_desc,
+                "reliability": reliability,
+                "sources_used": used_sources
+            })
 
-        with open(f"data/combined_{location}.json", "w") as f:
-            json.dump(result, f, indent=2)
-        print(f"✅ Kombinerad prognos sparad: data/combined_{location}.json")
+    # Spara per ort
+    output_path = f"data/combined_{location}.json"
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(combined, f, indent=2, ensure_ascii=False)
+    print(f"✅ Sparat: {output_path}")
 
-        all_combined.append(result)
-    else:
-        print(f"⛔ Ingen tillräcklig data för {location}, hoppar över.")
+    all_combined[location] = combined
 
-# Spara samlad fil med alla orter
-if all_combined:
-    with open("data/combined.json", "w") as f:
-        json.dump(all_combined, f, indent=2)
-    print("\n📦 Samlad fil skapad: data/combined.json")
-else:
-    print("\n❌ Ingen kombinerad data kunde sparas – kontrollera datakällorna.")
+# Spara samlad fil för alla orter
+with open("data/combined.json", "w", encoding="utf-8") as f:
+    json.dump(all_combined, f, indent=2, ensure_ascii=False)
+print("\n📦 Samlad fil sparad: data/combined.json")
