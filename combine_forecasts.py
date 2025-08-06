@@ -30,6 +30,9 @@ def calculate_reliability(temps):
     else:
         return "låg"
 
+# Lista som samlar alla kombinerade prognoser
+all_combined = []
+
 # Bearbeta varje ort
 for location in locations:
     temps = []
@@ -55,9 +58,19 @@ for location in locations:
             "sources_used": len(temps),
         }
 
+        # Spara fil per ort
         with open(f"data/combined_{location}.json", "w") as f:
             json.dump(result, f, indent=2)
         print(f"Kombinerad prognos sparad: data/combined_{location}.json")
 
+        # Lägg till i samlad lista
+        all_combined.append(result)
+
     else:
         print(f"Ingen data tillgänglig för {location}, hoppar över.")
+
+# Spara samlad fil med alla orter
+with open("data/combined.json", "w") as f:
+    json.dump(all_combined, f, indent=2)
+
+print("Skapade samlad fil: data/combined.json")
