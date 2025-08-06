@@ -4,11 +4,18 @@ import statistics
 
 # Lista med orter
 locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
-sources = ["openweather", "smhi", "yr"]
+
+# Karta över källa och motsvarande filprefix
+source_filenames = {
+    "openweather": "{location}.json",
+    "smhi": "smhi_{location}.json",
+    "yr": "{location}_yr.json"
+}
 
 # Funktion för att läsa väderdata från en viss källa
 def read_source_data(source, location):
-    path = f"data/{source}_{location}.json"
+    filename = source_filenames[source].format(location=location)
+    path = f"data/{filename}"
     if not os.path.exists(path):
         print(f"⚠️ Saknar fil: {path}")
         return None
@@ -43,7 +50,7 @@ for location in locations:
 
     print(f"\n🔍 Bearbetar {location.title()}...")
 
-    for source in sources:
+    for source in source_filenames:
         data = read_source_data(source, location)
 
         if data and isinstance(data, dict):
@@ -52,9 +59,9 @@ for location in locations:
                 descriptions.append(data["desc"])
                 used_sources.append(source)
             else:
-                print(f"⚠️ Fil {source}_{location}.json saknar 'temp' eller 'desc'")
+                print(f"⚠️ Fil för {source} och {location} saknar 'temp' eller 'desc'")
         else:
-            print(f"⚠️ Ingen användbar data från {source}_{location}.json")
+            print(f"⚠️ Ingen användbar data från källa {source} för {location}")
 
     if temps:
         avg_temp = round(sum(temps) / len(temps), 1)
