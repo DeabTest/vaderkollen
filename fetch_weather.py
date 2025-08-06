@@ -54,8 +54,8 @@ for city in cities:
                 "desc": entry["weather"][0]["description"]
             })
 
-        # Spara i rätt format
-        output_path = os.path.join(OUTPUT_FOLDER, f"weather_{city}.json")
+        # Spara i rätt format som t.ex. data/eskilstuna.json
+        output_path = os.path.join(OUTPUT_FOLDER, f"{city}.json")
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(hourly_data, f, ensure_ascii=False, indent=2)
         print(f"✅ Hourly-data sparad: {output_path}")
