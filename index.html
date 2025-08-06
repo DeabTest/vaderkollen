@@ -54,16 +54,15 @@
     <table id="forecastTable">
       <thead>
         <tr>
-          <th>Ikon</th>
+          <th></th>
           <th>Tid</th>
           <th>Temperatur (°C)</th>
           <th>Väder</th>
           <th>Tillförlitlighet</th>
-          <th>Källor</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td colspan="6">Laddar...</td></tr>
+        <tr><td colspan="5">Laddar...</td></tr>
       </tbody>
     </table>
   </div>
@@ -110,20 +109,16 @@
           const rel = document.createElement("td");
           rel.textContent = entry.reliability;
 
-          const sources = document.createElement("td");
-          sources.textContent = entry.sources_used.join(", ");
-
           row.appendChild(icon);
           row.appendChild(time);
           row.appendChild(temp);
           row.appendChild(desc);
           row.appendChild(rel);
-          row.appendChild(sources);
 
           tableBody.appendChild(row);
         });
       } catch (e) {
-        tableBody.innerHTML = `<tr><td colspan="6">Kunde inte ladda data.</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="5">Kunde inte ladda data.</td></tr>`;
         console.error("Fel vid laddning av väderdata:", e);
       }
     }
