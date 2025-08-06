@@ -1,6 +1,7 @@
 import json
 import os
 import statistics
+from datetime import datetime
 
 # Lista över orter
 locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
@@ -8,10 +9,21 @@ locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
 # Karta över källa och motsvarande filprefix
 source_filenames = {
     "openweather": "{location}.json",
-    "smhi": "weather_smhi_{location}.json",  # Ändrat här
+    "smhi": "weather_smhi_{location}.json",
     "yr": "{location}_yr.json",
     "weatherapi": "{location}_weatherapi.json",
 }
+
+# Funktion för att normalisera tidsformat
+def normalize_time(time_str):
+    for fmt in ("%Y-%m-%dT%H:%M:%S", "%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d %H:%M"):
+        try:
+            dt = datetime.strptime(time_str, fmt)
+            return dt.strftime("%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            continue
+    print(f"⚠️ Okänt tidsformat: {time_str}")
+    return time_str
 
 # Funktion för att läsa väderdata från en viss källa
 def read_source_data(source, location):
@@ -24,7 +36,11 @@ def read_source_data(source, location):
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
             if isinstance(data, list):
-                return {entry["time"]: entry for entry in data if "time" in entry}
+                return {
+                    normalize_time(entry["time"]): entry
+                    for entry in data
+                    if "time" in entry
+                }
             else:
                 print(f"⚠️ Filen {path} innehåller inte en lista.")
                 return None
