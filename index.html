@@ -72,7 +72,7 @@
     const tableBody = document.querySelector("#forecastTable tbody");
 
     function getWeatherIcon(desc) {
-      if (!desc) return "❓";
+      if (!desc) return "";
       desc = desc.toLowerCase();
 
       if (desc.includes("klart")) return "☀️";
@@ -81,7 +81,7 @@
       if (desc.includes("snö")) return "❄️";
       if (desc.includes("dimma")) return "🌫️";
       if (desc.includes("åska")) return "⛈️";
-      return "❓";
+      return "";
     }
 
     async function loadWeather(location) {
@@ -107,7 +107,7 @@
           desc.textContent = entry.desc;
 
           const rel = document.createElement("td");
-          rel.textContent = entry.reliability;
+          rel.textContent = entry.reliability || "";
 
           row.appendChild(icon);
           row.appendChild(time);
