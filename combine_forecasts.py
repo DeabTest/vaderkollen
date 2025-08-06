@@ -1,6 +1,7 @@
 import json
 import os
 import statistics
+from collections import Counter
 from datetime import datetime
 
 # Lista över orter
@@ -69,6 +70,7 @@ for location in locations:
 
     source_data = {}
 
+    # Läs in alla datakällor
     for source in source_filenames:
         data = read_source_data(source, location)
         if data:
@@ -78,6 +80,7 @@ for location in locations:
         print(f"⛔ Ingen data tillgänglig för {location}")
         continue
 
+    # Hitta gemensamma tidpunkter mellan källor
     all_times = [set(d.keys()) for d in source_data.values()]
     common_times = set.intersection(*all_times)
 
@@ -87,6 +90,7 @@ for location in locations:
 
     combined = []
 
+    # Kombinera data för varje tidpunkt
     for time in sorted(common_times):
         entries = []
 
@@ -100,11 +104,13 @@ for location in locations:
                 })
 
         if entries:
-            all_descs = [e["desc"] for e in entries]
-            most_common_desc = max(set(all_descs), key=all_descs.count)
-
             temps = [e["temp"] for e in entries]
-            used_sources = [e["source"] for e in entries]
+            descs = [e["desc"] for e in entries]
+            sources = [e["source"] for e in entries]
+
+            # Använd Counter för att välja vanligaste väderbeskrivningen
+            desc_counter = Counter(descs)
+            most_common_desc = desc_counter.most_common(1)[0][0]
 
             avg_temp = round(sum(temps) / len(temps), 1)
             reliability = calculate_reliability(temps)
@@ -114,9 +120,10 @@ for location in locations:
                 "avg_temp": avg_temp,
                 "desc": most_common_desc,
                 "reliability": reliability,
-                "sources_used": used_sources
+                "sources_used": sources
             })
 
+    # Spara per ort
     output_path = f"data/combined_{location}.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(combined, f, indent=2, ensure_ascii=False)
