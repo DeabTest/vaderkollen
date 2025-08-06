@@ -103,9 +103,8 @@ for location in locations:
             all_descs = [e["desc"] for e in entries]
             most_common_desc = max(set(all_descs), key=all_descs.count)
 
-            matching_entries = [e for e in entries if e["desc"] == most_common_desc]
-            temps = [e["temp"] for e in matching_entries]
-            used_sources = [e["source"] for e in matching_entries]
+            temps = [e["temp"] for e in entries]
+            used_sources = [e["source"] for e in entries]
 
             avg_temp = round(sum(temps) / len(temps), 1)
             reliability = calculate_reliability(temps)
