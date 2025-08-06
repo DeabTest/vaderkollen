@@ -35,6 +35,9 @@
     th {
       background: #eee;
     }
+    td img {
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -59,10 +62,11 @@
           <th>Temperatur (°C)</th>
           <th>Väder</th>
           <th>Tillförlitlighet</th>
+          <th>Källor</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td colspan="5">Laddar...</td></tr>
+        <tr><td colspan="6">Laddar...</td></tr>
       </tbody>
     </table>
   </div>
@@ -71,17 +75,51 @@
     const locationSelect = document.getElementById("location");
     const tableBody = document.querySelector("#forecastTable tbody");
 
-    function getWeatherIcon(desc) {
+    function formatReliability(level) {
+      if (!level) return "";
+      const map = {
+        hög: '<span style="color:green; font-weight:bold;">Hög</span>',
+        medel: '<span style="color:orange; font-weight:bold;">Medel</span>',
+        låg: '<span style="color:red; font-weight:bold;">Låg</span>',
+      };
+      return map[level.toLowerCase()] || level;
+    }
+
+    function getTimeOfDayIconCode(iconCode, hour) {
+      const dayCodes = [
+        "clearsky", "fair", "partlycloudy", "rainshowers", "sleetshowers", "snowshowers"
+      ];
+      const isDay = hour >= 6 && hour < 18;
+      const base = iconCode.replace(/_(day|night)$/, "");
+
+      if (dayCodes.includes(base)) {
+        return `${base}_${isDay ? "day" : "night"}`;
+      }
+      return base;
+    }
+
+    function getWeatherIcon(desc, timeStr) {
       if (!desc) return "";
       desc = desc.toLowerCase();
 
-      if (desc.includes("klart")) return "☀️";
-      if (desc.includes("moln")) return "⛅";
-      if (desc.includes("regn") || desc.includes("skur")) return "🌧️";
-      if (desc.includes("snö")) return "❄️";
-      if (desc.includes("dimma")) return "🌫️";
-      if (desc.includes("åska")) return "⛈️";
-      return "";
+      let iconCode = "clearsky"; // fallback
+
+      if (desc.includes("klart") || desc.includes("klar himmel")) iconCode = "clearsky";
+      else if (desc.includes("växlande molnighet") || desc.includes("halvklart")) iconCode = "fair";
+      else if (desc.includes("mulet") || desc.includes("molnigt")) iconCode = "cloudy";
+      else if (desc.includes("moln")) iconCode = "partlycloudy";
+      else if (desc.includes("lätt regn") || desc.includes("regnskur")) iconCode = "rainshowers";
+      else if (desc.includes("regn") || desc.includes("hällregn")) iconCode = "rain";
+      else if (desc.includes("snöblandat regn")) iconCode = "sleet";
+      else if (desc.includes("snö") || desc.includes("snöfall")) iconCode = "snow";
+      else if (desc.includes("dimma")) iconCode = "fog";
+      else if (desc.includes("åska")) iconCode = "thunderstorm";
+      else if (desc.includes("storm") || desc.includes("blåst")) iconCode = "heavyrainandthunder";
+
+      const hour = new Date(timeStr).getHours();
+      const fullIconCode = getTimeOfDayIconCode(iconCode, hour);
+      const url = `https://api.met.no/images/weathericons/svg/${fullIconCode}.svg`;
+      return `<img src="${url}" alt="${desc}" width="30" height="30">`;
     }
 
     async function loadWeather(location) {
@@ -95,7 +133,7 @@
           const row = document.createElement("tr");
 
           const icon = document.createElement("td");
-          icon.textContent = getWeatherIcon(entry.desc);
+          icon.innerHTML = getWeatherIcon(entry.desc, entry.time);
 
           const time = document.createElement("td");
           time.textContent = entry.time;
@@ -107,18 +145,22 @@
           desc.textContent = entry.desc;
 
           const rel = document.createElement("td");
-          rel.textContent = entry.reliability || "";
+          rel.innerHTML = formatReliability(entry.reliability);
+
+          const sources = document.createElement("td");
+          sources.textContent = entry.sources_used?.length || 0;
 
           row.appendChild(icon);
           row.appendChild(time);
           row.appendChild(temp);
           row.appendChild(desc);
           row.appendChild(rel);
+          row.appendChild(sources);
 
           tableBody.appendChild(row);
         });
       } catch (e) {
-        tableBody.innerHTML = `<tr><td colspan="5">Kunde inte ladda data.</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="6">Kunde inte ladda data.</td></tr>`;
         console.error("Fel vid laddning av väderdata:", e);
       }
     }
