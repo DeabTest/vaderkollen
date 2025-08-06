@@ -3,7 +3,7 @@ import json
 import os
 
 # 🧩 Steg 1: Inställningar
-API_KEY = "1c38e00bc35998299133d067befd75a5"  # <-- byt ut mot din egen nyckel
+API_KEY = os.environ.get("OWM_API_KEY")
 CITY_NAME = "Eskilstuna"
 COUNTRY_CODE = "SE"
 OUTPUT_FOLDER = "data"
@@ -32,3 +32,4 @@ if response.status_code == 200:
 else:
     print(f"❌ Fel vid API-anrop: {response.status_code}")
     print(response.text)
+
