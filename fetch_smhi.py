@@ -1,75 +1,74 @@
 import requests
 import json
 import os
-import time
 
-# Lista över orter
-cities = [
-    "eskilstuna",
-    "stockholm",
-    "göteborg",
-    "lomma",
-    "malmö",
-    "umeå"
-]
+print("🌦️ Hämtar SMHI-prognos för alla städer...")
 
-OUTPUT_FOLDER = "data"
+# Städer med justerade koordinater (lite avrundade för att undvika API-buggar)
+locations = {
+    "eskilstuna": {"lat": 59.37, "lon": 16.51},
+    "stockholm": {"lat": 59.33, "lon": 18.06},
+    "göteborg": {"lat": 57.71, "lon": 11.97},
+    "lomma": {"lat": 55.68, "lon": 13.07},
+    "malmö": {"lat": 55.60, "lon": 13.00},
+    "umeå": {"lat": 63.82, "lon": 20.26}  # ✅ Justerat så att det fungerar
+}
 
-# Skapa mapp om den inte finns
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+# Funktion för att hämta temperatur och väderbeskrivning från SMHI
+def fetch_smhi_forecast(lat, lon):
+    url = f"https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{lon}/lat/{lat}/data.json"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
 
-# Funktion för att hämta koordinater med OpenStreetMap (Nominatim)
-def get_coordinates(city_name):
-    url = f"https://nominatim.openstreetmap.org/search"
-    params = {
-        "q": city_name + ", Sweden",
-        "format": "json",
-        "limit": 1
-    }
-    headers = {
-        "User-Agent": "vaderkollen (kontakt@example.com)"  # <-- byt till din mejl om du vill
-    }
+        # Hitta första temperaturen och väderkoden i forecasten
+        for time_series in data["timeSeries"]:
+            params = {p["name"]: p["values"][0] for p in time_series["parameters"]}
+            if "t" in params and "Wsymb2" in params:
+                temp = params["t"]
+                symbol = params["Wsymb2"]
+                desc = smhi_symbol_to_text(symbol)
+                return temp, desc
 
-    response = requests.get(url, params=params, headers=headers)
-    response.raise_for_status()
-    results = response.json()
-    if results:
-        return float(results[0]["lat"]), float(results[0]["lon"])
-    else:
+        return None, None
+    except Exception as e:
+        print(f"❌ Fel vid API-anrop för {lat}, {lon}: {e}")
         return None, None
 
-# Funktion för att hämta SMHI-prognos
-def fetch_smhi_forecast(lat, lon):
-    url = f"https://opendata.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{lon}/lat/{lat}/data.json"
-    headers = {
-        "User-Agent": "vaderkollen (kontakt@example.com)"  # <-- byt till din mejl om du vill
+# SMHI:s vädersymboler till text
+def smhi_symbol_to_text(symbol):
+    mapping = {
+        1: "Klart",
+        2: "Lätt molnighet",
+        3: "Halvklart",
+        4: "Molnigt",
+        5: "Mulet",
+        6: "Dimma",
+        7: "Lätt regn",
+        8: "Regn",
+        9: "Kraftigt regn",
+        10: "Åska",
+        11: "Lätt snö",
+        12: "Snö",
+        13: "Kraftigt snöfall",
     }
+    return mapping.get(symbol, "Okänt")
 
-    print(f"🔗 URL för {lat}, {lon}: {url}")
-    response = requests.get(url, headers=headers)
+# Skapa mapp om den inte finns
+os.makedirs("data", exist_ok=True)
 
-    if response.status_code != 200:
-        raise Exception(f"HTTP {response.status_code}: {response.text[:100]}")
+# Gå igenom alla städer
+for location, coords in locations.items():
+    print(f"🌦️ Hämtar SMHI-prognos för {location.capitalize()}...")
+    print(f"🔗 URL för {location}: https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{coords['lon']}/lat/{coords['lat']}/data.json")
 
-    return response.json()
-
-# Loopa över alla orter
-for city in cities:
-    print(f"\n🌦️ Hämtar SMHI-prognos för {city.title()}...")
-
-    lat, lon = get_coordinates(city)
-    if lat is None or lon is None:
-        print(f"❌ Kunde inte hitta koordinater för {city}")
-        continue
-
-    try:
-        data = fetch_smhi_forecast(lat, lon)
-        output_path = os.path.join(OUTPUT_FOLDER, f"{city}_smhi.json")
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"✅ Sparad till {output_path}")
-    except Exception as e:
-        print(f"❌ Fel vid hämtning för {city}: {e}")
-
-    # SMHI gillar inte spam – sov lite mellan anropen
-    time.sleep(1)
+    temp, desc = fetch_smhi_forecast(coords["lat"], coords["lon"])
+    if temp is not None:
+        forecast = {"temp": temp, "desc": desc}
+        path = f"data/smhi_{location}.json"
+        with open(path, "w") as f:
+            json.dump(forecast, f, indent=2)
+        print(f"✅ Sparat: {path}")
+    else:
+        print(f"❌ Kunde inte hämta prognos för {location.capitalize()}.\n")
