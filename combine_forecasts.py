@@ -33,18 +33,42 @@ def read_source_data(source, location):
     if not os.path.exists(path):
         print(f"⚠️ Saknar fil: {path}")
         return None
+
     try:
         with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            if isinstance(data, list):
-                return {
-                    normalize_time(entry["time"]): entry
-                    for entry in data
-                    if "time" in entry
-                }
-            else:
-                print(f"⚠️ Filen {path} innehåller inte en lista.")
-                return None
+            raw = json.load(f)
+
+        entries = []
+
+        # Om list (OpenWeather, SMHI, WeatherAPI)
+        if isinstance(raw, list):
+            for e in raw:
+                if "time" in e and "temp" in e and "desc" in e:
+                    entries.append({
+                        "time": normalize_time(e["time"]),
+                        "temp": e["temp"],
+                        "desc": e["desc"]
+                    })
+
+        # Om dict (YR): nyckel = datum, värde = lista av timvärden
+        elif isinstance(raw, dict) and source == "yr":
+            for date_key, hours in raw.items():
+                for h in hours:
+                    # h["time"] är t.ex. "03:00"
+                    full_time = f"{date_key} {h['time']}"
+                    entries.append({
+                        "time": normalize_time(full_time),
+                        "temp": h.get("temp"),
+                        "desc": h.get("desc")
+                    })
+
+        else:
+            print(f"⚠️ Filen {path} innehåller inte en lista eller YR-format.")
+            return None
+
+        # Byt till dict med time som nyckel
+        return { e["time"]: e for e in entries }
+
     except Exception as e:
         print(f"❌ Fel vid läsning av {path}: {e}")
         return None
@@ -69,8 +93,6 @@ for location in locations:
     print(f"\n📍 Bearbetar {location.title()}...")
 
     source_data = {}
-
-    # Läs in alla datakällor
     for source in source_filenames:
         data = read_source_data(source, location)
         if data:
@@ -82,54 +104,43 @@ for location in locations:
 
     # Hitta tidpunkter som finns i minst två källor
     time_counts = Counter()
-    for data in source_data.values():
-        time_counts.update(data.keys())
-    common_times = [time for time, count in time_counts.items() if count >= 2]
+    for d in source_data.values():
+        time_counts.update(d.keys())
+    common_times = [t for t, cnt in time_counts.items() if cnt >= 2]
 
     if not common_times:
         print(f"⚠️ Inga gemensamma tidpunkter för {location}")
         continue
 
     combined = []
-
-    # Kombinera data för varje tidpunkt
     for time in sorted(common_times):
         entries = []
+        for src, d in source_data.items():
+            e = d.get(time)
+            if e:
+                entries.append({"temp": e["temp"], "desc": e["desc"], "source": src})
 
-        for source, data in source_data.items():
-            entry = data.get(time)
-            if entry and "temp" in entry and "desc" in entry:
-                entries.append({
-                    "temp": entry["temp"],
-                    "desc": entry["desc"],
-                    "source": source
-                })
+        temps = [e["temp"] for e in entries]
+        descs = [e["desc"] for e in entries]
+        sources = [e["source"] for e in entries]
 
-        if entries:
-            temps = [e["temp"] for e in entries]
-            descs = [e["desc"] for e in entries]
-            sources = [e["source"] for e in entries]
+        most_common_desc = Counter(descs).most_common(1)[0][0]
+        avg_temp = round(sum(temps) / len(temps), 1)
+        reliability = calculate_reliability(temps)
 
-            # Vanligaste väderbeskrivningen
-            desc_counter = Counter(descs)
-            most_common_desc = desc_counter.most_common(1)[0][0]
-
-            avg_temp = round(sum(temps) / len(temps), 1)
-            reliability = calculate_reliability(temps)
-
-            combined.append({
-                "time": time,
-                "avg_temp": avg_temp,
-                "desc": most_common_desc,
-                "reliability": reliability,
-                "sources_used": sources
-            })
+        combined.append({
+            "time": time,
+            "avg_temp": avg_temp,
+            "desc": most_common_desc,
+            "reliability": reliability,
+            "sources_used": sources
+        })
 
     # Spara per ort
-    output_path = f"data/combined_{location}.json"
-    with open(output_path, "w", encoding="utf-8") as f:
+    out_path = f"data/combined_{location}.json"
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(combined, f, indent=2, ensure_ascii=False)
-    print(f"✅ Sparat: {output_path}")
+    print(f"✅ Sparat: {out_path}")
 
     all_combined[location] = combined
 
