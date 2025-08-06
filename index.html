@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Väder i Eskilstuna</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    .forecast { margin-bottom: 1rem; }
+    .icon { vertical-align: middle; }
+  </style>
+</head>
+<body>
+  <h1>Väderprognos – Eskilstuna</h1>
+  <div id="forecast-container">Laddar prognos...</div>
+
+  <script>
+    async function loadWeather() {
+      try {
+        const response = await fetch('data/eskilstuna.json');
+        const data = await response.json();
+        const container = document.getElementById('forecast-container');
+        container.innerHTML = '';
+
+        data.list.slice(0, 12).forEach(item => {
+          const date = new Date(item.dt * 1000).toLocaleString('sv-SE', {
+            weekday: 'short', hour: '2-digit', minute: '2-digit'
+          });
+
+          const temp = Math.round(item.main.temp);
+          const desc = item.weather[0].description;
+          const icon = item.weather[0].icon;
+
+          const html = `
+            <div class="forecast">
+              <strong>${date}</strong>: ${temp}°C – ${desc}
+              <img class="icon" src="https://openweathermap.org/img/wn/${icon}.png" alt="${desc}">
+            </div>
+          `;
+
+          container.innerHTML += html;
+        });
+      } catch (err) {
+        document.getElementById('forecast-container').textContent = 'Kunde inte ladda väderdatan.';
+        console.error(err);
+      }
+    }
+
+    loadWeather();
+  </script>
+</body>
+</html>
