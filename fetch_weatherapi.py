@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from datetime import datetime
 
 # Hämta API-nyckel från miljövariabel/secrets
 API_KEY = os.environ.get("WEATHERAPI_KEY")
@@ -23,11 +24,11 @@ RAW_FOLDER = os.path.join(OUTPUT_FOLDER, "raw")
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 os.makedirs(RAW_FOLDER, exist_ok=True)
 
-# Loopa igenom alla orter
+# Hämta hourly forecast
 for city in cities:
     print(f"\n🌦️ Hämtar WeatherAPI-data för {city.title()}...")
 
-    url = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city},SE&lang=sv"
+    url = f"http://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={city},SE&lang=sv&days=2&aqi=no&alerts=no"
 
     try:
         response = requests.get(url)
@@ -35,25 +36,30 @@ for city in cities:
         data = response.json()
 
         # Spara rådata
-        raw_path = os.path.join(RAW_FOLDER, f"{city}_weatherapi.json")
+        raw_path = os.path.join(RAW_FOLDER, f"weatherapi_{city}.json")
         with open(raw_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
         print(f"📄 Rådata sparad: {raw_path}")
 
-        # Extrahera förenklad väderdata
-        temp = round(data["current"]["temp_c"], 1)
-        desc = data["current"]["condition"]["text"].lower()
+        # Extrahera hourly-data
+        hourly = []
+        for day in data["forecast"]["forecastday"]:
+            for hour in day["hour"]:
+                time_str = datetime.strptime(hour["time"], "%Y-%m-%d %H:%M").strftime("%Y-%m-%d %H:%M")
+                temp = round(hour["temp_c"], 1)
+                desc = hour["condition"]["text"].lower()
 
-        clean_data = {
-            "temp": temp,
-            "desc": desc
-        }
+                hourly.append({
+                    "time": time_str,
+                    "temp": temp,
+                    "desc": desc
+                })
 
-        # Spara förenklad data
-        output_path = os.path.join(OUTPUT_FOLDER, f"{city}_weatherapi.json")
+        # Spara förenklad hourly-data i rätt format
+        output_path = os.path.join(OUTPUT_FOLDER, f"weatherapi_{city}.json")
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(clean_data, f, indent=2)
-        print(f"✅ Förenklad data sparad: {output_path}")
+            json.dump(hourly, f, indent=2, ensure_ascii=False)
+        print(f"✅ Hourly-data sparad: {output_path}")
 
     except Exception as e:
         print(f"❌ Fel vid hämtning för {city}: {e}")
