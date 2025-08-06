@@ -13,7 +13,9 @@ cities = [
 ]
 
 OUTPUT_FOLDER = "data"
+RAW_FOLDER = os.path.join(OUTPUT_FOLDER, "raw")
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+os.makedirs(RAW_FOLDER, exist_ok=True)
 
 # Hämta koordinater med Nominatim
 def get_coordinates(city_name):
@@ -46,7 +48,7 @@ def fetch_yr_forecast(lat, lon):
 
 # Kör för varje ort
 for city in cities:
-    print(f"Hämtar Yr-prognos för {city.title()}...")
+    print(f"\n🌦️ Hämtar Yr-prognos för {city.title()}...")
 
     lat, lon = get_coordinates(city)
     if lat is None or lon is None:
@@ -55,10 +57,36 @@ for city in cities:
 
     try:
         data = fetch_yr_forecast(lat, lon)
+
+        # Extrahera första timme
+        timeseries = data["properties"]["timeseries"]
+        first_entry = timeseries[0]
+        details = first_entry["data"]["instant"]["details"]
+        temp = round(details["air_temperature"], 1)
+
+        # Yr har ingen väderbeskrivning direkt, men kan ge symbol
+        try:
+            symbol_code = first_entry["data"]["next_1_hours"]["summary"]["symbol_code"]
+            desc = symbol_code.replace("_", " ")
+        except KeyError:
+            desc = "okänt väder"
+
+        # Spara förenklad data
+        clean_data = {
+            "temp": temp,
+            "desc": desc
+        }
         output_path = os.path.join(OUTPUT_FOLDER, f"{city}_yr.json")
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"✅ Sparad till {output_path}")
+            json.dump(clean_data, f, ensure_ascii=False, indent=2)
+        print(f"✅ Förenklad data sparad: {output_path}")
+
+        # Spara rådata (första 3 tidssteg)
+        raw_output_path = os.path.join(RAW_FOLDER, f"{city}_yr.json")
+        with open(raw_output_path, "w", encoding="utf-8") as f:
+            json.dump(timeseries[:3], f, ensure_ascii=False, indent=2)
+        print(f"📄 Rådata sparad: {raw_output_path}")
+
     except Exception as e:
         print(f"❌ Fel vid hämtning för {city}: {e}")
 
