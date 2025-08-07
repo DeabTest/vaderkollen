@@ -34,7 +34,7 @@ jobs:
         run: python fetch_yr.py
 
       - name: Hämta OpenWeather
-        run: python fetch_openweather.py
+        run: python fetch_weather.py
 
       - name: Hämta WeatherAPI
         run: python fetch_weatherapi.py
