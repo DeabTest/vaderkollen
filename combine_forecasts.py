@@ -15,7 +15,7 @@ source_filenames = {
     "smhi":          "weather_smhi_{location}.json",
     "yr":            "{location}_yr.json",
     "weatherapi":    "weatherapi_{location}.json",
-    "msn":           "msn_{location}.json",   # ← Här är MSN tillagd
+    "openmeteo":    "openmeteo_{location}.json",   
 }
 
 def normalize_time(time_str):
