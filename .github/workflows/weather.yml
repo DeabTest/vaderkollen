@@ -44,8 +44,12 @@ jobs:
       - name: 🏗️ Kör WeatherAPI-fetch
         run: python fetch_weatherapi.py
 
+        - name: 🏗️ Kör MSN-fetch
+        run: python fetch_msn.py
+
       - name: 🔄 Kombinera prognoser
         run: python combine_forecasts.py
+        
 
       - name: ✅ Lägg till och committa nya datafiler
         run: |
