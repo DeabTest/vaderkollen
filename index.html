@@ -19,9 +19,14 @@
       overflow-x: auto;
     }
     select {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       padding: 0.5rem;
       font-size: 1rem;
+    }
+    #lastUpdated {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
     }
     table {
       width: 100%;
@@ -42,6 +47,7 @@
 </head>
 <body>
   <h1>AI Väder</h1>
+  <p id="lastUpdated">Senast uppdaterad: –</p>
 
   <label for="location">Välj ort:</label><br>
   <select id="location">
@@ -74,6 +80,7 @@
   <script>
     const locationSelect = document.getElementById("location");
     const tableBody = document.querySelector("#forecastTable tbody");
+    const lastUpdatedEl = document.getElementById("lastUpdated");
 
     function formatReliability(level) {
       if (!level) return "";
@@ -100,7 +107,6 @@
       if (!desc) return "";
       desc = desc.toLowerCase();
       let iconCode = "clearsky";
-
       if (desc.includes("klart") || desc.includes("klar himmel")) iconCode = "clearsky";
       else if (desc.includes("växlande molnighet") || desc.includes("halvklart")) iconCode = "fair";
       else if (desc.includes("mulet") || desc.includes("molnigt")) iconCode = "cloudy";
@@ -120,6 +126,15 @@
       return `<img src="${url}" alt="${desc}" width="30" height="30">`;
     }
 
+    function updateLastUpdated() {
+      const now = new Date();
+      const opts = { year: 'numeric', month: '2-digit', day: '2-digit',
+                     hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      lastUpdatedEl.textContent = 'Senast uppdaterad: ' +
+        now.toLocaleDateString('sv-SE', opts).replace(/\./g, '-') + ' ' +
+        now.toLocaleTimeString('sv-SE', opts);
+    }
+
     async function loadWeather(location) {
       try {
         const res = await fetch(`data/combined_${location}.json`);
@@ -129,7 +144,6 @@
         const now = new Date();
         const maxDate = new Date(now);
         maxDate.setDate(now.getDate() + 5);
-
         data = data.filter(entry => {
           const d = new Date(entry.time.replace(" ", "T"));
           return d >= now && d <= maxDate;
@@ -138,6 +152,7 @@
         tableBody.innerHTML = "";
         data.forEach(entry => {
           const row = document.createElement("tr");
+
           const iconCell = document.createElement("td");
           iconCell.innerHTML = getWeatherIcon(entry.desc, entry.time);
 
@@ -163,6 +178,8 @@
         if (data.length === 0) {
           tableBody.innerHTML = `<tr><td colspan="6">Ingen prognos tillgänglig för de närmaste 5 dygnen.</td></tr>`;
         }
+
+        updateLastUpdated();
       } catch (e) {
         tableBody.innerHTML = `<tr><td colspan="6">Kunde inte ladda data.</td></tr>`;
         console.error("Fel vid laddning av väderdata:", e);
@@ -173,14 +190,9 @@
       loadWeather(locationSelect.value);
     });
 
-    // Ladda initial ort
+    // Ladda initial ort och sätt upp auto-uppdatering
     loadWeather(locationSelect.value);
-
-    // Auto-uppdatera varje timme
-    setInterval(() => {
-      console.log("⏰ Automatisk uppdatering av prognos");
-      loadWeather(locationSelect.value);
-    }, 60 * 60 * 1000);
+    setInterval(() => loadWeather(locationSelect.value), 60 * 60 * 1000);
   </script>
 </body>
 </html>
