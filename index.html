@@ -99,8 +99,8 @@
     function getWeatherIcon(desc, timeStr) {
       if (!desc) return "";
       desc = desc.toLowerCase();
-
       let iconCode = "clearsky";
+
       if (desc.includes("klart") || desc.includes("klar himmel")) iconCode = "clearsky";
       else if (desc.includes("växlande molnighet") || desc.includes("halvklart")) iconCode = "fair";
       else if (desc.includes("mulet") || desc.includes("molnigt")) iconCode = "cloudy";
@@ -113,7 +113,6 @@
       else if (desc.includes("åska")) iconCode = "thunderstorm";
       else if (desc.includes("storm") || desc.includes("blåst")) iconCode = "heavyrainandthunder";
 
-      // Parsea "YYYY-MM-DD HH:MM:SS" till Date
       const d = new Date(timeStr.replace(" ", "T"));
       const hour = d.getHours();
       const fullCode = getTimeOfDayIconCode(iconCode, hour);
@@ -126,7 +125,7 @@
         const res = await fetch(`data/combined_${location}.json`);
         let data = await res.json();
 
-        // Filtrera bort gamla datum och begränsa till 5 dygn framåt
+        // Filtrera kommande fem dygn
         const now = new Date();
         const maxDate = new Date(now);
         maxDate.setDate(now.getDate() + 5);
@@ -137,10 +136,8 @@
         });
 
         tableBody.innerHTML = "";
-
         data.forEach(entry => {
           const row = document.createElement("tr");
-
           const iconCell = document.createElement("td");
           iconCell.innerHTML = getWeatherIcon(entry.desc, entry.time);
 
@@ -178,6 +175,12 @@
 
     // Ladda initial ort
     loadWeather(locationSelect.value);
+
+    // Auto-uppdatera varje timme
+    setInterval(() => {
+      console.log("⏰ Automatisk uppdatering av prognos");
+      loadWeather(locationSelect.value);
+    }, 60 * 60 * 1000);
   </script>
 </body>
 </html>
