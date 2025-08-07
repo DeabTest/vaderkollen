@@ -13,10 +13,10 @@ jobs:
   fetch-and-combine:
     runs-on: ubuntu-latest
 
-    # Gör dina API-nycklar tillgängliga i alla steg
+    # Här exporterar vi båda secrets som env-vars
     env:
-      OWM_API_KEY:       ${{ secrets.OWM_API_KEY }}
-      WEATHERAPI_KEY:    ${{ secrets.WEATHERAPI_KEY }}
+      OWM_API_KEY:    ${{ secrets.OWM_API_KEY }}
+      WEATHERAPI_KEY: ${{ secrets.WEATHERAPI_KEY }}
 
     steps:
       - name: 🔄 Klona repo
@@ -32,23 +32,27 @@ jobs:
           pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: 🏗️ Kör alla fetch-skript
-        run: |
-          python fetch_smhi.py
-          python fetch_yr.py
-          python fetch_weather.py
-          python fetch_weatherapi.py
+      - name: 🏗️ Kör SMHI-fetch
+        run: python fetch_smhi.py
+
+      - name: 🏗️ Kör YR-fetch
+        run: python fetch_yr.py
+
+      - name: 🏗️ Kör OpenWeather-fetch
+        run: python fetch_weather.py
+
+      - name: 🏗️ Kör WeatherAPI-fetch
+        run: python fetch_weatherapi.py
 
       - name: 🔄 Kombinera prognoser
-        run: |
-          python combine_forecasts.py
+        run: python combine_forecasts.py
 
       - name: ✅ Lägg till och committa nya datafiler
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add data/
-          git commit -m "🔄 Automatisk uppdatering av väderdata $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "Inget att committa"
+          git commit -m "🔄 Automatisk uppdatering av väderdata $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "Inga ändringar att committa"
 
       - name: ↗️ Push changes
         uses: ad-m/github-push-action@v0.8.0
