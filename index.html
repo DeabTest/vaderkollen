@@ -113,7 +113,9 @@
       else if (desc.includes("åska")) iconCode = "thunderstorm";
       else if (desc.includes("storm") || desc.includes("blåst")) iconCode = "heavyrainandthunder";
 
-      const hour = new Date(timeStr).getHours();
+      // Parsea "YYYY-MM-DD HH:MM:SS" till Date
+      const d = new Date(timeStr.replace(" ", "T"));
+      const hour = d.getHours();
       const fullCode = getTimeOfDayIconCode(iconCode, hour);
       const url = `https://api.met.no/images/weathericons/svg/${fullCode}.svg`;
       return `<img src="${url}" alt="${desc}" width="30" height="30">`;
@@ -122,7 +124,17 @@
     async function loadWeather(location) {
       try {
         const res = await fetch(`data/combined_${location}.json`);
-        const data = await res.json();
+        let data = await res.json();
+
+        // Filtrera bort gamla datum och begränsa till 5 dygn framåt
+        const now = new Date();
+        const maxDate = new Date(now);
+        maxDate.setDate(now.getDate() + 5);
+
+        data = data.filter(entry => {
+          const d = new Date(entry.time.replace(" ", "T"));
+          return d >= now && d <= maxDate;
+        });
 
         tableBody.innerHTML = "";
 
@@ -150,6 +162,10 @@
           row.append(iconCell, timeCell, tempCell, descCell, relCell, sourcesCell);
           tableBody.appendChild(row);
         });
+
+        if (data.length === 0) {
+          tableBody.innerHTML = `<tr><td colspan="6">Ingen prognos tillgänglig för de närmaste 5 dygnen.</td></tr>`;
+        }
       } catch (e) {
         tableBody.innerHTML = `<tr><td colspan="6">Kunde inte ladda data.</td></tr>`;
         console.error("Fel vid laddning av väderdata:", e);
@@ -160,6 +176,7 @@
       loadWeather(locationSelect.value);
     });
 
+    // Ladda initial ort
     loadWeather(locationSelect.value);
   </script>
 </body>
