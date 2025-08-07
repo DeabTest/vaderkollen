@@ -1,10 +1,3 @@
-# För att schemalägga detta skript att köras varje timme dygnet runt,
-# lägg till följande rad i din crontab (kör `crontab -e`):
-#
-# 0 * * * * /usr/bin/env python3 /sökväg/till/combine_forecasts.py >> /sökväg/till/combine_forecasts.log 2>&1
-#
-# Detta kör skriptet på minut 0 varje timme och loggar output till combine_forecasts.log.
-
 #!/usr/bin/env python3
 import json
 import os
@@ -19,10 +12,10 @@ locations = ["eskilstuna", "stockholm", "göteborg", "lomma", "malmö", "umeå"]
 # Karta över källa och motsvarande filprefix
 source_filenames = {
     "openweather": "{location}.json",
-    "smhi": "weather_smhi_{location}.json",
-    "yr": "{location}_yr.json",
-    "weatherapi": "weatherapi_{location}.json",
-    "msn":           "msn_{location}.json",
+    "smhi":          "weather_smhi_{location}.json",
+    "yr":            "{location}_yr.json",
+    "weatherapi":    "weatherapi_{location}.json",
+    "msn":           "msn_{location}.json",   # ← Här är MSN tillagd
 }
 
 def normalize_time(time_str):
@@ -40,7 +33,7 @@ def normalize_time(time_str):
     return time_str
 
 def read_source_data(source, location):
-    """Läs och normalisera data från en källa för en viss ort."""
+    """Läser in och normaliserar data från en given källa."""
     filename = source_filenames[source].format(location=location)
     path = os.path.join("data", filename)
     if not os.path.exists(path):
@@ -48,15 +41,14 @@ def read_source_data(source, location):
         return None
 
     try:
-        with open(path, "r", encoding="utf-8") as f:
-            raw = json.load(f)
+        raw = json.load(open(path, encoding="utf-8"))
     except Exception as e:
         print(f"❌ Fel vid läsning av {path}: {e}", file=sys.stderr)
         return None
 
     entries = []
     if isinstance(raw, list):
-        # OpenWeather, SMHI, WeatherAPI
+        # Öppna listor från OpenWeather, SMHI, WeatherAPI, MSN
         for e in raw:
             if "time" in e and "temp" in e and "desc" in e:
                 entries.append({
@@ -64,12 +56,13 @@ def read_source_data(source, location):
                     "temp": e["temp"],
                     "desc": e["desc"]
                 })
+
     elif isinstance(raw, dict) and source == "yr":
         # YR: dict av datum → lista av timvärden
         for date_key, hours in raw.items():
             for h in hours:
                 t = h.get("time")
-                if t is None: 
+                if not t:
                     continue
                 full_time = f"{date_key} {t}"
                 entries.append({
@@ -78,13 +71,13 @@ def read_source_data(source, location):
                     "desc": h.get("desc")
                 })
     else:
-        print(f"⚠️ Filen {path} innehåller inte en lista eller YR-format.", file=sys.stderr)
+        print(f"⚠️ Filen {path} innehåller inte ett list- eller YR-format.", file=sys.stderr)
         return None
 
     return { e["time"]: e for e in entries }
 
 def calculate_reliability(temps):
-    """Beräkna hög/medel/låg baserat på temperaturvariation."""
+    """Returnerar 'hög', 'medel' eller 'låg' beroende på spridning."""
     if len(temps) < 2:
         return "låg"
     spread = max(temps) - min(temps)
@@ -97,18 +90,19 @@ def calculate_reliability(temps):
         return "låg"
 
 def combine_for_location(location):
-    """Kombinera prognoser för en specifik ort."""
+    """Kombinerar prognoser för en ort och sparar combined_{ort}.json."""
     source_data = {}
     for source in source_filenames:
         data = read_source_data(source, location)
         if data:
             print(f"ℹ️ Läste in {len(data)} poster från {source}")
             source_data[source] = data
+
     if not source_data:
         print(f"⛔ Ingen data tillgänglig för {location}", file=sys.stderr)
         return
 
-    # Hitta tidpunkter som finns i minst två källor
+    # Tidpunkter som minst två källor har
     time_counts = Counter()
     for d in source_data.values():
         time_counts.update(d.keys())
@@ -117,8 +111,8 @@ def combine_for_location(location):
     combined = []
     for time in common_times:
         entries = []
-        for src, d in source_data.items():
-            e = d.get(time)
+        for src, data in source_data.items():
+            e = data.get(time)
             if e:
                 entries.append({"temp": e["temp"], "desc": e["desc"], "source": src})
 
@@ -148,10 +142,10 @@ def main():
         print(f"\n📍 Bearbetar {location.title()}...")
         combine_for_location(location)
 
-    # Spara samlad fil för alla orter
+    # Spara även en samlad fil
     all_combined = {
-        location: json.load(open(os.path.join("data", f"combined_{location}.json"), encoding="utf-8"))
-        for location in locations
+        loc: json.load(open(os.path.join("data", f"combined_{loc}.json"), encoding="utf-8"))
+        for loc in locations
     }
     with open("data/combined.json", "w", encoding="utf-8") as f:
         json.dump(all_combined, f, indent=2, ensure_ascii=False)
