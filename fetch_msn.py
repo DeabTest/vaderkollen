@@ -2,7 +2,6 @@
 import requests
 import json
 import os
-import unicodedata
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -13,64 +12,37 @@ OUTPUT_FOLDER = "data"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 def slugify(city):
-    """Ta bort diakritiska tecken åäö → aao osv, för engelsk fallback."""
-    nfkd = unicodedata.normalize("NFKD", city)
-    return "".join(c for c in nfkd if not unicodedata.combining(c)).lower()
+    """Gör om åäö till aao, osv, för engelska URL:en."""
+    return city.lower().replace("å", "a").replace("ä", "a").replace("ö", "o")
 
-def find_swedish_url(en_html):
-    """Hitta <link rel="alternate" hreflang="sv-se"> i engelsk sida."""
-    soup = BeautifulSoup(en_html, "html.parser")
-    tag = soup.find("link", {"rel": "alternate", "hreflang": "sv-se"})
-    return tag["href"] if tag and tag.has_attr("href") else None
-
-def fetch_msn_html(city):
-    """Hämta HTML från svenska MSN om möjligt, annars engelsk sida."""
+def fetch_and_parse(city):
     slug = slugify(city)
-    en_url = f"https://www.msn.com/en-us/weather/{slug}"
-    print(f"🌦️ Hämtar engelska MSN för {city}: {en_url}")
-    r = requests.get(en_url)
-    if r.status_code != 200:
-        print(f"⚠️ Engelska sidan gav {r.status_code}, hoppar över")
+    url = f"https://www.msn.com/en-us/weather/{slug}"
+    print(f"\n🌦️ Hämtar MSN (EN) för {city.title()}: {url}")
+    res = requests.get(url)
+    try:
+        res.raise_for_status()
+    except requests.HTTPError as e:
+        print(f"⚠️ Misslyckades med {res.status_code} för {city}: {e}")
         return None
 
-    sv_url = find_swedish_url(r.text)
-    if sv_url:
-        print(f"🌦️ Byter till svenska MSN-URL: {sv_url}")
-        r2 = requests.get(sv_url)
-        if r2.status_code == 200:
-            return r2.text
-        print(f"⚠️ Svenska sidan gav {r2.status_code}, använder engelska")
-    return r.text
+    soup = BeautifulSoup(res.text, "html.parser")
+    tag = soup.find("script", {"id": "__NEXT_DATA__"})
+    if not tag or not tag.string:
+        print(f"⚠️ __NEXT_DATA__ inte hittad för {city}, skippar")
+        return None
 
-def parse_and_save(city, html):
-    soup = BeautifulSoup(html, "html.parser")
-    # Loopar alla script[type=application/json] och söker efter "forecasts"
-    scripts = soup.find_all("script", {"type": "application/json"})
-    js = None
-    for tag in scripts:
-        txt = tag.string or ""
-        if '"forecasts"' in txt:
-            try:
-                js = json.loads(txt)
-                break
-            except json.JSONDecodeError:
-                continue
-
-    if not js:
-        print(f"⚠️ Hittade ingen forecasts‐JSON för {city}, skippar.")
-        return
-
-    # Extrahera tim‐lista
+    data = json.loads(tag.string)
     hourly = (
-        js.get("props", {})
-          .get("pageProps", {})
-          .get("forecasts", {})
-          .get("hourly", None)
-        or js.get("forecasts", {}).get("hourly", [])
+        data
+        .get("props", {})
+        .get("pageProps", {})
+        .get("forecasts", {})
+        .get("hourly", [])
     )
     if not isinstance(hourly, list):
-        print(f"⚠️ Ingen hourly‐lista för {city}, skippar.")
-        return
+        print(f"⚠️ Ingen tim-lista i JSON för {city}, skippar")
+        return None
 
     out = []
     for h in hourly:
@@ -84,13 +56,14 @@ def parse_and_save(city, html):
             "desc": h.get("iconPhrase", "").lower()
         })
 
-    path = os.path.join(OUTPUT_FOLDER, f"msn_{city}.json")
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"✅ Sparat: {path} ({len(out)} datapunkter)")
+    return out
 
 if __name__ == "__main__":
     for city in cities:
-        html = fetch_msn_html(city)
-        if html:
-            parse_and_save(city, html)
+        result = fetch_and_parse(city)
+        if not result:
+            continue
+        path = os.path.join(OUTPUT_FOLDER, f"msn_{city}.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        print(f"✅ Sparat: {path} ({len(result)} rader)")
