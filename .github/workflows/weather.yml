@@ -45,8 +45,8 @@ jobs:
       - name: 🏗️ Kör WeatherAPI-fetch
         run: python fetch_weatherapi.py
 
-      - name: 🏗️ Kör MSN-fetch
-        run: python fetch_msn.py
+      - name: 🏗️ Kör Open-Meteo-fetch
+        run: python fetch_openmeteo.py
 
       - name: 🔄 Kombinera prognoser
         run: python combine_forecasts.py
