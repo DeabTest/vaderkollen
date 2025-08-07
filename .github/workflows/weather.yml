@@ -13,7 +13,7 @@ jobs:
   fetch-and-combine:
     runs-on: ubuntu-latest
 
-    # Här exporterar vi båda secrets som env-vars
+    # Gör dina API-nycklar tillgängliga i alla steg
     env:
       OWM_API_KEY:    ${{ secrets.OWM_API_KEY }}
       WEATHERAPI_KEY: ${{ secrets.WEATHERAPI_KEY }}
@@ -44,12 +44,11 @@ jobs:
       - name: 🏗️ Kör WeatherAPI-fetch
         run: python fetch_weatherapi.py
 
-        - name: 🏗️ Kör MSN-fetch
+      - name: 🏗️ Kör MSN-fetch
         run: python fetch_msn.py
 
       - name: 🔄 Kombinera prognoser
         run: python combine_forecasts.py
-        
 
       - name: ✅ Lägg till och committa nya datafiler
         run: |
