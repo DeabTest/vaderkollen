@@ -3,52 +3,54 @@
 name: Uppdatera väderdata
 
 on:
-  # Kör varje timme på minut 0
-  schedule:
-    - cron: '0 * * * *'
-  # Möjlighet att köra manuellt från GitHub UI
+  # Körs manuellt via GitHub UI
   workflow_dispatch:
+  # Körs varje timme på minut 0
+  schedule:
+    - cron: "0 * * * *"
 
 jobs:
-  update-weather:
+  fetch-and-combine:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    # Gör dina API-nycklar tillgängliga i alla steg
+    env:
+      OWM_API_KEY:       ${{ secrets.OWM_API_KEY }}
+      WEATHERAPI_KEY:    ${{ secrets.WEATHERAPI_KEY }}
 
-      - name: Setup Python
+    steps:
+      - name: 🔄 Klona repo
+        uses: actions/checkout@v3
+
+      - name: 📦 Installera Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: Install dependencies
+      - name: 🧪 Installera dependencies (om du har requirements.txt)
         run: |
           pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Hämta SMHI
-        run: python fetch_smhi.py
-
-      - name: Hämta YR
-        run: python fetch_yr.py
-
-      - name: Hämta OpenWeather
-        run: python fetch_weather.py
-
-      - name: Hämta WeatherAPI
-        run: python fetch_weatherapi.py
-
-      - name: Kombinera prognoser
-        run: python combine_forecasts.py
-
-      - name: Commit och push JSON-data
+      - name: 🏗️ Kör alla fetch-skript
         run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name  "github-actions[bot]"
+          python fetch_smhi.py
+          python fetch_yr.py
+          python fetch_weather.py
+          python fetch_weatherapi.py
+
+      - name: 🔄 Kombinera prognoser
+        run: |
+          python combine_forecasts.py
+
+      - name: ✅ Lägg till och committa nya datafiler
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add data/
-          git commit -m "Uppdatera väderdata $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "Inga ändringar att committa"
-      - name: Push changes
+          git commit -m "🔄 Automatisk uppdatering av väderdata $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "Inget att committa"
+
+      - name: ↗️ Push changes
         uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
