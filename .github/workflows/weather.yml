@@ -1,0 +1,54 @@
+# .github/workflows/weather.yml
+
+name: Uppdatera väderdata
+
+on:
+  # Kör varje timme på minut 0
+  schedule:
+    - cron: '0 * * * *'
+  # Möjlighet att köra manuellt från GitHub UI
+  workflow_dispatch:
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Hämta SMHI
+        run: python fetch_smhi.py
+
+      - name: Hämta YR
+        run: python fetch_yr.py
+
+      - name: Hämta OpenWeather
+        run: python fetch_openweather.py
+
+      - name: Hämta WeatherAPI
+        run: python fetch_weatherapi.py
+
+      - name: Kombinera prognoser
+        run: python combine_forecasts.py
+
+      - name: Commit och push JSON-data
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name  "github-actions[bot]"
+          git add data/
+          git commit -m "Uppdatera väderdata $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "Inga ändringar att committa"
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
