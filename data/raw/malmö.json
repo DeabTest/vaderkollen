@@ -4,56 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1754589600,
-      "main": {
-        "temp": 18.93,
-        "feels_like": 18.76,
-        "temp_min": 18.19,
-        "temp_max": 18.93,
-        "pressure": 1015,
-        "sea_level": 1015,
-        "grnd_level": 1014,
-        "humidity": 72,
-        "temp_kf": 0.74
-      },
-      "weather": [
-        {
-          "id": 500,
-          "main": "Rain",
-          "description": "lätt regn",
-          "icon": "10d"
-        }
-      ],
-      "clouds": {
-        "all": 100
-      },
-      "wind": {
-        "speed": 5.25,
-        "deg": 223,
-        "gust": 8.13
-      },
-      "visibility": 10000,
-      "pop": 0.2,
-      "rain": {
-        "3h": 0.4
-      },
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-08-07 18:00:00"
-    },
-    {
       "dt": 1754600400,
       "main": {
-        "temp": 18.26,
-        "feels_like": 18.05,
-        "temp_min": 16.92,
-        "temp_max": 18.26,
+        "temp": 17.61,
+        "feels_like": 17.41,
+        "temp_min": 16.97,
+        "temp_max": 17.61,
         "pressure": 1015,
         "sea_level": 1015,
         "grnd_level": 1013,
-        "humidity": 73,
-        "temp_kf": 1.34
+        "humidity": 76,
+        "temp_kf": 0.64
       },
       "weather": [
         {
@@ -84,15 +45,15 @@
     {
       "dt": 1754611200,
       "main": {
-        "temp": 17.49,
-        "feels_like": 17.28,
+        "temp": 17.16,
+        "feels_like": 16.97,
         "temp_min": 16.77,
-        "temp_max": 17.49,
+        "temp_max": 17.16,
         "pressure": 1014,
         "sea_level": 1014,
         "grnd_level": 1012,
-        "humidity": 76,
-        "temp_kf": 0.72
+        "humidity": 78,
+        "temp_kf": 0.39
       },
       "weather": [
         {
@@ -1454,6 +1415,42 @@
         "pod": "d"
       },
       "dt_txt": "2025-08-12 15:00:00"
+    },
+    {
+      "dt": 1755021600,
+      "main": {
+        "temp": 19.14,
+        "feels_like": 18.75,
+        "temp_min": 19.14,
+        "temp_max": 19.14,
+        "pressure": 1018,
+        "sea_level": 1018,
+        "grnd_level": 1017,
+        "humidity": 63,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 802,
+          "main": "Clouds",
+          "description": "växlande molnighet",
+          "icon": "03d"
+        }
+      ],
+      "clouds": {
+        "all": 30
+      },
+      "wind": {
+        "speed": 3.68,
+        "deg": 338,
+        "gust": 5.02
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-08-12 18:00:00"
     }
   ],
   "city": {
