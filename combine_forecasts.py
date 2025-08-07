@@ -22,6 +22,7 @@ source_filenames = {
     "smhi": "weather_smhi_{location}.json",
     "yr": "{location}_yr.json",
     "weatherapi": "weatherapi_{location}.json",
+    "msn":           "msn_{location}.json",
 }
 
 def normalize_time(time_str):
