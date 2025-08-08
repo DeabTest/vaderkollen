@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-08-08T22:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1018.3,
-          "air_temperature": 19.4,
-          "cloud_area_fraction": 20.2,
-          "relative_humidity": 64.4,
-          "wind_from_direction": 276.3,
-          "wind_speed": 4.5
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "fair_day"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "fair_night"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "clearsky_night"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-08-08T23:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1018.7,
-          "air_temperature": 18.5,
+          "air_temperature": 18.4,
           "cloud_area_fraction": 10.2,
           "relative_humidity": 68.3,
           "wind_from_direction": 268.6,
@@ -79,7 +42,7 @@
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1018.9,
-          "air_temperature": 18.0,
+          "air_temperature": 17.8,
           "cloud_area_fraction": 23.9,
           "relative_humidity": 70.8,
           "wind_from_direction": 279.5,
@@ -103,6 +66,43 @@
       "next_6_hours": {
         "summary": {
           "symbol_code": "fair_night"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-08-09T01:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1018.9,
+          "air_temperature": 17.3,
+          "cloud_area_fraction": 13.9,
+          "relative_humidity": 76.9,
+          "wind_from_direction": 278.9,
+          "wind_speed": 3.5
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "fair_day"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "fair_night"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "fair_day"
         },
         "details": {
           "precipitation_amount": 0.0
