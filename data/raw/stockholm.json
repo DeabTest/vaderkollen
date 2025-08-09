@@ -4,64 +4,28 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1754773200,
-      "main": {
-        "temp": 16.09,
-        "feels_like": 15.74,
-        "temp_min": 16.09,
-        "temp_max": 16.19,
-        "pressure": 1015,
-        "sea_level": 1015,
-        "grnd_level": 1010,
-        "humidity": 76,
-        "temp_kf": -0.1
-      },
-      "weather": [
-        {
-          "id": 802,
-          "main": "Clouds",
-          "description": "växlande molnighet",
-          "icon": "03n"
-        }
-      ],
-      "clouds": {
-        "all": 40
-      },
-      "wind": {
-        "speed": 1.58,
-        "deg": 220,
-        "gust": 3.64
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-08-09 21:00:00"
-    },
-    {
       "dt": 1754784000,
       "main": {
-        "temp": 15.81,
-        "feels_like": 15.48,
-        "temp_min": 15.25,
-        "temp_max": 15.81,
-        "pressure": 1015,
-        "sea_level": 1015,
+        "temp": 14.92,
+        "feels_like": 14.69,
+        "temp_min": 14.92,
+        "temp_max": 15.06,
+        "pressure": 1014,
+        "sea_level": 1014,
         "grnd_level": 1009,
-        "humidity": 78,
-        "temp_kf": 0.56
+        "humidity": 85,
+        "temp_kf": -0.14
       },
       "weather": [
         {
-          "id": 802,
+          "id": 801,
           "main": "Clouds",
-          "description": "växlande molnighet",
-          "icon": "03n"
+          "description": "lätt molnighet",
+          "icon": "02n"
         }
       ],
       "clouds": {
-        "all": 40
+        "all": 23
       },
       "wind": {
         "speed": 0.89,
@@ -78,15 +42,15 @@
     {
       "dt": 1754794800,
       "main": {
-        "temp": 14.85,
-        "feels_like": 14.51,
+        "temp": 14.44,
+        "feels_like": 14.13,
         "temp_min": 14.23,
-        "temp_max": 14.85,
-        "pressure": 1014,
-        "sea_level": 1014,
+        "temp_max": 14.44,
+        "pressure": 1013,
+        "sea_level": 1013,
         "grnd_level": 1009,
-        "humidity": 81,
-        "temp_kf": 0.62
+        "humidity": 84,
+        "temp_kf": 0.21
       },
       "weather": [
         {
@@ -97,7 +61,7 @@
         }
       ],
       "clouds": {
-        "all": 60
+        "all": 51
       },
       "wind": {
         "speed": 2.09,
@@ -1445,6 +1409,45 @@
         "pod": "d"
       },
       "dt_txt": "2025-08-14 18:00:00"
+    },
+    {
+      "dt": 1755205200,
+      "main": {
+        "temp": 15.31,
+        "feels_like": 15.12,
+        "temp_min": 15.31,
+        "temp_max": 15.31,
+        "pressure": 1022,
+        "sea_level": 1022,
+        "grnd_level": 1017,
+        "humidity": 85,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 3.01,
+        "deg": 192,
+        "gust": 10.15
+      },
+      "visibility": 10000,
+      "pop": 0.8,
+      "rain": {
+        "3h": 0.36
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-08-14 21:00:00"
     }
   ],
   "city": {
