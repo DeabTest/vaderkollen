@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1754924400,
-      "main": {
-        "temp": 21.12,
-        "feels_like": 20.67,
-        "temp_min": 20.74,
-        "temp_max": 21.12,
-        "pressure": 1015,
-        "sea_level": 1015,
-        "grnd_level": 1011,
-        "humidity": 53,
-        "temp_kf": 0.38
-      },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "klar himmel",
-          "icon": "01d"
-        }
-      ],
-      "clouds": {
-        "all": 0
-      },
-      "wind": {
-        "speed": 1.38,
-        "deg": 289,
-        "gust": 4.01
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-08-11 15:00:00"
-    },
-    {
       "dt": 1754935200,
       "main": {
-        "temp": 20.64,
-        "feels_like": 20.09,
-        "temp_min": 19.67,
-        "temp_max": 20.64,
-        "pressure": 1015,
-        "sea_level": 1015,
+        "temp": 20.71,
+        "feels_like": 20.17,
+        "temp_min": 19.71,
+        "temp_max": 20.71,
+        "pressure": 1014,
+        "sea_level": 1014,
         "grnd_level": 1011,
         "humidity": 51,
-        "temp_kf": 0.97
+        "temp_kf": 1
       },
       "weather": [
         {
@@ -78,15 +42,15 @@
     {
       "dt": 1754946000,
       "main": {
-        "temp": 18.23,
-        "feels_like": 17.75,
+        "temp": 18.26,
+        "feels_like": 17.76,
         "temp_min": 16.79,
-        "temp_max": 18.23,
+        "temp_max": 18.26,
         "pressure": 1015,
         "sea_level": 1015,
         "grnd_level": 1010,
-        "humidity": 63,
-        "temp_kf": 1.44
+        "humidity": 62,
+        "temp_kf": 1.47
       },
       "weather": [
         {
@@ -1466,6 +1430,42 @@
         "pod": "d"
       },
       "dt_txt": "2025-08-16 12:00:00"
+    },
+    {
+      "dt": 1755356400,
+      "main": {
+        "temp": 22.4,
+        "feels_like": 21.69,
+        "temp_min": 22.4,
+        "temp_max": 22.4,
+        "pressure": 1016,
+        "sea_level": 1016,
+        "grnd_level": 1012,
+        "humidity": 38,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "molnigt",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 79
+      },
+      "wind": {
+        "speed": 4.09,
+        "deg": 102,
+        "gust": 4.8
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-08-16 15:00:00"
     }
   ],
   "city": {
