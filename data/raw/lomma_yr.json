@@ -1,49 +1,12 @@
 [
   {
-    "time": "2025-08-16T16:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1017.4,
-          "air_temperature": 20.7,
-          "cloud_area_fraction": 93.6,
-          "relative_humidity": 46.7,
-          "wind_from_direction": 323.6,
-          "wind_speed": 7.7
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "clearsky_night"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "partlycloudy_day"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "fair_night"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-08-16T17:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1017.3,
           "air_temperature": 20.2,
-          "cloud_area_fraction": 93.7,
+          "cloud_area_fraction": 90.6,
           "relative_humidity": 44.0,
           "wind_from_direction": 321.7,
           "wind_speed": 6.8
@@ -79,8 +42,8 @@
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1017.1,
-          "air_temperature": 19.5,
-          "cloud_area_fraction": 37.7,
+          "air_temperature": 19.6,
+          "cloud_area_fraction": 35.0,
           "relative_humidity": 49.9,
           "wind_from_direction": 327.4,
           "wind_speed": 5.9
@@ -95,6 +58,43 @@
       "next_1_hours": {
         "summary": {
           "symbol_code": "fair_day"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "clearsky_night"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-08-16T19:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1017.3,
+          "air_temperature": 18.7,
+          "cloud_area_fraction": 0.0,
+          "relative_humidity": 49.7,
+          "wind_from_direction": 325.1,
+          "wind_speed": 3.9
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "clearsky_day"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "clearsky_night"
         },
         "details": {
           "precipitation_amount": 0.0
