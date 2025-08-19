@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1755604800,
-      "main": {
-        "temp": 21.93,
-        "feels_like": 21.72,
-        "temp_min": 21.93,
-        "temp_max": 22.26,
-        "pressure": 1012,
-        "sea_level": 1012,
-        "grnd_level": 1010,
-        "humidity": 59,
-        "temp_kf": -0.33
-      },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "klar himmel",
-          "icon": "01d"
-        }
-      ],
-      "clouds": {
-        "all": 7
-      },
-      "wind": {
-        "speed": 5.77,
-        "deg": 227,
-        "gust": 7.45
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-08-19 12:00:00"
-    },
-    {
       "dt": 1755615600,
       "main": {
         "temp": 22.37,
-        "feels_like": 22.18,
+        "feels_like": 22.2,
         "temp_min": 22.37,
-        "temp_max": 23.24,
+        "temp_max": 23.25,
         "pressure": 1011,
         "sea_level": 1011,
         "grnd_level": 1008,
-        "humidity": 58,
-        "temp_kf": -0.87
+        "humidity": 59,
+        "temp_kf": -0.88
       },
       "weather": [
         {
@@ -1457,6 +1421,42 @@
         "pod": "d"
       },
       "dt_txt": "2025-08-24 09:00:00"
+    },
+    {
+      "dt": 1756036800,
+      "main": {
+        "temp": 17,
+        "feels_like": 16.22,
+        "temp_min": 17,
+        "temp_max": 17,
+        "pressure": 1010,
+        "sea_level": 1010,
+        "grnd_level": 1009,
+        "humidity": 56,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "molnigt",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 72
+      },
+      "wind": {
+        "speed": 3.06,
+        "deg": 255,
+        "gust": 3.41
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-08-24 12:00:00"
     }
   ],
   "city": {
