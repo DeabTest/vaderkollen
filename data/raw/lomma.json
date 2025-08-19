@@ -4,52 +4,16 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1755561600,
-      "main": {
-        "temp": 11.44,
-        "feels_like": 10.65,
-        "temp_min": 11.44,
-        "temp_max": 14.84,
-        "pressure": 1017,
-        "sea_level": 1017,
-        "grnd_level": 1016,
-        "humidity": 77,
-        "temp_kf": -3.4
-      },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "klar himmel",
-          "icon": "01n"
-        }
-      ],
-      "clouds": {
-        "all": 3
-      },
-      "wind": {
-        "speed": 3.44,
-        "deg": 253,
-        "gust": 4.5
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-08-19 00:00:00"
-    },
-    {
       "dt": 1755572400,
       "main": {
         "temp": 12.2,
-        "feels_like": 11.51,
+        "feels_like": 11.56,
         "temp_min": 12.2,
         "temp_max": 13.73,
         "pressure": 1016,
         "sea_level": 1016,
         "grnd_level": 1014,
-        "humidity": 78,
+        "humidity": 80,
         "temp_kf": -1.53
       },
       "weather": [
@@ -79,13 +43,13 @@
       "dt": 1755583200,
       "main": {
         "temp": 15.19,
-        "feels_like": 14.67,
+        "feels_like": 14.7,
         "temp_min": 15.19,
         "temp_max": 17.07,
         "pressure": 1015,
         "sea_level": 1015,
         "grnd_level": 1013,
-        "humidity": 73,
+        "humidity": 74,
         "temp_kf": -1.88
       },
       "weather": [
@@ -1469,6 +1433,42 @@
         "pod": "n"
       },
       "dt_txt": "2025-08-23 21:00:00"
+    },
+    {
+      "dt": 1755993600,
+      "main": {
+        "temp": 12.37,
+        "feels_like": 11.49,
+        "temp_min": 12.37,
+        "temp_max": 12.37,
+        "pressure": 1013,
+        "sea_level": 1013,
+        "grnd_level": 1011,
+        "humidity": 70,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 801,
+          "main": "Clouds",
+          "description": "lätt molnighet",
+          "icon": "02n"
+        }
+      ],
+      "clouds": {
+        "all": 22
+      },
+      "wind": {
+        "speed": 3,
+        "deg": 321,
+        "gust": 4.13
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-08-24 00:00:00"
     }
   ],
   "city": {
