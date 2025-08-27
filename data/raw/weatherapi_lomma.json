@@ -6,23 +6,23 @@
     "lat": 55.6833,
     "lon": 13.0833,
     "tz_id": "Europe/Stockholm",
-    "localtime_epoch": 1756265293,
-    "localtime": "2025-08-27 05:28"
+    "localtime_epoch": 1756267862,
+    "localtime": "2025-08-27 06:11"
   },
   "current": {
-    "last_updated_epoch": 1756264500,
-    "last_updated": "2025-08-27 05:15",
-    "temp_c": 12.1,
-    "temp_f": 53.8,
-    "is_day": 0,
+    "last_updated_epoch": 1756267200,
+    "last_updated": "2025-08-27 06:00",
+    "temp_c": 13.3,
+    "temp_f": 55.9,
+    "is_day": 1,
     "condition": {
       "text": "V\u00e4xlande molnighet",
-      "icon": "//cdn.weatherapi.com/weather/64x64/night/116.png",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
       "code": 1003
     },
-    "wind_mph": 7.6,
-    "wind_kph": 12.2,
-    "wind_degree": 144,
+    "wind_mph": 8.3,
+    "wind_kph": 13.3,
+    "wind_degree": 139,
     "wind_dir": "SE",
     "pressure_mb": 1011.0,
     "pressure_in": 29.85,
@@ -30,19 +30,19 @@
     "precip_in": 0.0,
     "humidity": 100,
     "cloud": 0,
-    "feelslike_c": 10.8,
-    "feelslike_f": 51.5,
+    "feelslike_c": 12.2,
+    "feelslike_f": 53.9,
     "windchill_c": 14.1,
-    "windchill_f": 57.3,
-    "heatindex_c": 14.8,
-    "heatindex_f": 58.6,
-    "dewpoint_c": 11.3,
-    "dewpoint_f": 52.3,
+    "windchill_f": 57.5,
+    "heatindex_c": 14.9,
+    "heatindex_f": 58.9,
+    "dewpoint_c": 11.6,
+    "dewpoint_f": 52.9,
     "vis_km": 10.0,
     "vis_miles": 6.0,
     "uv": 0.0,
-    "gust_mph": 13.9,
-    "gust_kph": 22.3
+    "gust_mph": 14.5,
+    "gust_kph": 23.3
   },
   "forecast": {
     "forecastday": [
@@ -289,8 +289,8 @@
           {
             "time_epoch": 1756263600,
             "time": "2025-08-27 05:00",
-            "temp_c": 12.1,
-            "temp_f": 53.8,
+            "temp_c": 14.8,
+            "temp_f": 58.6,
             "is_day": 0,
             "condition": {
               "text": "V\u00e4xlande molnighet",
@@ -306,8 +306,8 @@
             "precip_mm": 0.0,
             "precip_in": 0.0,
             "snow_cm": 0.0,
-            "humidity": 100,
-            "cloud": 0,
+            "humidity": 79,
+            "cloud": 28,
             "feelslike_c": 14.1,
             "feelslike_f": 57.3,
             "windchill_c": 14.1,
@@ -329,12 +329,12 @@
           {
             "time_epoch": 1756267200,
             "time": "2025-08-27 06:00",
-            "temp_c": 14.9,
-            "temp_f": 58.9,
-            "is_day": 0,
+            "temp_c": 13.3,
+            "temp_f": 55.9,
+            "is_day": 1,
             "condition": {
               "text": "V\u00e4xlande molnighet",
-              "icon": "//cdn.weatherapi.com/weather/64x64/night/116.png",
+              "icon": "//cdn.weatherapi.com/weather/64x64/day/116.png",
               "code": 1003
             },
             "wind_mph": 8.3,
@@ -346,8 +346,8 @@
             "precip_mm": 0.0,
             "precip_in": 0.0,
             "snow_cm": 0.0,
-            "humidity": 81,
-            "cloud": 28,
+            "humidity": 100,
+            "cloud": 0,
             "feelslike_c": 14.1,
             "feelslike_f": 57.5,
             "windchill_c": 14.1,
@@ -364,7 +364,7 @@
             "vis_miles": 6.0,
             "gust_mph": 14.5,
             "gust_kph": 23.3,
-            "uv": 0
+            "uv": 0.0
           },
           {
             "time_epoch": 1756270800,
