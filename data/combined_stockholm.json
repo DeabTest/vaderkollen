@@ -205,8 +205,6 @@
     "desc": "dimma",
     "reliability": "medel",
     "sources_used": [
-      "smhi",
-      "yr",
       "weatherapi",
       "openmeteo"
     ]
@@ -217,7 +215,6 @@
     "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
-      "openweather",
       "smhi",
       "yr",
       "weatherapi",
@@ -226,7 +223,7 @@
   },
   {
     "time": "2025-08-29 22:00:00",
-    "avg_temp": 14.9,
+    "avg_temp": 14.7,
     "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
@@ -238,9 +235,9 @@
   },
   {
     "time": "2025-08-29 23:00:00",
-    "avg_temp": 14.7,
+    "avg_temp": 14.8,
     "desc": null,
-    "reliability": "medel",
+    "reliability": "hög",
     "sources_used": [
       "smhi",
       "yr",
@@ -252,7 +249,7 @@
     "time": "2025-08-30 00:00:00",
     "avg_temp": 14.6,
     "desc": "lätt regn",
-    "reliability": "medel",
+    "reliability": "hög",
     "sources_used": [
       "openweather",
       "smhi",
@@ -374,7 +371,7 @@
   },
   {
     "time": "2025-08-30 10:00:00",
-    "avg_temp": 16.1,
+    "avg_temp": 16.2,
     "desc": "dimma",
     "reliability": "medel",
     "sources_used": [
@@ -423,7 +420,7 @@
   },
   {
     "time": "2025-08-30 14:00:00",
-    "avg_temp": 18.1,
+    "avg_temp": 18.2,
     "desc": "dimma",
     "reliability": "medel",
     "sources_used": [
@@ -460,7 +457,7 @@
   },
   {
     "time": "2025-08-30 17:00:00",
-    "avg_temp": 17.7,
+    "avg_temp": 17.8,
     "desc": "mulet",
     "reliability": "låg",
     "sources_used": [
@@ -472,7 +469,7 @@
   },
   {
     "time": "2025-08-30 18:00:00",
-    "avg_temp": 16.3,
+    "avg_temp": 16.4,
     "desc": "mulet",
     "reliability": "låg",
     "sources_used": [
@@ -497,9 +494,9 @@
   },
   {
     "time": "2025-08-30 20:00:00",
-    "avg_temp": 15.5,
+    "avg_temp": 15.7,
     "desc": "molnigt",
-    "reliability": "låg",
+    "reliability": "medel",
     "sources_used": [
       "smhi",
       "yr",
@@ -605,7 +602,7 @@
     "time": "2025-08-31 05:00:00",
     "avg_temp": 14.0,
     "desc": null,
-    "reliability": "medel",
+    "reliability": "hög",
     "sources_used": [
       "smhi",
       "yr",
@@ -807,7 +804,7 @@
   },
   {
     "time": "2025-08-31 23:00:00",
-    "avg_temp": 14.8,
+    "avg_temp": 14.9,
     "desc": "molnigt",
     "reliability": "medel",
     "sources_used": [
@@ -831,7 +828,7 @@
   {
     "time": "2025-09-01 01:00:00",
     "avg_temp": 14.0,
-    "desc": "lätt regn",
+    "desc": "dimma",
     "reliability": "medel",
     "sources_used": [
       "smhi",
@@ -841,7 +838,7 @@
   {
     "time": "2025-09-01 02:00:00",
     "avg_temp": 13.8,
-    "desc": "lätt regn",
+    "desc": "dimma",
     "reliability": "medel",
     "sources_used": [
       "smhi",
@@ -861,7 +858,7 @@
   },
   {
     "time": "2025-09-01 06:00:00",
-    "avg_temp": 14.9,
+    "avg_temp": 15.0,
     "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
@@ -873,11 +870,12 @@
   },
   {
     "time": "2025-09-01 09:00:00",
-    "avg_temp": 18.2,
+    "avg_temp": 18.7,
     "desc": "växlande molnighet",
     "reliability": "låg",
     "sources_used": [
       "openweather",
+      "smhi",
       "openmeteo"
     ]
   },
@@ -1092,6 +1090,16 @@
     ]
   },
   {
+    "time": "2025-09-03 21:00:00",
+    "avg_temp": 16.1,
+    "desc": "mulet",
+    "reliability": "hög",
+    "sources_used": [
+      "openweather",
+      "openmeteo"
+    ]
+  },
+  {
     "time": "2025-09-04 00:00:00",
     "avg_temp": 16.0,
     "desc": "lätt regn",
@@ -1179,7 +1187,7 @@
     "time": "2025-09-07 00:00:00",
     "avg_temp": 14.8,
     "desc": "halvklart",
-    "reliability": "hög",
+    "reliability": "medel",
     "sources_used": [
       "smhi",
       "yr"
@@ -1187,9 +1195,9 @@
   },
   {
     "time": "2025-09-07 12:00:00",
-    "avg_temp": 20.0,
+    "avg_temp": 19.9,
     "desc": "halvklart",
-    "reliability": "hög",
+    "reliability": "medel",
     "sources_used": [
       "smhi",
       "yr"
@@ -1207,7 +1215,7 @@
   },
   {
     "time": "2025-09-08 12:00:00",
-    "avg_temp": 19.6,
+    "avg_temp": 19.5,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
