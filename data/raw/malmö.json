@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1756652400,
-      "main": {
-        "temp": 21.93,
-        "feels_like": 21.69,
-        "temp_min": 21.93,
-        "temp_max": 22.79,
-        "pressure": 1012,
-        "sea_level": 1012,
-        "grnd_level": 1011,
-        "humidity": 58,
-        "temp_kf": -0.86
-      },
-      "weather": [
-        {
-          "id": 803,
-          "main": "Clouds",
-          "description": "molnigt",
-          "icon": "04d"
-        }
-      ],
-      "clouds": {
-        "all": 77
-      },
-      "wind": {
-        "speed": 4.41,
-        "deg": 166,
-        "gust": 5.51
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-08-31 15:00:00"
-    },
-    {
       "dt": 1756663200,
       "main": {
-        "temp": 21.2,
-        "feels_like": 20.97,
-        "temp_min": 19.74,
-        "temp_max": 21.2,
+        "temp": 21.25,
+        "feels_like": 21,
+        "temp_min": 19.9,
+        "temp_max": 21.25,
         "pressure": 1012,
         "sea_level": 1012,
         "grnd_level": 1011,
-        "humidity": 61,
-        "temp_kf": 1.46
+        "humidity": 60,
+        "temp_kf": 1.35
       },
       "weather": [
         {
@@ -1466,6 +1430,45 @@
         "pod": "d"
       },
       "dt_txt": "2025-09-05 12:00:00"
+    },
+    {
+      "dt": 1757084400,
+      "main": {
+        "temp": 18.73,
+        "feels_like": 18.38,
+        "temp_min": 18.73,
+        "temp_max": 18.73,
+        "pressure": 1013,
+        "sea_level": 1013,
+        "grnd_level": 1012,
+        "humidity": 66,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 7.64,
+        "deg": 222,
+        "gust": 10.79
+      },
+      "visibility": 10000,
+      "pop": 1,
+      "rain": {
+        "3h": 0.99
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-09-05 15:00:00"
     }
   ],
   "city": {
