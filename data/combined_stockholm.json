@@ -51,7 +51,17 @@
   },
   {
     "time": "2025-09-03 05:00:00",
-    "avg_temp": 16.7,
+    "avg_temp": 16.4,
+    "desc": "lätt regnskur",
+    "reliability": "medel",
+    "sources_used": [
+      "weatherapi",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-09-03 06:00:00",
+    "avg_temp": 16.8,
     "desc": "regn",
     "reliability": "medel",
     "sources_used": [
@@ -62,23 +72,10 @@
     ]
   },
   {
-    "time": "2025-09-03 06:00:00",
-    "avg_temp": 16.8,
-    "desc": "något regn",
-    "reliability": "medel",
-    "sources_used": [
-      "openweather",
-      "smhi",
-      "yr",
-      "weatherapi",
-      "openmeteo"
-    ]
-  },
-  {
     "time": "2025-09-03 07:00:00",
-    "avg_temp": 17.4,
+    "avg_temp": 17.2,
     "desc": "molnigt",
-    "reliability": "hög",
+    "reliability": "medel",
     "sources_used": [
       "smhi",
       "yr",
@@ -88,7 +85,7 @@
   },
   {
     "time": "2025-09-03 08:00:00",
-    "avg_temp": 17.9,
+    "avg_temp": 18.0,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
@@ -100,7 +97,7 @@
   },
   {
     "time": "2025-09-03 09:00:00",
-    "avg_temp": 18.3,
+    "avg_temp": 18.4,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
@@ -150,7 +147,7 @@
   },
   {
     "time": "2025-09-03 13:00:00",
-    "avg_temp": 21.8,
+    "avg_temp": 21.7,
     "desc": "lätt molnighet",
     "reliability": "medel",
     "sources_used": [
@@ -162,9 +159,9 @@
   },
   {
     "time": "2025-09-03 14:00:00",
-    "avg_temp": 22.2,
+    "avg_temp": 22.1,
     "desc": "lätt molnighet",
-    "reliability": "hög",
+    "reliability": "medel",
     "sources_used": [
       "smhi",
       "yr",
@@ -187,7 +184,7 @@
   },
   {
     "time": "2025-09-03 16:00:00",
-    "avg_temp": 21.6,
+    "avg_temp": 21.7,
     "desc": "klart",
     "reliability": "medel",
     "sources_used": [
@@ -273,7 +270,7 @@
   },
   {
     "time": "2025-09-03 23:00:00",
-    "avg_temp": 16.5,
+    "avg_temp": 16.4,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
@@ -347,7 +344,7 @@
   },
   {
     "time": "2025-09-04 05:00:00",
-    "avg_temp": 16.8,
+    "avg_temp": 16.7,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
@@ -409,7 +406,7 @@
   },
   {
     "time": "2025-09-04 10:00:00",
-    "avg_temp": 21.0,
+    "avg_temp": 21.1,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
@@ -470,7 +467,7 @@
   },
   {
     "time": "2025-09-04 15:00:00",
-    "avg_temp": 22.0,
+    "avg_temp": 22.1,
     "desc": "lätt molnighet",
     "reliability": "hög",
     "sources_used": [
@@ -495,7 +492,7 @@
   },
   {
     "time": "2025-09-04 17:00:00",
-    "avg_temp": 20.8,
+    "avg_temp": 20.9,
     "desc": "lätt molnighet",
     "reliability": "medel",
     "sources_used": [
@@ -520,7 +517,7 @@
   },
   {
     "time": "2025-09-04 19:00:00",
-    "avg_temp": 18.9,
+    "avg_temp": 18.8,
     "desc": "halvklart",
     "reliability": "låg",
     "sources_used": [
@@ -569,7 +566,7 @@
   },
   {
     "time": "2025-09-04 23:00:00",
-    "avg_temp": 17.4,
+    "avg_temp": 17.3,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
@@ -581,7 +578,7 @@
   },
   {
     "time": "2025-09-05 00:00:00",
-    "avg_temp": 17.2,
+    "avg_temp": 17.1,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
@@ -604,7 +601,7 @@
   },
   {
     "time": "2025-09-05 02:00:00",
-    "avg_temp": 17.0,
+    "avg_temp": 16.9,
     "desc": "molnigt",
     "reliability": "medel",
     "sources_used": [
@@ -695,7 +692,7 @@
   },
   {
     "time": "2025-09-05 10:00:00",
-    "avg_temp": 21.6,
+    "avg_temp": 21.7,
     "desc": "halvklart",
     "reliability": "medel",
     "sources_used": [
@@ -717,7 +714,7 @@
   },
   {
     "time": "2025-09-05 12:00:00",
-    "avg_temp": 23.2,
+    "avg_temp": 23.3,
     "desc": "lätt molnighet",
     "reliability": "medel",
     "sources_used": [
@@ -959,10 +956,11 @@
   },
   {
     "time": "2025-09-08 06:00:00",
-    "avg_temp": 15.6,
-    "desc": "lätt molnighet",
+    "avg_temp": 15.8,
+    "desc": "klar himmel",
     "reliability": "medel",
     "sources_used": [
+      "openweather",
       "smhi",
       "yr",
       "openmeteo"
