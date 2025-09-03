@@ -1,49 +1,12 @@
 [
   {
-    "time": "2025-09-03T08:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1010.1,
-          "air_temperature": 19.4,
-          "cloud_area_fraction": 5.7,
-          "relative_humidity": 72.5,
-          "wind_from_direction": 160.6,
-          "wind_speed": 3.5
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "partlycloudy_day"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "clearsky_day"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "clearsky_day"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-09-03T09:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1010.2,
-          "air_temperature": 21.0,
-          "cloud_area_fraction": 0.7,
+          "air_temperature": 20.9,
+          "cloud_area_fraction": 0.0,
           "relative_humidity": 62.4,
           "wind_from_direction": 164.4,
           "wind_speed": 4.3
@@ -80,7 +43,7 @@
         "details": {
           "air_pressure_at_sea_level": 1010.3,
           "air_temperature": 22.0,
-          "cloud_area_fraction": 3.0,
+          "cloud_area_fraction": 2.3,
           "relative_humidity": 57.8,
           "wind_from_direction": 168.0,
           "wind_speed": 5.0
@@ -103,6 +66,43 @@
       "next_6_hours": {
         "summary": {
           "symbol_code": "fair_day"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-09-03T11:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1009.9,
+          "air_temperature": 23.0,
+          "cloud_area_fraction": 2.3,
+          "relative_humidity": 51.4,
+          "wind_from_direction": 163.0,
+          "wind_speed": 5.6
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "partlycloudy_day"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "clearsky_day"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "partlycloudy_day"
         },
         "details": {
           "precipitation_amount": 0.0
