@@ -6,23 +6,23 @@
     "lat": 59.3333,
     "lon": 18.05,
     "tz_id": "Europe/Stockholm",
-    "localtime_epoch": 1757388538,
-    "localtime": "2025-09-09 05:28"
+    "localtime_epoch": 1757391197,
+    "localtime": "2025-09-09 06:13"
   },
   "current": {
-    "last_updated_epoch": 1757387700,
-    "last_updated": "2025-09-09 05:15",
+    "last_updated_epoch": 1757390400,
+    "last_updated": "2025-09-09 06:00",
     "temp_c": 15.2,
     "temp_f": 59.4,
-    "is_day": 0,
+    "is_day": 1,
     "condition": {
       "text": "Dimma",
-      "icon": "//cdn.weatherapi.com/weather/64x64/night/248.png",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/248.png",
       "code": 1135
     },
-    "wind_mph": 2.7,
-    "wind_kph": 4.3,
-    "wind_degree": 86,
+    "wind_mph": 2.2,
+    "wind_kph": 3.6,
+    "wind_degree": 83,
     "wind_dir": "E",
     "pressure_mb": 1022.0,
     "pressure_in": 30.18,
@@ -32,17 +32,17 @@
     "cloud": 100,
     "feelslike_c": 15.2,
     "feelslike_f": 59.4,
-    "windchill_c": 15.5,
-    "windchill_f": 59.8,
-    "heatindex_c": 14.9,
-    "heatindex_f": 58.8,
-    "dewpoint_c": 13.9,
-    "dewpoint_f": 57.1,
-    "vis_km": 0.4,
+    "windchill_c": 15.4,
+    "windchill_f": 59.7,
+    "heatindex_c": 15.4,
+    "heatindex_f": 59.7,
+    "dewpoint_c": 14.1,
+    "dewpoint_f": 57.5,
+    "vis_km": 0.6,
     "vis_miles": 0.0,
     "uv": 0.0,
-    "gust_mph": 5.6,
-    "gust_kph": 9.1
+    "gust_mph": 4.6,
+    "gust_kph": 7.4
   },
   "forecast": {
     "forecastday": [
@@ -289,13 +289,13 @@
           {
             "time_epoch": 1757386800,
             "time": "2025-09-09 05:00",
-            "temp_c": 15.2,
-            "temp_f": 59.4,
+            "temp_c": 14.9,
+            "temp_f": 58.8,
             "is_day": 0,
             "condition": {
-              "text": "Dimma",
-              "icon": "//cdn.weatherapi.com/weather/64x64/night/248.png",
-              "code": 1135
+              "text": "Klart",
+              "icon": "//cdn.weatherapi.com/weather/64x64/night/113.png",
+              "code": 1000
             },
             "wind_mph": 2.7,
             "wind_kph": 4.3,
@@ -306,8 +306,8 @@
             "precip_mm": 0.0,
             "precip_in": 0.0,
             "snow_cm": 0.0,
-            "humidity": 100,
-            "cloud": 100,
+            "humidity": 94,
+            "cloud": 6,
             "feelslike_c": 15.5,
             "feelslike_f": 59.8,
             "windchill_c": 15.5,
@@ -320,8 +320,8 @@
             "chance_of_rain": 0,
             "will_it_snow": 0,
             "chance_of_snow": 0,
-            "vis_km": 0.4,
-            "vis_miles": 0.0,
+            "vis_km": 10.0,
+            "vis_miles": 6.0,
             "gust_mph": 5.6,
             "gust_kph": 9.1,
             "uv": 0
@@ -329,13 +329,13 @@
           {
             "time_epoch": 1757390400,
             "time": "2025-09-09 06:00",
-            "temp_c": 15.4,
-            "temp_f": 59.7,
-            "is_day": 0,
+            "temp_c": 15.2,
+            "temp_f": 59.4,
+            "is_day": 1,
             "condition": {
-              "text": "Klart",
-              "icon": "//cdn.weatherapi.com/weather/64x64/night/113.png",
-              "code": 1000
+              "text": "Dimma",
+              "icon": "//cdn.weatherapi.com/weather/64x64/day/248.png",
+              "code": 1135
             },
             "wind_mph": 2.2,
             "wind_kph": 3.6,
@@ -346,8 +346,8 @@
             "precip_mm": 0.0,
             "precip_in": 0.0,
             "snow_cm": 0.0,
-            "humidity": 92,
-            "cloud": 13,
+            "humidity": 100,
+            "cloud": 100,
             "feelslike_c": 15.4,
             "feelslike_f": 59.7,
             "windchill_c": 15.4,
@@ -360,11 +360,11 @@
             "chance_of_rain": 0,
             "will_it_snow": 0,
             "chance_of_snow": 0,
-            "vis_km": 10.0,
-            "vis_miles": 6.0,
+            "vis_km": 0.6,
+            "vis_miles": 0.0,
             "gust_mph": 4.6,
             "gust_kph": 7.4,
-            "uv": 0
+            "uv": 0.0
           },
           {
             "time_epoch": 1757394000,
