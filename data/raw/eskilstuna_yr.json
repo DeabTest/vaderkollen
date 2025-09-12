@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-09-12T13:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1010.2,
-          "air_temperature": 20.2,
-          "cloud_area_fraction": 20.9,
-          "relative_humidity": 56.2,
-          "wind_from_direction": 181.4,
-          "wind_speed": 3.4
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "lightrainshowers_day"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "fair_day"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "lightrainshowers_day"
-        },
-        "details": {
-          "precipitation_amount": 0.7
-        }
-      }
-    }
-  },
-  {
     "time": "2025-09-12T14:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1010.5,
-          "air_temperature": 20.1,
+          "air_temperature": 20.2,
           "cloud_area_fraction": 56.0,
           "relative_humidity": 54.7,
           "wind_from_direction": 193.0,
@@ -106,6 +69,43 @@
         },
         "details": {
           "precipitation_amount": 0.9
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-09-12T16:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1011.1,
+          "air_temperature": 19.0,
+          "cloud_area_fraction": 42.5,
+          "relative_humidity": 63.8,
+          "wind_from_direction": 190.4,
+          "wind_speed": 3.0
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "lightrainshowers_night"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "partlycloudy_day"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "lightrainshowers_night"
+        },
+        "details": {
+          "precipitation_amount": 0.8
         }
       }
     }
