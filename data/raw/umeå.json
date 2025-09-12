@@ -4,50 +4,14 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1757635200,
-      "main": {
-        "temp": 16.96,
-        "feels_like": 16.59,
-        "temp_min": 16.23,
-        "temp_max": 16.96,
-        "pressure": 1013,
-        "sea_level": 1013,
-        "grnd_level": 1007,
-        "humidity": 72,
-        "temp_kf": 0.73
-      },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "klar himmel",
-          "icon": "01n"
-        }
-      ],
-      "clouds": {
-        "all": 0
-      },
-      "wind": {
-        "speed": 6.64,
-        "deg": 136,
-        "gust": 15.31
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-09-12 00:00:00"
-    },
-    {
       "dt": 1757646000,
       "main": {
         "temp": 16.28,
         "feels_like": 15.95,
         "temp_min": 14.92,
         "temp_max": 16.28,
-        "pressure": 1013,
-        "sea_level": 1013,
+        "pressure": 1012,
+        "sea_level": 1012,
         "grnd_level": 1007,
         "humidity": 76,
         "temp_kf": 1.36
@@ -1513,6 +1477,45 @@
         "pod": "n"
       },
       "dt_txt": "2025-09-16 21:00:00"
+    },
+    {
+      "dt": 1758067200,
+      "main": {
+        "temp": 11.34,
+        "feels_like": 11.09,
+        "temp_min": 11.34,
+        "temp_max": 11.34,
+        "pressure": 994,
+        "sea_level": 994,
+        "grnd_level": 988,
+        "humidity": 98,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 0.63,
+        "deg": 164,
+        "gust": 0.72
+      },
+      "visibility": 10000,
+      "pop": 0.4,
+      "rain": {
+        "3h": 0.48
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-09-17 00:00:00"
     }
   ],
   "city": {
