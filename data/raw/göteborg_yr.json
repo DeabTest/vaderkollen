@@ -1,14 +1,51 @@
 [
   {
-    "time": "2025-09-12T03:00:00Z",
+    "time": "2025-09-12T04:00:00Z",
     "data": {
       "instant": {
         "details": {
-          "air_pressure_at_sea_level": 1005.4,
-          "air_temperature": 13.9,
-          "cloud_area_fraction": 66.0,
-          "relative_humidity": 81.2,
-          "wind_from_direction": 142.0,
+          "air_pressure_at_sea_level": 1005.5,
+          "air_temperature": 13.8,
+          "cloud_area_fraction": 88.6,
+          "relative_humidity": 83.3,
+          "wind_from_direction": 143.1,
+          "wind_speed": 2.4
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "rainshowersandthunder_day"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "lightrain"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "heavyrainshowersandthunder_day"
+        },
+        "details": {
+          "precipitation_amount": 11.1
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-09-12T05:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1005.6,
+          "air_temperature": 13.6,
+          "cloud_area_fraction": 76.0,
+          "relative_humidity": 90.3,
+          "wind_from_direction": 132.4,
           "wind_speed": 2.8
         }
       },
@@ -20,33 +57,33 @@
       },
       "next_1_hours": {
         "summary": {
-          "symbol_code": "partlycloudy_night"
+          "symbol_code": "rainshowers_day"
         },
         "details": {
-          "precipitation_amount": 0.0
+          "precipitation_amount": 0.5
         }
       },
       "next_6_hours": {
         "summary": {
-          "symbol_code": "heavyrainandthunder"
+          "symbol_code": "heavyrainshowersandthunder_day"
         },
         "details": {
-          "precipitation_amount": 12.3
+          "precipitation_amount": 10.6
         }
       }
     }
   },
   {
-    "time": "2025-09-12T04:00:00Z",
+    "time": "2025-09-12T06:00:00Z",
     "data": {
       "instant": {
         "details": {
-          "air_pressure_at_sea_level": 1005.4,
+          "air_pressure_at_sea_level": 1005.9,
           "air_temperature": 13.8,
-          "cloud_area_fraction": 85.5,
-          "relative_humidity": 87.0,
-          "wind_from_direction": 139.3,
-          "wind_speed": 2.9
+          "cloud_area_fraction": 96.6,
+          "relative_humidity": 88.2,
+          "wind_from_direction": 131.0,
+          "wind_speed": 3.3
         }
       },
       "next_12_hours": {
@@ -57,55 +94,18 @@
       },
       "next_1_hours": {
         "summary": {
-          "symbol_code": "lightrainshowers_night"
+          "symbol_code": "heavyrainandthunder"
         },
         "details": {
-          "precipitation_amount": 0.3
+          "precipitation_amount": 5.0
         }
       },
       "next_6_hours": {
         "summary": {
-          "symbol_code": "heavyrainandthunder"
+          "symbol_code": "heavyrainshowersandthunder_day"
         },
         "details": {
-          "precipitation_amount": 12.8
-        }
-      }
-    }
-  },
-  {
-    "time": "2025-09-12T05:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1005.5,
-          "air_temperature": 13.4,
-          "cloud_area_fraction": 74.0,
-          "relative_humidity": 87.5,
-          "wind_from_direction": 134.1,
-          "wind_speed": 3.0
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "rainshowersandthunder_day"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "heavyrainshowers_day"
-        },
-        "details": {
-          "precipitation_amount": 2.9
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "heavyrainandthunder"
-        },
-        "details": {
-          "precipitation_amount": 12.3
+          "precipitation_amount": 9.7
         }
       }
     }
