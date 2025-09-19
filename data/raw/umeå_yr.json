@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-09-19T17:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1009.4,
-          "air_temperature": 12.2,
-          "cloud_area_fraction": 48.2,
-          "relative_humidity": 86.0,
-          "wind_from_direction": 198.6,
-          "wind_speed": 1.8
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "partlycloudy_night"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "cloudy"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-09-19T18:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1009.2,
-          "air_temperature": 11.0,
+          "air_temperature": 12.1,
           "cloud_area_fraction": 99.9,
           "relative_humidity": 90.2,
           "wind_from_direction": 176.9,
@@ -79,7 +42,7 @@
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1009.2,
-          "air_temperature": 10.3,
+          "air_temperature": 11.4,
           "cloud_area_fraction": 90.7,
           "relative_humidity": 92.0,
           "wind_from_direction": 191.9,
@@ -106,6 +69,43 @@
         },
         "details": {
           "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-09-19T20:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1008.8,
+          "air_temperature": 10.8,
+          "cloud_area_fraction": 97.1,
+          "relative_humidity": 93.3,
+          "wind_from_direction": 127.9,
+          "wind_speed": 0.9
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "rainshowers_day"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "partlycloudy_night"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {
+          "precipitation_amount": 2.0
         }
       }
     }
