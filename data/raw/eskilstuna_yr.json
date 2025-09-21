@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-09-21T10:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 998.6,
-          "air_temperature": 16.9,
-          "cloud_area_fraction": 99.9,
-          "relative_humidity": 81.2,
-          "wind_from_direction": 188.7,
-          "wind_speed": 5.8
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "lightrain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "cloudy"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "partlycloudy_day"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-09-21T11:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 997.9,
-          "air_temperature": 18.5,
+          "air_temperature": 18.1,
           "cloud_area_fraction": 89.3,
           "relative_humidity": 78.3,
           "wind_from_direction": 198.9,
@@ -106,6 +69,43 @@
         },
         "details": {
           "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-09-21T13:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 997.5,
+          "air_temperature": 19.6,
+          "cloud_area_fraction": 94.5,
+          "relative_humidity": 66.1,
+          "wind_from_direction": 222.7,
+          "wind_speed": 6.6
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "lightrainshowers_day"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "cloudy"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {
+          "precipitation_amount": 1.7
         }
       }
     }
