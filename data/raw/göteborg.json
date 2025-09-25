@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1758780000,
-      "main": {
-        "temp": 4.1,
-        "feels_like": 2.71,
-        "temp_min": 4.1,
-        "temp_max": 4.1,
-        "pressure": 1034,
-        "sea_level": 1034,
-        "grnd_level": 1029,
-        "humidity": 79,
-        "temp_kf": 0
-      },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "klar himmel",
-          "icon": "01d"
-        }
-      ],
-      "clouds": {
-        "all": 2
-      },
-      "wind": {
-        "speed": 1.66,
-        "deg": 92,
-        "gust": 1.92
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-09-25 06:00:00"
-    },
-    {
       "dt": 1758790800,
       "main": {
-        "temp": 7.25,
-        "feels_like": 6.49,
-        "temp_min": 7.25,
-        "temp_max": 13.56,
-        "pressure": 1034,
-        "sea_level": 1034,
+        "temp": 7.28,
+        "feels_like": 6.52,
+        "temp_min": 7.28,
+        "temp_max": 13.47,
+        "pressure": 1033,
+        "sea_level": 1033,
         "grnd_level": 1029,
-        "humidity": 72,
-        "temp_kf": -6.31
+        "humidity": 74,
+        "temp_kf": -6.19
       },
       "weather": [
         {
@@ -78,15 +42,15 @@
     {
       "dt": 1758801600,
       "main": {
-        "temp": 13.17,
-        "feels_like": 12.06,
-        "temp_min": 13.17,
+        "temp": 13.2,
+        "feels_like": 12.12,
+        "temp_min": 13.2,
         "temp_max": 17.71,
         "pressure": 1034,
         "sea_level": 1034,
         "grnd_level": 1029,
-        "humidity": 58,
-        "temp_kf": -4.54
+        "humidity": 59,
+        "temp_kf": -4.51
       },
       "weather": [
         {
@@ -1445,6 +1409,45 @@
         "pod": "n"
       },
       "dt_txt": "2025-09-30 03:00:00"
+    },
+    {
+      "dt": 1759212000,
+      "main": {
+        "temp": 9.97,
+        "feels_like": 8.33,
+        "temp_min": 9.97,
+        "temp_max": 9.97,
+        "pressure": 1028,
+        "sea_level": 1028,
+        "grnd_level": 1023,
+        "humidity": 88,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 3.26,
+        "deg": 129,
+        "gust": 7.55
+      },
+      "visibility": 10000,
+      "pop": 0.22,
+      "rain": {
+        "3h": 0.18
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-09-30 06:00:00"
     }
   ],
   "city": {
