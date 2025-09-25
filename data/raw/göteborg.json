@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1758801600,
-      "main": {
-        "temp": 17.08,
-        "feels_like": 16.25,
-        "temp_min": 17.08,
-        "temp_max": 17.15,
-        "pressure": 1034,
-        "sea_level": 1034,
-        "grnd_level": 1029,
-        "humidity": 54,
-        "temp_kf": -0.07
-      },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "klar himmel",
-          "icon": "01d"
-        }
-      ],
-      "clouds": {
-        "all": 0
-      },
-      "wind": {
-        "speed": 1.5,
-        "deg": 260,
-        "gust": 1.59
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-09-25 12:00:00"
-    },
-    {
       "dt": 1758812400,
       "main": {
-        "temp": 16.64,
-        "feels_like": 15.82,
-        "temp_min": 15.76,
-        "temp_max": 16.64,
-        "pressure": 1034,
-        "sea_level": 1034,
+        "temp": 16.42,
+        "feels_like": 15.55,
+        "temp_min": 15.98,
+        "temp_max": 16.42,
+        "pressure": 1033,
+        "sea_level": 1033,
         "grnd_level": 1028,
-        "humidity": 56,
-        "temp_kf": 0.88
+        "humidity": 55,
+        "temp_kf": 0.44
       },
       "weather": [
         {
@@ -78,15 +42,15 @@
     {
       "dt": 1758823200,
       "main": {
-        "temp": 12.12,
-        "feels_like": 11.19,
+        "temp": 11.97,
+        "feels_like": 11.02,
         "temp_min": 9.64,
-        "temp_max": 12.12,
+        "temp_max": 11.97,
         "pressure": 1034,
         "sea_level": 1034,
         "grnd_level": 1028,
         "humidity": 69,
-        "temp_kf": 2.48
+        "temp_kf": 2.33
       },
       "weather": [
         {
@@ -1448,6 +1412,42 @@
         "pod": "d"
       },
       "dt_txt": "2025-09-30 09:00:00"
+    },
+    {
+      "dt": 1759233600,
+      "main": {
+        "temp": 14.95,
+        "feels_like": 14.12,
+        "temp_min": 14.95,
+        "temp_max": 14.95,
+        "pressure": 1033,
+        "sea_level": 1033,
+        "grnd_level": 1027,
+        "humidity": 62,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "mulet",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 3.37,
+        "deg": 158,
+        "gust": 4.79
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-09-30 12:00:00"
     }
   ],
   "city": {
