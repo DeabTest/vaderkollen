@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1759168800,
-      "main": {
-        "temp": 12.07,
-        "feels_like": 11.21,
-        "temp_min": 12.07,
-        "temp_max": 12.07,
-        "pressure": 1028,
-        "sea_level": 1028,
-        "grnd_level": 1027,
-        "humidity": 72,
-        "temp_kf": 0
-      },
-      "weather": [
-        {
-          "id": 802,
-          "main": "Clouds",
-          "description": "växlande molnighet",
-          "icon": "03n"
-        }
-      ],
-      "clouds": {
-        "all": 42
-      },
-      "wind": {
-        "speed": 6.26,
-        "deg": 89,
-        "gust": 10.91
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-09-29 18:00:00"
-    },
-    {
       "dt": 1759179600,
       "main": {
-        "temp": 11.79,
-        "feels_like": 10.85,
-        "temp_min": 11.24,
-        "temp_max": 11.79,
+        "temp": 11.66,
+        "feels_like": 10.84,
+        "temp_min": 11.13,
+        "temp_max": 11.66,
         "pressure": 1028,
         "sea_level": 1028,
         "grnd_level": 1027,
-        "humidity": 70,
-        "temp_kf": 0.55
+        "humidity": 75,
+        "temp_kf": 0.53
       },
       "weather": [
         {
@@ -78,15 +42,15 @@
     {
       "dt": 1759190400,
       "main": {
-        "temp": 10.72,
-        "feels_like": 9.68,
+        "temp": 10.67,
+        "feels_like": 9.67,
         "temp_min": 10.04,
-        "temp_max": 10.72,
+        "temp_max": 10.67,
         "pressure": 1028,
         "sea_level": 1028,
         "grnd_level": 1027,
-        "humidity": 70,
-        "temp_kf": 0.68
+        "humidity": 72,
+        "temp_kf": 0.63
       },
       "weather": [
         {
@@ -1460,6 +1424,45 @@
         "pod": "d"
       },
       "dt_txt": "2025-10-04 15:00:00"
+    },
+    {
+      "dt": 1759600800,
+      "main": {
+        "temp": 10.8,
+        "feels_like": 10.26,
+        "temp_min": 10.8,
+        "temp_max": 10.8,
+        "pressure": 993,
+        "sea_level": 993,
+        "grnd_level": 992,
+        "humidity": 89,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 8.69,
+        "deg": 171,
+        "gust": 11.26
+      },
+      "visibility": 8453,
+      "pop": 1,
+      "rain": {
+        "3h": 1.98
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-10-04 18:00:00"
     }
   ],
   "city": {

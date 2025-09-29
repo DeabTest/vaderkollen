@@ -4,67 +4,28 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1759168800,
-      "main": {
-        "temp": 12.9,
-        "feels_like": 12.26,
-        "temp_min": 12.9,
-        "temp_max": 12.9,
-        "pressure": 1029,
-        "sea_level": 1029,
-        "grnd_level": 1024,
-        "humidity": 77,
-        "temp_kf": 0
-      },
-      "weather": [
-        {
-          "id": 500,
-          "main": "Rain",
-          "description": "lätt regn",
-          "icon": "10n"
-        }
-      ],
-      "clouds": {
-        "all": 100
-      },
-      "wind": {
-        "speed": 3,
-        "deg": 98,
-        "gust": 7.73
-      },
-      "visibility": 10000,
-      "pop": 0.2,
-      "rain": {
-        "3h": 0.12
-      },
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-09-29 18:00:00"
-    },
-    {
       "dt": 1759179600,
       "main": {
-        "temp": 12.82,
-        "feels_like": 12.06,
-        "temp_min": 12.67,
-        "temp_max": 12.82,
+        "temp": 12.29,
+        "feels_like": 11.53,
+        "temp_min": 12.29,
+        "temp_max": 12.38,
         "pressure": 1029,
         "sea_level": 1029,
         "grnd_level": 1025,
-        "humidity": 73,
-        "temp_kf": 0.15
+        "humidity": 75,
+        "temp_kf": -0.09
       },
       "weather": [
         {
-          "id": 804,
+          "id": 802,
           "main": "Clouds",
-          "description": "mulet",
-          "icon": "04n"
+          "description": "växlande molnighet",
+          "icon": "03n"
         }
       ],
       "clouds": {
-        "all": 100
+        "all": 47
       },
       "wind": {
         "speed": 4.34,
@@ -81,26 +42,26 @@
     {
       "dt": 1759190400,
       "main": {
-        "temp": 10.48,
-        "feels_like": 9.59,
+        "temp": 10.26,
+        "feels_like": 9.35,
         "temp_min": 9.27,
-        "temp_max": 10.48,
+        "temp_max": 10.26,
         "pressure": 1030,
         "sea_level": 1030,
         "grnd_level": 1025,
         "humidity": 77,
-        "temp_kf": 1.21
+        "temp_kf": 0.99
       },
       "weather": [
         {
-          "id": 803,
+          "id": 802,
           "main": "Clouds",
-          "description": "molnigt",
-          "icon": "04n"
+          "description": "växlande molnighet",
+          "icon": "03n"
         }
       ],
       "clouds": {
-        "all": 71
+        "all": 45
       },
       "wind": {
         "speed": 3.24,
@@ -1469,6 +1430,45 @@
         "pod": "d"
       },
       "dt_txt": "2025-10-04 15:00:00"
+    },
+    {
+      "dt": 1759600800,
+      "main": {
+        "temp": 8.43,
+        "feels_like": 5.17,
+        "temp_min": 8.43,
+        "temp_max": 8.43,
+        "pressure": 994,
+        "sea_level": 994,
+        "grnd_level": 989,
+        "humidity": 87,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 6.22,
+        "deg": 117,
+        "gust": 12.67
+      },
+      "visibility": 10000,
+      "pop": 1,
+      "rain": {
+        "3h": 1.08
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-10-04 18:00:00"
     }
   ],
   "city": {
