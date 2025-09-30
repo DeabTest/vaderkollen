@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1759266000,
-      "main": {
-        "temp": 9.44,
-        "feels_like": 7.48,
-        "temp_min": 7.67,
-        "temp_max": 9.44,
-        "pressure": 1033,
-        "sea_level": 1033,
-        "grnd_level": 1031,
-        "humidity": 87,
-        "temp_kf": 1.77
-      },
-      "weather": [
-        {
-          "id": 801,
-          "main": "Clouds",
-          "description": "lätt molnighet",
-          "icon": "02n"
-        }
-      ],
-      "clouds": {
-        "all": 18
-      },
-      "wind": {
-        "speed": 3.66,
-        "deg": 71,
-        "gust": 5.01
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-09-30 21:00:00"
-    },
-    {
       "dt": 1759276800,
       "main": {
         "temp": 8.84,
         "feels_like": 6.73,
-        "temp_min": 7.65,
+        "temp_min": 7.63,
         "temp_max": 8.84,
-        "pressure": 1033,
-        "sea_level": 1033,
+        "pressure": 1032,
+        "sea_level": 1032,
         "grnd_level": 1031,
         "humidity": 87,
-        "temp_kf": 1.19
+        "temp_kf": 1.21
       },
       "weather": [
         {
@@ -1493,6 +1457,45 @@
         "pod": "n"
       },
       "dt_txt": "2025-10-05 18:00:00"
+    },
+    {
+      "dt": 1759698000,
+      "main": {
+        "temp": 12.5,
+        "feels_like": 12.26,
+        "temp_min": 12.5,
+        "temp_max": 12.5,
+        "pressure": 985,
+        "sea_level": 985,
+        "grnd_level": 984,
+        "humidity": 94,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 98
+      },
+      "wind": {
+        "speed": 4.01,
+        "deg": 42,
+        "gust": 7.5
+      },
+      "visibility": 10000,
+      "pop": 0.96,
+      "rain": {
+        "3h": 0.9
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-10-05 21:00:00"
     }
   ],
   "city": {
