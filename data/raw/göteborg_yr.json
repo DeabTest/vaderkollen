@@ -1,52 +1,15 @@
 [
   {
-    "time": "2025-10-01T09:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1035.4,
-          "air_temperature": 11.0,
-          "cloud_area_fraction": 0.1,
-          "relative_humidity": 73.5,
-          "wind_from_direction": 126.2,
-          "wind_speed": 2.7
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "fair_day"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "clearsky_day"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "clearsky_day"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-10-01T10:00:00Z",
     "data": {
       "instant": {
         "details": {
-          "air_pressure_at_sea_level": 1035.3,
-          "air_temperature": 12.5,
-          "cloud_area_fraction": 0.6,
-          "relative_humidity": 66.8,
-          "wind_from_direction": 133.3,
-          "wind_speed": 2.7
+          "air_pressure_at_sea_level": 1035.2,
+          "air_temperature": 12.4,
+          "cloud_area_fraction": 0.4,
+          "relative_humidity": 67.2,
+          "wind_from_direction": 132.3,
+          "wind_speed": 2.8
         }
       },
       "next_12_hours": {
@@ -78,17 +41,17 @@
     "data": {
       "instant": {
         "details": {
-          "air_pressure_at_sea_level": 1035.1,
-          "air_temperature": 13.6,
-          "cloud_area_fraction": 3.7,
-          "relative_humidity": 60.8,
-          "wind_from_direction": 137.6,
-          "wind_speed": 2.6
+          "air_pressure_at_sea_level": 1034.8,
+          "air_temperature": 13.5,
+          "cloud_area_fraction": 2.8,
+          "relative_humidity": 61.5,
+          "wind_from_direction": 136.8,
+          "wind_speed": 2.5
         }
       },
       "next_12_hours": {
         "summary": {
-          "symbol_code": "fair_day"
+          "symbol_code": "partlycloudy_day"
         },
         "details": {}
       },
@@ -103,6 +66,43 @@
       "next_6_hours": {
         "summary": {
           "symbol_code": "fair_day"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-10-01T12:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1034.4,
+          "air_temperature": 14.4,
+          "cloud_area_fraction": 3.4,
+          "relative_humidity": 55.6,
+          "wind_from_direction": 132.9,
+          "wind_speed": 2.5
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "partlycloudy_day"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "clearsky_day"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "partlycloudy_day"
         },
         "details": {
           "precipitation_amount": 0.0
