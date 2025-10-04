@@ -4,56 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1759568400,
-      "main": {
-        "temp": 8.96,
-        "feels_like": 5.24,
-        "temp_min": 8.96,
-        "temp_max": 9.21,
-        "pressure": 1012,
-        "sea_level": 1012,
-        "grnd_level": 1005,
-        "humidity": 81,
-        "temp_kf": -0.25
-      },
-      "weather": [
-        {
-          "id": 500,
-          "main": "Rain",
-          "description": "lätt regn",
-          "icon": "10d"
-        }
-      ],
-      "clouds": {
-        "all": 75
-      },
-      "wind": {
-        "speed": 8.29,
-        "deg": 154,
-        "gust": 14.12
-      },
-      "visibility": 10000,
-      "pop": 0.42,
-      "rain": {
-        "3h": 0.24
-      },
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-10-04 09:00:00"
-    },
-    {
       "dt": 1759579200,
       "main": {
         "temp": 9.34,
         "feels_like": 5.85,
         "temp_min": 9.34,
-        "temp_max": 10.11,
+        "temp_max": 10.1,
         "pressure": 1011,
         "sea_level": 1011,
         "grnd_level": 1003,
         "humidity": 79,
-        "temp_kf": -0.77
+        "temp_kf": -0.76
       },
       "weather": [
         {
@@ -1508,6 +1469,42 @@
         "pod": "d"
       },
       "dt_txt": "2025-10-09 06:00:00"
+    },
+    {
+      "dt": 1760000400,
+      "main": {
+        "temp": 9.84,
+        "feels_like": 7.88,
+        "temp_min": 9.84,
+        "temp_max": 9.84,
+        "pressure": 1008,
+        "sea_level": 1008,
+        "grnd_level": 1002,
+        "humidity": 74,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "mulet",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 3.84,
+        "deg": 259,
+        "gust": 12.22
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-10-09 09:00:00"
     }
   ],
   "city": {
