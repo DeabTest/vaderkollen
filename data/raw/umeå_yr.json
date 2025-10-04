@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-10-04T19:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1004.1,
-          "air_temperature": 9.3,
-          "cloud_area_fraction": 100.0,
-          "relative_humidity": 70.1,
-          "wind_from_direction": 132.5,
-          "wind_speed": 7.3
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "lightrain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "cloudy"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "cloudy"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-10-04T20:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1003.5,
-          "air_temperature": 9.1,
+          "air_temperature": 9.2,
           "cloud_area_fraction": 100.0,
           "relative_humidity": 69.1,
           "wind_from_direction": 132.3,
@@ -106,6 +69,43 @@
         },
         "details": {
           "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-10-04T22:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1002.4,
+          "air_temperature": 8.7,
+          "cloud_area_fraction": 100.0,
+          "relative_humidity": 72.7,
+          "wind_from_direction": 126.7,
+          "wind_speed": 7.2
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "cloudy"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "lightrain"
+        },
+        "details": {
+          "precipitation_amount": 0.6
         }
       }
     }
