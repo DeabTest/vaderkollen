@@ -171,12 +171,10 @@
   },
   {
     "time": "2025-10-10 17:00:00",
-    "avg_temp": 14.2,
+    "avg_temp": 14.4,
     "desc": "mulet",
     "reliability": "hög",
     "sources_used": [
-      "smhi",
-      "yr",
       "weatherapi",
       "openmeteo"
     ]
@@ -187,7 +185,6 @@
     "desc": "molnigt",
     "reliability": "hög",
     "sources_used": [
-      "openweather",
       "smhi",
       "yr",
       "weatherapi",
@@ -196,8 +193,8 @@
   },
   {
     "time": "2025-10-10 19:00:00",
-    "avg_temp": 14.1,
-    "desc": "molnigt",
+    "avg_temp": 13.9,
+    "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
       "smhi",
@@ -381,7 +378,7 @@
   },
   {
     "time": "2025-10-11 10:00:00",
-    "avg_temp": 13.5,
+    "avg_temp": 13.6,
     "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
@@ -405,7 +402,7 @@
   },
   {
     "time": "2025-10-11 12:00:00",
-    "avg_temp": 14.3,
+    "avg_temp": 14.2,
     "desc": "mulet",
     "reliability": "hög",
     "sources_used": [
@@ -504,7 +501,7 @@
   },
   {
     "time": "2025-10-11 20:00:00",
-    "avg_temp": 13.2,
+    "avg_temp": 13.1,
     "desc": "dimma",
     "reliability": "medel",
     "sources_used": [
@@ -712,8 +709,8 @@
   },
   {
     "time": "2025-10-12 14:00:00",
-    "avg_temp": 16.0,
-    "desc": "halvklart",
+    "avg_temp": 15.9,
+    "desc": "lätt molnighet",
     "reliability": "hög",
     "sources_used": [
       "smhi",
@@ -735,7 +732,7 @@
   },
   {
     "time": "2025-10-12 16:00:00",
-    "avg_temp": 14.5,
+    "avg_temp": 14.4,
     "desc": "klart",
     "reliability": "låg",
     "sources_used": [
@@ -780,7 +777,7 @@
   },
   {
     "time": "2025-10-12 20:00:00",
-    "avg_temp": 9.4,
+    "avg_temp": 9.3,
     "desc": "klart",
     "reliability": "medel",
     "sources_used": [
@@ -827,7 +824,7 @@
     "time": "2025-10-13 00:00:00",
     "avg_temp": 6.6,
     "desc": "växlande molnighet",
-    "reliability": "hög",
+    "reliability": "medel",
     "sources_used": [
       "openweather",
       "smhi",
@@ -1068,9 +1065,10 @@
   {
     "time": "2025-10-15 18:00:00",
     "avg_temp": 11.8,
-    "desc": "dimma",
+    "desc": "växlande molnighet",
     "reliability": "hög",
     "sources_used": [
+      "openweather",
       "smhi",
       "yr",
       "openmeteo"
