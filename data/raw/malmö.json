@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1760799600,
-      "main": {
-        "temp": 9.93,
-        "feels_like": 7.89,
-        "temp_min": 8.88,
-        "temp_max": 9.93,
-        "pressure": 1027,
-        "sea_level": 1027,
-        "grnd_level": 1026,
-        "humidity": 56,
-        "temp_kf": 1.05
-      },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "klar himmel",
-          "icon": "01d"
-        }
-      ],
-      "clouds": {
-        "all": 1
-      },
-      "wind": {
-        "speed": 4.05,
-        "deg": 336,
-        "gust": 5.1
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-10-18 15:00:00"
-    },
-    {
       "dt": 1760810400,
       "main": {
-        "temp": 8.61,
-        "feels_like": 6.99,
-        "temp_min": 5.98,
-        "temp_max": 8.61,
+        "temp": 8.63,
+        "feels_like": 7.01,
+        "temp_min": 6.04,
+        "temp_max": 8.63,
         "pressure": 1027,
         "sea_level": 1027,
         "grnd_level": 1026,
-        "humidity": 58,
-        "temp_kf": 2.63
+        "humidity": 60,
+        "temp_kf": 2.59
       },
       "weather": [
         {
@@ -85,7 +49,7 @@
         "pressure": 1027,
         "sea_level": 1027,
         "grnd_level": 1026,
-        "humidity": 62,
+        "humidity": 63,
         "temp_kf": 1.65
       },
       "weather": [
@@ -1478,6 +1442,45 @@
         "pod": "d"
       },
       "dt_txt": "2025-10-23 12:00:00"
+    },
+    {
+      "dt": 1761231600,
+      "main": {
+        "temp": 12.05,
+        "feels_like": 11.77,
+        "temp_min": 12.05,
+        "temp_max": 12.05,
+        "pressure": 999,
+        "sea_level": 999,
+        "grnd_level": 997,
+        "humidity": 94,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 501,
+          "main": "Rain",
+          "description": "något regn",
+          "icon": "10d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 8.97,
+        "deg": 144,
+        "gust": 15.13
+      },
+      "visibility": 4736,
+      "pop": 1,
+      "rain": {
+        "3h": 5.37
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-10-23 15:00:00"
     }
   ],
   "city": {
