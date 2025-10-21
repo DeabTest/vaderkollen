@@ -1,42 +1,5 @@
 [
   {
-    "time": "2025-10-21T19:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 998.6,
-          "air_temperature": 10.1,
-          "cloud_area_fraction": 100.0,
-          "relative_humidity": 86.3,
-          "wind_from_direction": 153.6,
-          "wind_speed": 6.8
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "lightrain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "lightrain"
-        },
-        "details": {
-          "precipitation_amount": 0.2
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "lightrain"
-        },
-        "details": {
-          "precipitation_amount": 0.5
-        }
-      }
-    }
-  },
-  {
     "time": "2025-10-21T20:00:00Z",
     "data": {
       "instant": {
@@ -79,11 +42,48 @@
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 998.4,
-          "air_temperature": 10.4,
+          "air_temperature": 10.3,
           "cloud_area_fraction": 100.0,
           "relative_humidity": 84.7,
           "wind_from_direction": 158.5,
           "wind_speed": 6.4
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "lightrain"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "cloudy"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "cloudy"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-10-21T22:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 998.3,
+          "air_temperature": 10.6,
+          "cloud_area_fraction": 100.0,
+          "relative_humidity": 82.1,
+          "wind_from_direction": 161.4,
+          "wind_speed": 6.3
         }
       },
       "next_12_hours": {

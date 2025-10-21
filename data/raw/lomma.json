@@ -6,15 +6,15 @@
     {
       "dt": 1761080400,
       "main": {
-        "temp": 12.39,
-        "feels_like": 12.06,
-        "temp_min": 12.28,
-        "temp_max": 12.39,
+        "temp": 12.44,
+        "feels_like": 12.17,
+        "temp_min": 12.29,
+        "temp_max": 12.44,
         "pressure": 994,
         "sea_level": 994,
         "grnd_level": 993,
-        "humidity": 91,
-        "temp_kf": 0.11
+        "humidity": 93,
+        "temp_kf": 0.15
       },
       "weather": [
         {
@@ -25,7 +25,7 @@
         }
       ],
       "clouds": {
-        "all": 96
+        "all": 90
       },
       "wind": {
         "speed": 8.27,
@@ -44,6 +44,45 @@
     },
     {
       "dt": 1761091200,
+      "main": {
+        "temp": 12.28,
+        "feels_like": 11.99,
+        "temp_min": 11.96,
+        "temp_max": 12.28,
+        "pressure": 995,
+        "sea_level": 995,
+        "grnd_level": 994,
+        "humidity": 93,
+        "temp_kf": 0.32
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 90
+      },
+      "wind": {
+        "speed": 6.9,
+        "deg": 203,
+        "gust": 10.99
+      },
+      "visibility": 10000,
+      "pop": 1,
+      "rain": {
+        "3h": 0.86
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-10-22 00:00:00"
+    },
+    {
+      "dt": 1761102000,
       "main": {
         "temp": 12.1,
         "feels_like": 11.79,
@@ -64,46 +103,7 @@
         }
       ],
       "clouds": {
-        "all": 94
-      },
-      "wind": {
-        "speed": 6.9,
-        "deg": 203,
-        "gust": 10.99
-      },
-      "visibility": 10000,
-      "pop": 1,
-      "rain": {
-        "3h": 0.86
-      },
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-10-22 00:00:00"
-    },
-    {
-      "dt": 1761102000,
-      "main": {
-        "temp": 11.93,
-        "feels_like": 11.61,
-        "temp_min": 11.93,
-        "temp_max": 11.93,
-        "pressure": 996,
-        "sea_level": 996,
-        "grnd_level": 994,
-        "humidity": 93,
-        "temp_kf": 0
-      },
-      "weather": [
-        {
-          "id": 500,
-          "main": "Rain",
-          "description": "lätt regn",
-          "icon": "10n"
-        }
-      ],
-      "clouds": {
-        "all": 100
+        "all": 97
       },
       "wind": {
         "speed": 6.48,
