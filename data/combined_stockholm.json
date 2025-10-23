@@ -172,6 +172,16 @@
   {
     "time": "2025-10-23 17:00:00",
     "avg_temp": 11.2,
+    "desc": "fuktdis",
+    "reliability": "medel",
+    "sources_used": [
+      "weatherapi",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-10-23 18:00:00",
+    "avg_temp": 11.2,
     "desc": null,
     "reliability": "medel",
     "sources_used": [
@@ -182,22 +192,9 @@
     ]
   },
   {
-    "time": "2025-10-23 18:00:00",
-    "avg_temp": 11.1,
-    "desc": "molnigt",
-    "reliability": "medel",
-    "sources_used": [
-      "openweather",
-      "smhi",
-      "yr",
-      "weatherapi",
-      "openmeteo"
-    ]
-  },
-  {
     "time": "2025-10-23 19:00:00",
-    "avg_temp": 11.2,
-    "desc": "regn",
+    "avg_temp": 11.0,
+    "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
       "smhi",
@@ -208,7 +205,7 @@
   },
   {
     "time": "2025-10-23 20:00:00",
-    "avg_temp": 10.9,
+    "avg_temp": 11.1,
     "desc": null,
     "reliability": "hög",
     "sources_used": [
@@ -221,7 +218,7 @@
   {
     "time": "2025-10-23 21:00:00",
     "avg_temp": 10.9,
-    "desc": "molnigt",
+    "desc": "mulet",
     "reliability": "hög",
     "sources_used": [
       "openweather",
@@ -245,7 +242,7 @@
   },
   {
     "time": "2025-10-23 23:00:00",
-    "avg_temp": 10.7,
+    "avg_temp": 10.8,
     "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
@@ -294,7 +291,7 @@
   },
   {
     "time": "2025-10-24 03:00:00",
-    "avg_temp": 10.5,
+    "avg_temp": 10.6,
     "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
@@ -307,7 +304,7 @@
   },
   {
     "time": "2025-10-24 04:00:00",
-    "avg_temp": 10.3,
+    "avg_temp": 10.4,
     "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
@@ -319,7 +316,7 @@
   },
   {
     "time": "2025-10-24 05:00:00",
-    "avg_temp": 10.3,
+    "avg_temp": 10.4,
     "desc": null,
     "reliability": "hög",
     "sources_used": [
@@ -331,7 +328,7 @@
   },
   {
     "time": "2025-10-24 06:00:00",
-    "avg_temp": 10.4,
+    "avg_temp": 10.5,
     "desc": "mulet",
     "reliability": "hög",
     "sources_used": [
@@ -368,7 +365,7 @@
   },
   {
     "time": "2025-10-24 09:00:00",
-    "avg_temp": 10.7,
+    "avg_temp": 10.6,
     "desc": "lätt regn",
     "reliability": "hög",
     "sources_used": [
@@ -393,7 +390,7 @@
   },
   {
     "time": "2025-10-24 11:00:00",
-    "avg_temp": 10.5,
+    "avg_temp": 10.6,
     "desc": null,
     "reliability": "hög",
     "sources_used": [
@@ -405,7 +402,7 @@
   },
   {
     "time": "2025-10-24 12:00:00",
-    "avg_temp": 10.5,
+    "avg_temp": 10.6,
     "desc": "lätt regn",
     "reliability": "hög",
     "sources_used": [
@@ -418,8 +415,8 @@
   },
   {
     "time": "2025-10-24 13:00:00",
-    "avg_temp": 10.5,
-    "desc": null,
+    "avg_temp": 10.6,
+    "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
       "smhi",
@@ -442,7 +439,7 @@
   },
   {
     "time": "2025-10-24 15:00:00",
-    "avg_temp": 10.5,
+    "avg_temp": 10.6,
     "desc": "lätt regn",
     "reliability": "hög",
     "sources_used": [
@@ -587,7 +584,7 @@
   },
   {
     "time": "2025-10-25 03:00:00",
-    "avg_temp": 10.0,
+    "avg_temp": 10.1,
     "desc": "mulet",
     "reliability": "låg",
     "sources_used": [
@@ -621,7 +618,7 @@
   },
   {
     "time": "2025-10-25 06:00:00",
-    "avg_temp": 10.0,
+    "avg_temp": 10.1,
     "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
@@ -721,7 +718,7 @@
   },
   {
     "time": "2025-10-25 15:00:00",
-    "avg_temp": 10.2,
+    "avg_temp": 10.3,
     "desc": "lätt regn",
     "reliability": "låg",
     "sources_used": [
@@ -753,7 +750,7 @@
   },
   {
     "time": "2025-10-25 18:00:00",
-    "avg_temp": 9.8,
+    "avg_temp": 9.9,
     "desc": "lätt regn",
     "reliability": "medel",
     "sources_used": [
@@ -839,7 +836,7 @@
   },
   {
     "time": "2025-10-26 06:00:00",
-    "avg_temp": 7.2,
+    "avg_temp": 7.1,
     "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
@@ -1059,10 +1056,11 @@
   },
   {
     "time": "2025-10-28 18:00:00",
-    "avg_temp": 6.5,
-    "desc": "dimma",
-    "reliability": "hög",
+    "avg_temp": 6.1,
+    "desc": "molnigt",
+    "reliability": "medel",
     "sources_used": [
+      "openweather",
       "smhi",
       "yr",
       "openmeteo"
