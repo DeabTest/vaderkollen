@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-10-23T13:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 989.8,
-          "air_temperature": 12.0,
-          "cloud_area_fraction": 99.9,
-          "relative_humidity": 73.4,
-          "wind_from_direction": 97.8,
-          "wind_speed": 5.1
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "cloudy"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {
-          "precipitation_amount": 1.3
-        }
-      }
-    }
-  },
-  {
     "time": "2025-10-23T14:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 989.0,
-          "air_temperature": 11.8,
+          "air_temperature": 11.9,
           "cloud_area_fraction": 99.4,
           "relative_humidity": 74.7,
           "wind_from_direction": 87.1,
@@ -106,6 +69,43 @@
         },
         "details": {
           "precipitation_amount": 2.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-10-23T16:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 987.9,
+          "air_temperature": 11.6,
+          "cloud_area_fraction": 100.0,
+          "relative_humidity": 75.5,
+          "wind_from_direction": 85.1,
+          "wind_speed": 6.2
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "lightrain"
+        },
+        "details": {
+          "precipitation_amount": 0.2
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {
+          "precipitation_amount": 3.0
         }
       }
     }
