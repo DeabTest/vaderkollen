@@ -41,7 +41,7 @@
   },
   {
     "time": "2025-10-24 04:00:00",
-    "avg_temp": 5.4,
+    "avg_temp": 6.8,
     "desc": "klart",
     "reliability": "låg",
     "sources_used": [
@@ -51,7 +51,7 @@
   },
   {
     "time": "2025-10-24 05:00:00",
-    "avg_temp": 6.6,
+    "avg_temp": 5.1,
     "desc": "klart",
     "reliability": "låg",
     "sources_used": [
@@ -91,12 +91,10 @@
   },
   {
     "time": "2025-10-24 09:00:00",
-    "avg_temp": 7.7,
-    "desc": "dimma",
+    "avg_temp": 7.4,
+    "desc": "soligt",
     "reliability": "medel",
     "sources_used": [
-      "smhi",
-      "yr",
       "weatherapi",
       "openmeteo"
     ]
@@ -115,7 +113,7 @@
   },
   {
     "time": "2025-10-24 11:00:00",
-    "avg_temp": 9.4,
+    "avg_temp": 9.3,
     "desc": "dimma",
     "reliability": "låg",
     "sources_used": [
@@ -140,7 +138,7 @@
   },
   {
     "time": "2025-10-24 13:00:00",
-    "avg_temp": 10.3,
+    "avg_temp": 10.2,
     "desc": "dimma",
     "reliability": "låg",
     "sources_used": [
@@ -164,7 +162,7 @@
   },
   {
     "time": "2025-10-24 15:00:00",
-    "avg_temp": 9.8,
+    "avg_temp": 9.9,
     "desc": "mulet",
     "reliability": "låg",
     "sources_used": [
@@ -251,7 +249,7 @@
   },
   {
     "time": "2025-10-24 22:00:00",
-    "avg_temp": 8.0,
+    "avg_temp": 7.9,
     "desc": "mulet",
     "reliability": "låg",
     "sources_used": [
@@ -594,7 +592,7 @@
   },
   {
     "time": "2025-10-26 02:00:00",
-    "avg_temp": 7.5,
+    "avg_temp": 7.6,
     "desc": null,
     "reliability": "hög",
     "sources_used": [
@@ -605,7 +603,7 @@
   },
   {
     "time": "2025-10-26 03:00:00",
-    "avg_temp": 7.9,
+    "avg_temp": 8.0,
     "desc": "lätt regn",
     "reliability": "medel",
     "sources_used": [
@@ -617,7 +615,7 @@
   },
   {
     "time": "2025-10-26 04:00:00",
-    "avg_temp": 7.6,
+    "avg_temp": 7.7,
     "desc": null,
     "reliability": "hög",
     "sources_used": [
@@ -639,7 +637,7 @@
   },
   {
     "time": "2025-10-26 06:00:00",
-    "avg_temp": 8.0,
+    "avg_temp": 8.1,
     "desc": "lätt regn",
     "reliability": "medel",
     "sources_used": [
@@ -651,7 +649,7 @@
   },
   {
     "time": "2025-10-26 07:00:00",
-    "avg_temp": 7.8,
+    "avg_temp": 7.9,
     "desc": null,
     "reliability": "hög",
     "sources_used": [
@@ -673,7 +671,7 @@
   },
   {
     "time": "2025-10-26 09:00:00",
-    "avg_temp": 8.0,
+    "avg_temp": 8.1,
     "desc": "lätt regn",
     "reliability": "hög",
     "sources_used": [
@@ -696,7 +694,7 @@
   },
   {
     "time": "2025-10-26 11:00:00",
-    "avg_temp": 8.1,
+    "avg_temp": 8.0,
     "desc": null,
     "reliability": "hög",
     "sources_used": [
@@ -707,7 +705,7 @@
   },
   {
     "time": "2025-10-26 12:00:00",
-    "avg_temp": 8.2,
+    "avg_temp": 8.1,
     "desc": "lätt regn",
     "reliability": "hög",
     "sources_used": [
@@ -719,11 +717,12 @@
   },
   {
     "time": "2025-10-26 13:00:00",
-    "avg_temp": 8.2,
+    "avg_temp": 8.1,
     "desc": null,
     "reliability": "hög",
     "sources_used": [
       "smhi",
+      "yr",
       "openmeteo"
     ]
   },
@@ -734,6 +733,7 @@
     "reliability": "hög",
     "sources_used": [
       "smhi",
+      "yr",
       "openmeteo"
     ]
   },
@@ -745,12 +745,35 @@
     "sources_used": [
       "openweather",
       "smhi",
+      "yr",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-10-26 16:00:00",
+    "avg_temp": 7.9,
+    "desc": null,
+    "reliability": "hög",
+    "sources_used": [
+      "smhi",
+      "yr",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-10-26 17:00:00",
+    "avg_temp": 7.9,
+    "desc": null,
+    "reliability": "hög",
+    "sources_used": [
+      "smhi",
+      "yr",
       "openmeteo"
     ]
   },
   {
     "time": "2025-10-26 18:00:00",
-    "avg_temp": 7.4,
+    "avg_temp": 7.5,
     "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
@@ -1004,9 +1027,9 @@
   },
   {
     "time": "2025-10-29 18:00:00",
-    "avg_temp": 3.7,
+    "avg_temp": 3.5,
     "desc": "dimma",
-    "reliability": "hög",
+    "reliability": "medel",
     "sources_used": [
       "smhi",
       "yr",
