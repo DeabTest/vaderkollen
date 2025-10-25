@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-10-25T14:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 996.6,
-          "air_temperature": 7.5,
-          "cloud_area_fraction": 100.0,
-          "relative_humidity": 95.8,
-          "wind_from_direction": 59.7,
-          "wind_speed": 6.4
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "heavyrain"
-        },
-        "details": {
-          "precipitation_amount": 1.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {
-          "precipitation_amount": 3.9
-        }
-      }
-    }
-  },
-  {
     "time": "2025-10-25T15:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 996.2,
-          "air_temperature": 7.6,
+          "air_temperature": 7.5,
           "cloud_area_fraction": 100.0,
           "relative_humidity": 95.8,
           "wind_from_direction": 59.5,
@@ -106,6 +69,43 @@
         },
         "details": {
           "precipitation_amount": 2.4
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-10-25T17:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 995.9,
+          "air_temperature": 7.7,
+          "cloud_area_fraction": 100.0,
+          "relative_humidity": 96.4,
+          "wind_from_direction": 63.2,
+          "wind_speed": 5.5
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {
+          "precipitation_amount": 0.5
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {
+          "precipitation_amount": 1.9
         }
       }
     }
