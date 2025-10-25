@@ -1,42 +1,5 @@
 [
   {
-    "time": "2025-10-25T11:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 990.6,
-          "air_temperature": 10.2,
-          "cloud_area_fraction": 100.0,
-          "relative_humidity": 81.3,
-          "wind_from_direction": 190.8,
-          "wind_speed": 6.8
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "cloudy"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {
-          "precipitation_amount": 3.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-10-25T12:00:00Z",
     "data": {
       "instant": {
@@ -79,7 +42,7 @@
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 989.6,
-          "air_temperature": 10.1,
+          "air_temperature": 10.0,
           "cloud_area_fraction": 100.0,
           "relative_humidity": 84.7,
           "wind_from_direction": 190.3,
@@ -106,6 +69,43 @@
         },
         "details": {
           "precipitation_amount": 5.6
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-10-25T14:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 989.3,
+          "air_temperature": 9.9,
+          "cloud_area_fraction": 100.0,
+          "relative_humidity": 85.4,
+          "wind_from_direction": 188.2,
+          "wind_speed": 7.4
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {
+          "precipitation_amount": 0.7
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "heavyrain"
+        },
+        "details": {
+          "precipitation_amount": 6.5
         }
       }
     }
