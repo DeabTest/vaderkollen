@@ -4,42 +4,6 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1761674400,
-      "main": {
-        "temp": 4.96,
-        "feels_like": 3.95,
-        "temp_min": 4.96,
-        "temp_max": 5.74,
-        "pressure": 991,
-        "sea_level": 991,
-        "grnd_level": 986,
-        "humidity": 93,
-        "temp_kf": -0.78
-      },
-      "weather": [
-        {
-          "id": 803,
-          "main": "Clouds",
-          "description": "molnigt",
-          "icon": "04n"
-        }
-      ],
-      "clouds": {
-        "all": 75
-      },
-      "wind": {
-        "speed": 1.46,
-        "deg": 61,
-        "gust": 1.82
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-10-28 18:00:00"
-    },
-    {
       "dt": 1761685200,
       "main": {
         "temp": 4.83,
@@ -54,14 +18,14 @@
       },
       "weather": [
         {
-          "id": 803,
+          "id": 804,
           "main": "Clouds",
-          "description": "molnigt",
+          "description": "mulet",
           "icon": "04n"
         }
       ],
       "clouds": {
-        "all": 83
+        "all": 100
       },
       "wind": {
         "speed": 1.53,
@@ -97,7 +61,7 @@
         }
       ],
       "clouds": {
-        "all": 92
+        "all": 100
       },
       "wind": {
         "speed": 1.54,
@@ -1484,6 +1448,45 @@
         "pod": "n"
       },
       "dt_txt": "2025-11-02 15:00:00"
+    },
+    {
+      "dt": 1762106400,
+      "main": {
+        "temp": 6.11,
+        "feels_like": 2.78,
+        "temp_min": 6.11,
+        "temp_max": 6.11,
+        "pressure": 996,
+        "sea_level": 996,
+        "grnd_level": 990,
+        "humidity": 97,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 501,
+          "main": "Rain",
+          "description": "något regn",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 4.88,
+        "deg": 101,
+        "gust": 9.99
+      },
+      "visibility": 2381,
+      "pop": 1,
+      "rain": {
+        "3h": 3.36
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-11-02 18:00:00"
     }
   ],
   "city": {
