@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1761987600,
-      "main": {
-        "temp": 2.96,
-        "feels_like": 2.96,
-        "temp_min": 2.96,
-        "temp_max": 3.99,
-        "pressure": 1017,
-        "sea_level": 1017,
-        "grnd_level": 1010,
-        "humidity": 93,
-        "temp_kf": -1.03
-      },
-      "weather": [
-        {
-          "id": 804,
-          "main": "Clouds",
-          "description": "mulet",
-          "icon": "04d"
-        }
-      ],
-      "clouds": {
-        "all": 100
-      },
-      "wind": {
-        "speed": 0.36,
-        "deg": 34,
-        "gust": 0.48
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "d"
-      },
-      "dt_txt": "2025-11-01 09:00:00"
-    },
-    {
       "dt": 1761998400,
       "main": {
-        "temp": 3.76,
-        "feels_like": 1.63,
-        "temp_min": 3.76,
-        "temp_max": 5.36,
+        "temp": 4.41,
+        "feels_like": 2.39,
+        "temp_min": 4.41,
+        "temp_max": 5.3,
         "pressure": 1017,
         "sea_level": 1017,
         "grnd_level": 1010,
-        "humidity": 92,
-        "temp_kf": -1.6
+        "humidity": 89,
+        "temp_kf": -0.89
       },
       "weather": [
         {
@@ -81,15 +45,15 @@
     {
       "dt": 1762009200,
       "main": {
-        "temp": 4.58,
-        "feels_like": 1.85,
-        "temp_min": 4.58,
+        "temp": 4.91,
+        "feels_like": 2.25,
+        "temp_min": 4.91,
         "temp_max": 5.39,
         "pressure": 1016,
         "sea_level": 1016,
         "grnd_level": 1009,
-        "humidity": 90,
-        "temp_kf": -0.81
+        "humidity": 89,
+        "temp_kf": -0.48
       },
       "weather": [
         {
@@ -1465,6 +1429,44 @@
         "pod": "n"
       },
       "dt_txt": "2025-11-06 06:00:00"
+    },
+    {
+      "dt": 1762419600,
+      "main": {
+        "temp": 8,
+        "feels_like": 5.4,
+        "temp_min": 8,
+        "temp_max": 8,
+        "pressure": 1008,
+        "sea_level": 1008,
+        "grnd_level": 1002,
+        "humidity": 98,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 4.3,
+        "deg": 192,
+        "gust": 11.76
+      },
+      "pop": 0.27,
+      "rain": {
+        "3h": 0.27
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2025-11-06 09:00:00"
     }
   ],
   "city": {
