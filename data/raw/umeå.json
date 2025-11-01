@@ -4,53 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1762009200,
-      "main": {
-        "temp": 4.96,
-        "feels_like": 2.56,
-        "temp_min": 4.04,
-        "temp_max": 4.96,
-        "pressure": 1016,
-        "sea_level": 1016,
-        "grnd_level": 1010,
-        "humidity": 93,
-        "temp_kf": 0.92
-      },
-      "weather": [
-        {
-          "id": 803,
-          "main": "Clouds",
-          "description": "molnigt",
-          "icon": "04n"
-        }
-      ],
-      "clouds": {
-        "all": 75
-      },
-      "wind": {
-        "speed": 2.86,
-        "deg": 157,
-        "gust": 6.49
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-11-01 15:00:00"
-    },
-    {
       "dt": 1762020000,
       "main": {
         "temp": 4.94,
         "feels_like": 1.86,
-        "temp_min": 4.91,
+        "temp_min": 4.9,
         "temp_max": 4.94,
         "pressure": 1015,
         "sea_level": 1015,
         "grnd_level": 1008,
-        "humidity": 92,
-        "temp_kf": 0.03
+        "humidity": 89,
+        "temp_kf": 0.04
       },
       "weather": [
         {
@@ -85,7 +49,7 @@
         "pressure": 1014,
         "sea_level": 1014,
         "grnd_level": 1007,
-        "humidity": 92,
+        "humidity": 91,
         "temp_kf": -0.04
       },
       "weather": [
@@ -1462,6 +1426,44 @@
         "pod": "d"
       },
       "dt_txt": "2025-11-06 12:00:00"
+    },
+    {
+      "dt": 1762441200,
+      "main": {
+        "temp": 8.2,
+        "feels_like": 5.35,
+        "temp_min": 8.2,
+        "temp_max": 8.2,
+        "pressure": 1005,
+        "sea_level": 1005,
+        "grnd_level": 999,
+        "humidity": 98,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "lätt regn",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 4.97,
+        "deg": 199,
+        "gust": 14.36
+      },
+      "pop": 0.2,
+      "rain": {
+        "3h": 0.12
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-11-06 15:00:00"
     }
   ],
   "city": {

@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-11-01T14:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1008.0,
-          "air_temperature": 11.7,
-          "cloud_area_fraction": 100.0,
-          "relative_humidity": 84.8,
-          "wind_from_direction": 127.0,
-          "wind_speed": 5.8
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "cloudy"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {
-          "precipitation_amount": 2.6
-        }
-      }
-    }
-  },
-  {
     "time": "2025-11-01T15:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1007.0,
-          "air_temperature": 11.1,
+          "air_temperature": 11.0,
           "cloud_area_fraction": 100.0,
           "relative_humidity": 87.7,
           "wind_from_direction": 128.0,
@@ -79,7 +42,7 @@
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1006.9,
-          "air_temperature": 11.0,
+          "air_temperature": 10.9,
           "cloud_area_fraction": 100.0,
           "relative_humidity": 88.5,
           "wind_from_direction": 142.0,
@@ -98,6 +61,43 @@
         },
         "details": {
           "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {
+          "precipitation_amount": 3.7
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-01T17:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1006.6,
+          "air_temperature": 11.2,
+          "cloud_area_fraction": 100.0,
+          "relative_humidity": 88.4,
+          "wind_from_direction": 151.0,
+          "wind_speed": 6.2
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "lightrain"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "rain"
+        },
+        "details": {
+          "precipitation_amount": 0.3
         }
       },
       "next_6_hours": {
