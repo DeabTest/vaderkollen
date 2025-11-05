@@ -6,43 +6,43 @@
     "lat": 59.3667,
     "lon": 16.5,
     "tz_id": "Europe/Stockholm",
-    "localtime_epoch": 1762321846,
-    "localtime": "2025-11-05 06:50"
+    "localtime_epoch": 1762325190,
+    "localtime": "2025-11-05 07:46"
   },
   "current": {
-    "last_updated_epoch": 1762321500,
-    "last_updated": "2025-11-05 06:45",
-    "temp_c": 12.2,
-    "temp_f": 54.0,
-    "is_day": 0,
+    "last_updated_epoch": 1762325100,
+    "last_updated": "2025-11-05 07:45",
+    "temp_c": 12.1,
+    "temp_f": 53.8,
+    "is_day": 1,
     "condition": {
-      "text": "V\u00e4xlande molnighet",
-      "icon": "//cdn.weatherapi.com/weather/64x64/night/116.png",
-      "code": 1003
+      "text": "Mulet",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/122.png",
+      "code": 1009
     },
-    "wind_mph": 11.9,
-    "wind_kph": 19.1,
-    "wind_degree": 220,
+    "wind_mph": 11.0,
+    "wind_kph": 17.6,
+    "wind_degree": 222,
     "wind_dir": "SW",
     "pressure_mb": 1011.0,
     "pressure_in": 29.85,
     "precip_mm": 0.0,
     "precip_in": 0.0,
     "humidity": 88,
-    "cloud": 75,
+    "cloud": 100,
     "feelslike_c": 10.2,
     "feelslike_f": 50.4,
-    "windchill_c": 9.4,
-    "windchill_f": 48.8,
-    "heatindex_c": 11.5,
-    "heatindex_f": 52.7,
-    "dewpoint_c": 9.3,
-    "dewpoint_f": 48.8,
+    "windchill_c": 9.3,
+    "windchill_f": 48.7,
+    "heatindex_c": 11.3,
+    "heatindex_f": 52.4,
+    "dewpoint_c": 8.9,
+    "dewpoint_f": 48.0,
     "vis_km": 10.0,
     "vis_miles": 6.0,
     "uv": 0.0,
-    "gust_mph": 17.5,
-    "gust_kph": 28.1
+    "gust_mph": 16.3,
+    "gust_kph": 26.2
   },
   "forecast": {
     "forecastday": [
@@ -329,13 +329,13 @@
           {
             "time_epoch": 1762318800,
             "time": "2025-11-05 06:00",
-            "temp_c": 12.2,
-            "temp_f": 54.0,
+            "temp_c": 11.5,
+            "temp_f": 52.7,
             "is_day": 0,
             "condition": {
-              "text": "V\u00e4xlande molnighet",
-              "icon": "//cdn.weatherapi.com/weather/64x64/night/116.png",
-              "code": 1003
+              "text": "Mulet",
+              "icon": "//cdn.weatherapi.com/weather/64x64/night/122.png",
+              "code": 1009
             },
             "wind_mph": 11.9,
             "wind_kph": 19.1,
@@ -346,8 +346,8 @@
             "precip_mm": 0.0,
             "precip_in": 0.0,
             "snow_cm": 0.0,
-            "humidity": 88,
-            "cloud": 75,
+            "humidity": 86,
+            "cloud": 100,
             "feelslike_c": 9.4,
             "feelslike_f": 48.8,
             "windchill_c": 9.4,
@@ -369,12 +369,12 @@
           {
             "time_epoch": 1762322400,
             "time": "2025-11-05 07:00",
-            "temp_c": 11.3,
-            "temp_f": 52.4,
-            "is_day": 0,
+            "temp_c": 12.1,
+            "temp_f": 53.8,
+            "is_day": 1,
             "condition": {
               "text": "Mulet",
-              "icon": "//cdn.weatherapi.com/weather/64x64/night/122.png",
+              "icon": "//cdn.weatherapi.com/weather/64x64/day/122.png",
               "code": 1009
             },
             "wind_mph": 11.0,
@@ -386,7 +386,7 @@
             "precip_mm": 0.0,
             "precip_in": 0.0,
             "snow_cm": 0.0,
-            "humidity": 85,
+            "humidity": 88,
             "cloud": 100,
             "feelslike_c": 9.3,
             "feelslike_f": 48.7,
@@ -404,7 +404,7 @@
             "vis_miles": 6.0,
             "gust_mph": 16.3,
             "gust_kph": 26.2,
-            "uv": 0
+            "uv": 0.0
           },
           {
             "time_epoch": 1762326000,
