@@ -4,64 +4,28 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1762495200,
+      "dt": 1762506000,
       "main": {
-        "temp": 9.73,
-        "feels_like": 9.25,
-        "temp_min": 9.73,
-        "temp_max": 10.3,
-        "pressure": 1013,
-        "sea_level": 1013,
+        "temp": 10.25,
+        "feels_like": 9.73,
+        "temp_min": 10.25,
+        "temp_max": 11.3,
+        "pressure": 1012,
+        "sea_level": 1012,
         "grnd_level": 1008,
-        "humidity": 98,
-        "temp_kf": -0.57
+        "humidity": 92,
+        "temp_kf": -1.05
       },
       "weather": [
         {
           "id": 802,
           "main": "Clouds",
           "description": "växlande molnighet",
-          "icon": "03n"
+          "icon": "03d"
         }
       ],
       "clouds": {
-        "all": 40
-      },
-      "wind": {
-        "speed": 1.59,
-        "deg": 233,
-        "gust": 2.81
-      },
-      "visibility": 10000,
-      "pop": 0,
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-11-07 06:00:00"
-    },
-    {
-      "dt": 1762506000,
-      "main": {
-        "temp": 10.31,
-        "feels_like": 9.8,
-        "temp_min": 10.31,
-        "temp_max": 11.47,
-        "pressure": 1013,
-        "sea_level": 1013,
-        "grnd_level": 1008,
-        "humidity": 92,
-        "temp_kf": -1.16
-      },
-      "weather": [
-        {
-          "id": 803,
-          "main": "Clouds",
-          "description": "molnigt",
-          "icon": "04d"
-        }
-      ],
-      "clouds": {
-        "all": 60
+        "all": 33
       },
       "wind": {
         "speed": 1.82,
@@ -97,7 +61,7 @@
         }
       ],
       "clouds": {
-        "all": 80
+        "all": 67
       },
       "wind": {
         "speed": 2.55,
@@ -1454,6 +1418,42 @@
         "pod": "n"
       },
       "dt_txt": "2025-11-12 03:00:00"
+    },
+    {
+      "dt": 1762927200,
+      "main": {
+        "temp": 7.74,
+        "feels_like": 4.75,
+        "temp_min": 7.74,
+        "temp_max": 7.74,
+        "pressure": 1008,
+        "sea_level": 1008,
+        "grnd_level": 1003,
+        "humidity": 85,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "molnigt",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 80
+      },
+      "wind": {
+        "speed": 5.02,
+        "deg": 245,
+        "gust": 11.72
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-11-12 06:00:00"
     }
   ],
   "city": {
