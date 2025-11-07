@@ -1,48 +1,11 @@
 [
   {
-    "time": "2025-11-07T04:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1012.4,
-          "air_temperature": 8.5,
-          "cloud_area_fraction": 28.5,
-          "relative_humidity": 94.4,
-          "wind_from_direction": 120.0,
-          "wind_speed": 3.2
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "fair_day"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "fair_night"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "fair_day"
-        },
-        "details": {
-          "precipitation_amount": 0.0
-        }
-      }
-    }
-  },
-  {
     "time": "2025-11-07T05:00:00Z",
     "data": {
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1012.3,
-          "air_temperature": 8.3,
+          "air_temperature": 8.1,
           "cloud_area_fraction": 31.7,
           "relative_humidity": 94.6,
           "wind_from_direction": 117.0,
@@ -79,7 +42,7 @@
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1012.2,
-          "air_temperature": 7.9,
+          "air_temperature": 7.7,
           "cloud_area_fraction": 34.0,
           "relative_humidity": 94.9,
           "wind_from_direction": 108.0,
@@ -89,6 +52,43 @@
       "next_12_hours": {
         "summary": {
           "symbol_code": "clearsky_day"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "fair_day"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "clearsky_day"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-07T07:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1012.4,
+          "air_temperature": 7.4,
+          "cloud_area_fraction": 35.6,
+          "relative_humidity": 94.2,
+          "wind_from_direction": 111.0,
+          "wind_speed": 3.0
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "fair_day"
         },
         "details": {}
       },
