@@ -71,8 +71,8 @@
   },
   {
     "time": "2025-11-11 07:00:00",
-    "avg_temp": 1.8,
-    "desc": "växlande molnighet",
+    "avg_temp": 3.3,
+    "desc": "soligt",
     "reliability": "låg",
     "sources_used": [
       "weatherapi",
@@ -81,8 +81,8 @@
   },
   {
     "time": "2025-11-11 08:00:00",
-    "avg_temp": 3.4,
-    "desc": "soligt",
+    "avg_temp": 1.9,
+    "desc": "växlande molnighet",
     "reliability": "låg",
     "sources_used": [
       "weatherapi",
@@ -131,12 +131,10 @@
   },
   {
     "time": "2025-11-11 13:00:00",
-    "avg_temp": 7.9,
-    "desc": null,
+    "avg_temp": 6.8,
+    "desc": "soligt",
     "reliability": "låg",
     "sources_used": [
-      "smhi",
-      "yr",
       "weatherapi",
       "openmeteo"
     ]
@@ -168,7 +166,7 @@
   },
   {
     "time": "2025-11-11 16:00:00",
-    "avg_temp": 8.7,
+    "avg_temp": 8.6,
     "desc": "dimma",
     "reliability": "medel",
     "sources_used": [
@@ -229,7 +227,7 @@
   },
   {
     "time": "2025-11-11 21:00:00",
-    "avg_temp": 8.2,
+    "avg_temp": 8.3,
     "desc": "mulet",
     "reliability": "låg",
     "sources_used": [
@@ -365,7 +363,7 @@
   },
   {
     "time": "2025-11-12 08:00:00",
-    "avg_temp": 7.6,
+    "avg_temp": 7.5,
     "desc": "molnigt",
     "reliability": "låg",
     "sources_used": [
@@ -390,7 +388,7 @@
   },
   {
     "time": "2025-11-12 10:00:00",
-    "avg_temp": 9.1,
+    "avg_temp": 9.0,
     "desc": "molnigt",
     "reliability": "låg",
     "sources_used": [
@@ -414,7 +412,7 @@
   },
   {
     "time": "2025-11-12 12:00:00",
-    "avg_temp": 10.3,
+    "avg_temp": 10.2,
     "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
@@ -452,8 +450,8 @@
   {
     "time": "2025-11-12 15:00:00",
     "avg_temp": 11.3,
-    "desc": "mulet",
-    "reliability": "medel",
+    "desc": "lätt regn",
+    "reliability": "låg",
     "sources_used": [
       "openweather",
       "smhi",
@@ -464,7 +462,7 @@
   },
   {
     "time": "2025-11-12 16:00:00",
-    "avg_temp": 11.8,
+    "avg_temp": 11.7,
     "desc": null,
     "reliability": "låg",
     "sources_used": [
@@ -476,7 +474,7 @@
   },
   {
     "time": "2025-11-12 17:00:00",
-    "avg_temp": 11.6,
+    "avg_temp": 11.5,
     "desc": null,
     "reliability": "medel",
     "sources_used": [
@@ -488,8 +486,8 @@
   },
   {
     "time": "2025-11-12 18:00:00",
-    "avg_temp": 11.2,
-    "desc": "mulet",
+    "avg_temp": 11.1,
+    "desc": "lätt regn",
     "reliability": "medel",
     "sources_used": [
       "openweather",
@@ -574,17 +572,6 @@
   },
   {
     "time": "2025-11-13 01:00:00",
-    "avg_temp": 10.4,
-    "desc": "dimma",
-    "reliability": "hög",
-    "sources_used": [
-      "smhi",
-      "yr",
-      "openmeteo"
-    ]
-  },
-  {
-    "time": "2025-11-13 02:00:00",
     "avg_temp": 10.3,
     "desc": "dimma",
     "reliability": "hög",
@@ -595,8 +582,19 @@
     ]
   },
   {
+    "time": "2025-11-13 02:00:00",
+    "avg_temp": 10.2,
+    "desc": "dimma",
+    "reliability": "hög",
+    "sources_used": [
+      "smhi",
+      "yr",
+      "openmeteo"
+    ]
+  },
+  {
     "time": "2025-11-13 03:00:00",
-    "avg_temp": 10.1,
+    "avg_temp": 10.0,
     "desc": "mulet",
     "reliability": "hög",
     "sources_used": [
@@ -619,7 +617,7 @@
   },
   {
     "time": "2025-11-13 05:00:00",
-    "avg_temp": 10.1,
+    "avg_temp": 10.0,
     "desc": "molnigt",
     "reliability": "hög",
     "sources_used": [
@@ -687,7 +685,7 @@
   },
   {
     "time": "2025-11-13 11:00:00",
-    "avg_temp": 11.4,
+    "avg_temp": 11.3,
     "desc": "dimma",
     "reliability": "hög",
     "sources_used": [
@@ -698,7 +696,7 @@
   },
   {
     "time": "2025-11-13 12:00:00",
-    "avg_temp": 11.7,
+    "avg_temp": 11.6,
     "desc": "mulet",
     "reliability": "hög",
     "sources_used": [
@@ -720,7 +718,7 @@
   },
   {
     "time": "2025-11-13 14:00:00",
-    "avg_temp": 11.9,
+    "avg_temp": 11.8,
     "desc": "cloudy",
     "reliability": "hög",
     "sources_used": [
@@ -764,7 +762,7 @@
     "time": "2025-11-13 18:00:00",
     "avg_temp": 11.9,
     "desc": "mulet",
-    "reliability": "medel",
+    "reliability": "hög",
     "sources_used": [
       "openweather",
       "smhi",
@@ -776,7 +774,7 @@
     "time": "2025-11-13 21:00:00",
     "avg_temp": 11.7,
     "desc": "lätt regn",
-    "reliability": "medel",
+    "reliability": "hög",
     "sources_used": [
       "openweather",
       "smhi",
@@ -785,7 +783,29 @@
   },
   {
     "time": "2025-11-14 00:00:00",
-    "avg_temp": 9.7,
+    "avg_temp": 9.8,
+    "desc": "lätt regn",
+    "reliability": "låg",
+    "sources_used": [
+      "openweather",
+      "smhi",
+      "yr",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-11-14 03:00:00",
+    "avg_temp": 9.5,
+    "desc": "lätt regn",
+    "reliability": "låg",
+    "sources_used": [
+      "openweather",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-11-14 06:00:00",
+    "avg_temp": 7.5,
     "desc": "lätt regn",
     "reliability": "medel",
     "sources_used": [
@@ -796,32 +816,10 @@
     ]
   },
   {
-    "time": "2025-11-14 03:00:00",
-    "avg_temp": 8.6,
+    "time": "2025-11-14 09:00:00",
+    "avg_temp": 7.2,
     "desc": "mulet",
     "reliability": "medel",
-    "sources_used": [
-      "openweather",
-      "openmeteo"
-    ]
-  },
-  {
-    "time": "2025-11-14 06:00:00",
-    "avg_temp": 7.3,
-    "desc": "mulet",
-    "reliability": "hög",
-    "sources_used": [
-      "openweather",
-      "smhi",
-      "yr",
-      "openmeteo"
-    ]
-  },
-  {
-    "time": "2025-11-14 09:00:00",
-    "avg_temp": 7.1,
-    "desc": "mulet",
-    "reliability": "hög",
     "sources_used": [
       "openweather",
       "openmeteo"
@@ -841,9 +839,9 @@
   },
   {
     "time": "2025-11-14 15:00:00",
-    "avg_temp": 6.8,
+    "avg_temp": 7.2,
     "desc": "mulet",
-    "reliability": "medel",
+    "reliability": "hög",
     "sources_used": [
       "openweather",
       "openmeteo"
@@ -851,9 +849,9 @@
   },
   {
     "time": "2025-11-14 18:00:00",
-    "avg_temp": 6.2,
+    "avg_temp": 6.5,
     "desc": "mulet",
-    "reliability": "medel",
+    "reliability": "hög",
     "sources_used": [
       "openweather",
       "smhi",
@@ -863,9 +861,9 @@
   },
   {
     "time": "2025-11-14 21:00:00",
-    "avg_temp": 5.3,
+    "avg_temp": 6.0,
     "desc": "mulet",
-    "reliability": "medel",
+    "reliability": "hög",
     "sources_used": [
       "openweather",
       "openmeteo"
@@ -873,50 +871,6 @@
   },
   {
     "time": "2025-11-15 00:00:00",
-    "avg_temp": 3.3,
-    "desc": "mulet",
-    "reliability": "medel",
-    "sources_used": [
-      "openweather",
-      "smhi",
-      "yr",
-      "openmeteo"
-    ]
-  },
-  {
-    "time": "2025-11-15 03:00:00",
-    "avg_temp": 2.8,
-    "desc": "mulet",
-    "reliability": "medel",
-    "sources_used": [
-      "openweather",
-      "openmeteo"
-    ]
-  },
-  {
-    "time": "2025-11-15 06:00:00",
-    "avg_temp": 0.9,
-    "desc": "mulet",
-    "reliability": "låg",
-    "sources_used": [
-      "openweather",
-      "smhi",
-      "yr",
-      "openmeteo"
-    ]
-  },
-  {
-    "time": "2025-11-15 09:00:00",
-    "avg_temp": 1.6,
-    "desc": "mulet",
-    "reliability": "medel",
-    "sources_used": [
-      "openweather",
-      "openmeteo"
-    ]
-  },
-  {
-    "time": "2025-11-15 12:00:00",
     "avg_temp": 3.5,
     "desc": "mulet",
     "reliability": "medel",
@@ -928,9 +882,53 @@
     ]
   },
   {
-    "time": "2025-11-15 15:00:00",
-    "avg_temp": 2.5,
+    "time": "2025-11-15 03:00:00",
+    "avg_temp": 3.0,
     "desc": "mulet",
+    "reliability": "låg",
+    "sources_used": [
+      "openweather",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-11-15 06:00:00",
+    "avg_temp": 1.0,
+    "desc": "mulet",
+    "reliability": "låg",
+    "sources_used": [
+      "openweather",
+      "smhi",
+      "yr",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-11-15 09:00:00",
+    "avg_temp": 1.9,
+    "desc": "mulet",
+    "reliability": "låg",
+    "sources_used": [
+      "openweather",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-11-15 12:00:00",
+    "avg_temp": 3.6,
+    "desc": "mulet",
+    "reliability": "medel",
+    "sources_used": [
+      "openweather",
+      "smhi",
+      "yr",
+      "openmeteo"
+    ]
+  },
+  {
+    "time": "2025-11-15 15:00:00",
+    "avg_temp": 2.4,
+    "desc": "växlande molnighet",
     "reliability": "hög",
     "sources_used": [
       "openweather",
@@ -939,8 +937,8 @@
   },
   {
     "time": "2025-11-15 18:00:00",
-    "avg_temp": 1.1,
-    "desc": "molnigt",
+    "avg_temp": 1.0,
+    "desc": "lätt molnighet",
     "reliability": "medel",
     "sources_used": [
       "openweather",
@@ -951,7 +949,7 @@
   },
   {
     "time": "2025-11-15 21:00:00",
-    "avg_temp": 1.6,
+    "avg_temp": 1.3,
     "desc": "molnigt",
     "reliability": "hög",
     "sources_used": [
@@ -961,7 +959,7 @@
   },
   {
     "time": "2025-11-16 00:00:00",
-    "avg_temp": 2.5,
+    "avg_temp": 2.2,
     "desc": "molnigt",
     "reliability": "medel",
     "sources_used": [
@@ -973,7 +971,7 @@
   },
   {
     "time": "2025-11-16 03:00:00",
-    "avg_temp": 2.1,
+    "avg_temp": 1.7,
     "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
@@ -983,7 +981,7 @@
   },
   {
     "time": "2025-11-16 06:00:00",
-    "avg_temp": 2.5,
+    "avg_temp": 2.2,
     "desc": "mulet",
     "reliability": "låg",
     "sources_used": [
@@ -995,8 +993,8 @@
   },
   {
     "time": "2025-11-16 09:00:00",
-    "avg_temp": 3.1,
-    "desc": "lätt regn",
+    "avg_temp": 2.8,
+    "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
       "openweather",
@@ -1005,8 +1003,8 @@
   },
   {
     "time": "2025-11-16 12:00:00",
-    "avg_temp": 4.6,
-    "desc": "lätt regn",
+    "avg_temp": 4.9,
+    "desc": "mulet",
     "reliability": "medel",
     "sources_used": [
       "openweather",
