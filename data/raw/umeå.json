@@ -4,56 +4,17 @@
   "cnt": 40,
   "list": [
     {
-      "dt": 1762873200,
-      "main": {
-        "temp": -0.04,
-        "feels_like": -4.57,
-        "temp_min": -0.04,
-        "temp_max": 4.89,
-        "pressure": 1007,
-        "sea_level": 1007,
-        "grnd_level": 1001,
-        "humidity": 100,
-        "temp_kf": -4.93
-      },
-      "weather": [
-        {
-          "id": 500,
-          "main": "Rain",
-          "description": "lätt regn",
-          "icon": "10n"
-        }
-      ],
-      "clouds": {
-        "all": 100
-      },
-      "wind": {
-        "speed": 4.35,
-        "deg": 203,
-        "gust": 10.5
-      },
-      "visibility": 10000,
-      "pop": 0.94,
-      "rain": {
-        "3h": 0.44
-      },
-      "sys": {
-        "pod": "n"
-      },
-      "dt_txt": "2025-11-11 15:00:00"
-    },
-    {
       "dt": 1762884000,
       "main": {
-        "temp": 1.61,
-        "feels_like": -1.99,
-        "temp_min": 1.61,
-        "temp_max": 4.92,
+        "temp": 1.6,
+        "feels_like": -2,
+        "temp_min": 1.6,
+        "temp_max": 4.87,
         "pressure": 1007,
         "sea_level": 1007,
         "grnd_level": 1000,
         "humidity": 98,
-        "temp_kf": -3.31
+        "temp_kf": -3.27
       },
       "weather": [
         {
@@ -1470,6 +1431,45 @@
         "pod": "d"
       },
       "dt_txt": "2025-11-16 12:00:00"
+    },
+    {
+      "dt": 1763305200,
+      "main": {
+        "temp": -0.11,
+        "feels_like": -0.11,
+        "temp_min": -0.11,
+        "temp_max": -0.11,
+        "pressure": 998,
+        "sea_level": 998,
+        "grnd_level": 991,
+        "humidity": 81,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 600,
+          "main": "Snow",
+          "description": "lätt snöfall",
+          "icon": "13n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 1.22,
+        "deg": 252,
+        "gust": 1.05
+      },
+      "visibility": 10000,
+      "pop": 0.21,
+      "snow": {
+        "3h": 0.12
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2025-11-16 15:00:00"
     }
   ],
   "city": {
