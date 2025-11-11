@@ -1,42 +1,5 @@
 [
   {
-    "time": "2025-11-11T16:00:00Z",
-    "data": {
-      "instant": {
-        "details": {
-          "air_pressure_at_sea_level": 1007.6,
-          "air_temperature": 0.7,
-          "cloud_area_fraction": 100.0,
-          "relative_humidity": 96.7,
-          "wind_from_direction": 16.0,
-          "wind_speed": 1.6
-        }
-      },
-      "next_12_hours": {
-        "summary": {
-          "symbol_code": "lightrain"
-        },
-        "details": {}
-      },
-      "next_1_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {
-          "precipitation_amount": 0.4
-        }
-      },
-      "next_6_hours": {
-        "summary": {
-          "symbol_code": "rain"
-        },
-        "details": {
-          "precipitation_amount": 1.4
-        }
-      }
-    }
-  },
-  {
     "time": "2025-11-11T17:00:00Z",
     "data": {
       "instant": {
@@ -79,7 +42,7 @@
       "instant": {
         "details": {
           "air_pressure_at_sea_level": 1006.7,
-          "air_temperature": 1.1,
+          "air_temperature": 0.9,
           "cloud_area_fraction": 100.0,
           "relative_humidity": 98.5,
           "wind_from_direction": 18.0,
@@ -106,6 +69,43 @@
         },
         "details": {
           "precipitation_amount": 1.0
+        }
+      }
+    }
+  },
+  {
+    "time": "2025-11-11T19:00:00Z",
+    "data": {
+      "instant": {
+        "details": {
+          "air_pressure_at_sea_level": 1006.2,
+          "air_temperature": 1.3,
+          "cloud_area_fraction": 100.0,
+          "relative_humidity": 98.9,
+          "wind_from_direction": 33.0,
+          "wind_speed": 0.9
+        }
+      },
+      "next_12_hours": {
+        "summary": {
+          "symbol_code": "cloudy"
+        },
+        "details": {}
+      },
+      "next_1_hours": {
+        "summary": {
+          "symbol_code": "cloudy"
+        },
+        "details": {
+          "precipitation_amount": 0.0
+        }
+      },
+      "next_6_hours": {
+        "summary": {
+          "symbol_code": "cloudy"
+        },
+        "details": {
+          "precipitation_amount": 0.0
         }
       }
     }
