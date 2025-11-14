@@ -36,9 +36,6 @@ jobs:
       - name: 🏗️ Kör SMHI-fetch
         run: python fetch_smhi.py
 
-      - name: 🏗️ Kör YR-fetch
-        run: python fetch_yr.py
-
       - name: 🏗️ Kör OpenWeather-fetch
         run: python fetch_weather.py
 
